@@ -1,0 +1,76 @@
+.left{
+    color: white;
+    position: fixed;
+    top: 340px;
+   left:100px;
+
+}
+
+.right{
+    color: white;
+    position: fixed;
+    top: 0px;
+    right:300px;
+}
+
+.right2{
+    color: white;
+    position: fixed;
+    top: 0px;
+    right:200px;
+    line-height:  35px;
+}
+
+.bottom{
+    color: white;
+    position: fixed;
+    top: 650px;
+    right:420px;
+    font-size:50%;
+}
+
+.photo1{
+    position: fixed;
+    top: 50px;
+    left:120px;
+}
+
+.photo2{
+    position: fixed;
+    top: 572px;
+    left:170px;
+}
+
+.photo3{
+    position: fixed;
+    top: 492px;
+    left:170px;
+}
+
+.photo4{
+    position: fixed;
+    top: 450px;
+    right:300px;
+}
+
+.video1{
+    position: fixed;
+    top: 500px;
+    right:500px;
+}
+
+.list1{
+    line-height:  40px;
+}
+.signin{
+    color: orange;
+    position: relative;
+    left: 120px;
+}
+.web{
+    text-decoration:underline;
+}
+
+body{
+    background-color: #2D65A4;
+}
