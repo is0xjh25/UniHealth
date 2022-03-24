@@ -1,76 +1,86 @@
 .left{
     color: white;
-    position: fixed;
-    top: 340px;
-   left:100px;
+    position: absolute;
+    top: 320px;
+    left:150px;
+    
 
 }
 
 .right{
     color: white;
-    position: fixed;
+    position: absolute;
     top: 0px;
-    right:300px;
+    right:200px;
+    
 }
 
 .right2{
     color: white;
-    position: fixed;
+    position: absolute;
     top: 0px;
-    right:200px;
+    right:150px;
     line-height:  35px;
+    
 }
 
 .bottom{
     color: white;
-    position: fixed;
+    position: absolute;
     top: 650px;
-    right:420px;
+    right:620px;
     font-size:50%;
+    
 }
 
 .photo1{
-    position: fixed;
+    position: absolute;
     top: 50px;
-    left:120px;
+    left:170px;
+    
 }
 
 .photo2{
-    position: fixed;
-    top: 572px;
-    left:170px;
+    position: absolute;
+    top: 615px;
+    left:220px;
+    
 }
 
 .photo3{
-    position: fixed;
-    top: 492px;
-    left:170px;
+    position: absolute;
+    top: 480px;
+    left:220px;
+    
 }
 
 .photo4{
-    position: fixed;
+    position: absolute;
     top: 450px;
-    right:300px;
-}
-
-.video1{
-    position: fixed;
-    top: 500px;
     right:500px;
+    
 }
 
 .list1{
-    line-height:  40px;
+    line-height:  30px;
+    color: #0BDFD2; 
+    
 }
+
 .signin{
     color: orange;
-    position: relative;
+    position: absolute;
     left: 120px;
+    
 }
 .web{
     text-decoration:underline;
 }
 
 body{
+    height: 700px;
     background-color: #2D65A4;
+    overflow-y:auto;
+    float: left; 
+
 }
