@@ -1,0 +1,86 @@
+.left{
+    color: white;
+    position: absolute;
+    top: 320px;
+    left:150px;
+    
+
+}
+
+.right{
+    color: white;
+    position: absolute;
+    top: 0px;
+    right:200px;
+    
+}
+
+.right2{
+    color: white;
+    position: absolute;
+    top: 0px;
+    right:150px;
+    line-height:  35px;
+    
+}
+
+.bottom{
+    color: white;
+    position: absolute;
+    top: 650px;
+    right:620px;
+    font-size:50%;
+    
+}
+
+.photo1{
+    position: absolute;
+    top: 50px;
+    left:170px;
+    
+}
+
+.photo2{
+    position: absolute;
+    top: 615px;
+    left:220px;
+    
+}
+
+.photo3{
+    position: absolute;
+    top: 480px;
+    left:220px;
+    
+}
+
+.photo4{
+    position: absolute;
+    top: 450px;
+    right:500px;
+    
+}
+
+.list1{
+    line-height:  30px;
+    color: #0BDFD2; 
+    
+}
+
+.signin{
+    color: orange;
+    position: absolute;
+    left: 120px;
+    
+}
+.web{
+    text-decoration:underline;
+}
+
+body{
+    height: 700px;
+    background-color: #2D65A4;
+    overflow-y:auto;
+    float: left; 
+
+}
