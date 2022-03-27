@@ -160,17 +160,19 @@ h3 {
 	}
 
     .sub {
+		top: 0;
+		bottom: 0;
         padding-top: 5%;
+		min-height: 500px;
         position: fixed;
+		overflow-y: scroll;
         width: 45%; 
         float: left;
-		overflow: auto;
     }
 
     .main {
         width: 55%; 
         float: right;
-        overflow: hidden;
     }
 
 	#favicon {
