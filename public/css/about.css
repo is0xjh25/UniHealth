@@ -163,12 +163,13 @@ h3 {
         padding-top: 5%;
         position: fixed;
         width: 45%; 
-        float:left;
+        float: left;
+		overflow: auto;
     }
 
     .main {
         width: 55%; 
-        float:right;
+        float: right;
         overflow: hidden;
     }
 
