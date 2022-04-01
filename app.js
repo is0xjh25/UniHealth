@@ -23,7 +23,10 @@ app.get('/about-diabetes', (req, res) => {
 
 /* Patient */
 
+/* Demo */
+const demoRouter = require('./routes/demoRouter')
+app.use('/demo-management', demoRouter)
 
 app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`)
+	console.log(`UniHealth app listening on port ${port}`)
 })
