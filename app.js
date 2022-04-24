@@ -1,26 +1,42 @@
+const exphbs = require('express-handlebars')
+
+// Import express
 const express = require('express')
-const res = require('express/lib/response')
+// Set your app up as an express app
 const app = express()
-const port = 3000
-var path = require('path')
-app.use(express.static(path.join(__dirname, '/')))
 
-/* Genral */
+// configure Handlebars
+app.engine(
+    'hbs',
+    exphbs.engine({
+        defaultLayout: 'main',
+        extname: 'hbs',
+    })
+)
+// set Handlebars view engine
+app.set('view engine', 'hbs')
+
+app.use(express.static('public'))
+
+// Set up to handle POST requests
+app.use(express.json()) // needed if POST data is in JSON format
+app.use(express.urlencoded({ extended: false })) // only needed for URL-encoded input
+
+// link to our router
+const peopleRouter = require('./routes/peopleRouter')
+
+// the demo routes are added to the end of the '/people' path
+app.use('/people', peopleRouter)
+
+// our new model that will connect to MongoDB
+require('./models/index.js')
+
+// Tells the app to send the string: "Our demo app is working!" when you hit the '/' endpoint.
 app.get('/', (req, res) => {
-    res.send('<h1>Hello World!</h1>')
+    res.render('index.hbs')
 })
 
-app.get('/about-us', (req, res) => {
-    res.sendFile(__dirname + '/static/' + 'about-us.html')
-})
-
-app.get('/about-diabetes', (req, res) => {
-    res.sendFile(__dirname + '/static/' + 'about-diabetes.html')
-})
-
-/* Clinician */
-
-/* Port Listen */
+// Tells the app to listen on port 3000 and logs that information to the console.
 app.listen(process.env.PORT || 3000, () => {
-	console.log('The library app is running!')
+    console.log('Demo app is listening on port 3000!')
 })
