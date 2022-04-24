@@ -1,5 +1,12 @@
 {
   "dependencies": {
     "express": "^4.17.3"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "prettier": "prettier --single-quote --no-semi --tab-width 4 --write '**/*.js' '*.js'"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
   }
 }
