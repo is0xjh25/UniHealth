@@ -1,0 +1,440 @@
+/* General Setting*/
+:root {
+	--primary: #2763A7;
+	--secondary: #D6D8DA;
+	--link: #0ACCD9;
+	--navigate: #FFAD1F;
+	--text: white;
+	--title-font: "IMPACT";
+	--text-font: "Lato", sans-serif;
+}
+
+
+
+body {
+	display: flex;
+	color: var(--text);
+	background-color: var(--primary);
+	
+}
+
+.button{
+	color: white;
+	text-align: center;
+	background-color: var(--primary);
+}
+
+
+
+
+
+
+	/* Mobile */
+@media screen and (min-width: 375px) {
+	#desktop-login{
+		display: none;
+	}
+
+	#mobile-login{
+		display: block;
+	}
+
+	#desktop-login-role{
+		display: none;
+	}
+
+
+	
+	#favicon {
+		padding-left: 15%;
+		height: 600px;
+		width:auto;
+	}
+
+	.account-password{
+		margin-left: 15%;
+		margin-top: 10%;
+		font-size: 90%;
+		width:100%;
+	}
+
+
+	#acc{
+		padding-top:7%;
+		padding-bottom: 7%;
+		padding-left: 30%;
+		padding-right:35%;
+		border-radius: 90px;
+		border-style:solid;
+		border-width:1px;
+		background: white;
+		color: #484141;
+		font-size: 300%;
+	}
+
+
+	#passw{
+		margin-top: 10%;
+		padding-top:7%;
+		padding-bottom: 7%;
+		padding-left: 30%;
+		padding-right:30%;
+		border-radius: 90px;
+		border-style:solid;
+		border-width:1px;
+		background: white;
+		color: #484141;
+		font-size: 300%;
+	}
+
+	#signin{
+		margin-top: 10%;
+		padding-top:7%;
+		padding-bottom: 7%;
+		padding-left: 33%;
+		padding-right:62%;
+		width:40%;
+		border-radius: 90px;
+		border-style:solid;
+		border-width:1px;
+		background-color: #0ACCD9;
+		font-size: 300%;
+		white-space: nowrap;
+		
+	}
+
+	#about_diabetes_m{
+		border:none;
+		font-family: var(--text-font);
+		margin-left:0;
+		padding-left: 30%;
+		font-size:200%;
+		width:100%;
+		text-decoration: none;
+		background-color: var(--primary);
+		color:white;
+		margin-top: 4%;
+		white-space: nowrap;
+
+		
+	}
+
+	#about_unit_health_m{
+		background-color: var(--primary);
+		border:none;
+		font-family: var(--text-font);
+		margin-left:0;
+		padding-left: 30%;
+		font-size:200%;
+		width:100%;
+		text-decoration: none;
+		color: white;
+	}
+
+	.about_unit_health:hover{
+		color: var(--link);
+	}
+	.about_diabetes:hover{
+		color: var(--link);
+	}
+
+}
+
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+	#desktop-login{
+		display: none;
+	}
+
+	#mobile-login{
+		display: block;
+	}
+
+	#desktop-login-role{
+		display: none;
+	}
+
+	#favicon {
+		padding-left: 20%;
+		height: 600px;
+		width:auto;
+	}
+
+	.account-password{
+		margin-left: 15%;
+		margin-top: 10%;
+		font-size: 40px;
+		width:100%;
+	}
+
+
+	#acc{
+		font-size: 80%;
+		padding-top:7%;
+		padding-bottom: 7%;
+		padding-left: 40%;
+		padding-right:45%;
+		border-radius: 90px;
+		border-style:solid;
+		border-width:1px;
+		background: white;
+		color: #484141;
+	}
+
+
+	#passw{
+		font-size: 80%;
+		margin-top: 10%;
+		padding-top:7%;
+		padding-bottom: 7%;
+		padding-left: 40%;
+		padding-right:40%;
+		border-radius: 90px;
+		border-style:solid;
+		border-width:1px;
+		background: white;
+		color: #484141;
+	}
+
+	#signin{
+		font-size: 80%;
+		margin-top: 10%;
+		padding-top:7%;
+		padding-bottom: 7%;
+		padding-left: 40%;
+		padding-right:63%;
+		white-space: nowrap;
+		border-radius: 90px;
+		border-style:solid;
+		border-width:1px;
+		background-color: #0ACCD9;
+		
+	}
+
+	#about_diabetes_m{
+		border:none;
+		font-family: var(--text-font);
+		margin-left:0;
+		padding-left: 30%;
+		font-size:200%;
+		width:100%;
+		text-decoration: none;
+		background-color: var(--primary);
+		color:white;
+		margin-top: 10%;
+	}
+
+	#about_unit_health_m{
+		background-color: var(--primary);
+		border:none;
+		margin-top: 10%;;
+		font-family: var(--text-font);
+		margin-left:3%;
+		padding-left: 27%;
+		font-size: 200%;
+		width:100%;
+		text-decoration: none;
+		color: white;
+	}
+
+	.about_unit_health:hover{
+		color: var(--link);
+	}
+	.about_diabetes:hover{
+		color: var(--link);
+	}
+}
+
+/* Desktop */
+@media screen and (min-width: 1080px) {
+	#desktop-login{
+		display: block;
+	}
+	
+	#mobile-login{
+		display: none;
+	}
+
+	#desktop-login-role{
+		display: none;
+	}
+
+	
+	.sub {
+		width: auto;
+		height: auto; 
+	  }
+	
+	#favicon {
+		height: 1000px;
+	}
+	
+	
+	
+	#sign_in{
+		margin-top: -100%;
+		padding-left: 130%;
+		width:60%;
+		color: var(--text);
+		font-size: 100px;
+	}
+	
+	.role{
+		color: var(--text);
+		font-size: 60px;
+	
+	}
+	
+	#role_p{
+		background-color: var(--primary);
+		font-size: 100%;
+		margin-left: 130%;
+		padding-top:3%;
+		padding-bottom: 3%;
+		padding-left: 15%;
+		padding-right:13%;
+		border-radius: 90px;
+		border-style:solid;
+		border-width:1px;
+		border-color: white;
+		color:white;
+	}
+	#role_p:hover{
+		color: var(--link);
+	}
+	
+	#role_s{
+		background-color: var(--primary);
+		font-size: 100%;
+		margin-left: 130%;
+		margin-top: 5%;
+		padding-top:3%;
+		padding-bottom: 3%;
+		padding-left: 15%;
+		padding-right:20%;
+		border-radius: 90px;
+		border-style:solid;
+		border-width:1px;
+		border-color: white;
+		color:white;
+	}
+	
+	#role_s:hover{
+		color: var(--link);
+	}
+	
+	#about_unit_health{
+		background-color: var(--primary);
+		margin-left: 140%;
+		margin-top: 5%;
+		border:none;
+		width: 60%;
+		font-size: 50%;
+		color:white;
+		white-space: nowrap;
+	}
+	
+	#about_unit_health:hover{
+		color: var(--link);
+	} 
+	
+	
+	
+	#about_diabetes{
+		background-color: var(--primary);
+		margin-left: 140%;
+		margin-top: 3%;
+		border:none;
+		width: 60%;
+		font-size: 50%;
+		color:white;
+		white-space: nowrap;
+	}
+	
+	#about_diabetes:hover{
+		color: var(--link);
+	}
+
+	#icon{
+		float:left;
+		height: 100%;
+		width: 50%;
+		background-color: #0ACCD9;
+	}
+
+	#inout{
+		float:right;
+		height: 100%;
+		width: 50%;
+		background-color: #FFAD1F;
+	}
+
+
+
+	#role_ss{
+		background-color: var(--primary);
+		font-size: 150%;
+        border:none;
+        margin-left: 140%;
+		margin-top: -15%;
+		color:firebrick;
+	}
+
+	#acc_s{
+		margin-top: -10%;
+		padding-top:3%;
+		margin-left:110%;
+		padding-bottom: 3%;
+		padding-left: 20%;
+		padding-right:40%;
+		border-radius: 90px;
+		border-style:solid;
+		border-width:1px;
+		background: white;
+		color: #484141;
+		font-size: 80%;
+	}
+
+
+	#passw_s{
+		margin-left:110%;
+		margin-top: 3%;
+		padding-top:3%;
+		padding-bottom: 3%;
+		padding-left: 20%;
+		padding-right:40%;
+		border-radius: 90px;
+		border-style:solid;
+		border-width:1px;
+		background: white;
+		color: #484141;
+		font-size: 80%;
+	}
+
+	#signin_s{
+		margin-top: 3%;
+		margin-left:110%;
+		padding-top:3%;
+		padding-bottom: 3%;
+		padding-left: 20%;
+		padding-right:0%;
+		width:40%;
+		border-radius: 90px;
+		border-style:solid;
+		border-width:1px;
+		background-color: #0ACCD9;
+		font-size: 80%;
+		white-space: nowrap;
+	}
+
+	#goback{
+		position: absolute;
+		font-size: 200%;
+		padding-left: -10%;
+	}
+
+	#goback:hover{
+		color: var(--link);
+	}
+}
