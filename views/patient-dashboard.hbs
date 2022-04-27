@@ -1,44 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
     <link rel="stylesheet" type="text/css" href= "/public/css/patient-dashboard.css">
     <script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script>
-</head>
 
-
-<body>
 
 
     <!--desktop headBar-->
-    <div class = topmenu>
-        <img class="p1" src="/public/images/favicon.png">
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        <i class="fa-solid fa-house-user fa-3x" style="color:#D6D8DA;"></i>
-
-        <a href = patient-dashboard.html class="home">
-            Home
-        </a>
-
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        <i class="fa-solid fa-circle-user fa-3x" style="color: #D6D8DA;"></i>
-
-        <h2 class="userinfo">
-            User info
-        </h2>
-
-    </div>
-
-    <a class="signout" href="login_home_page.html">
-        Sign out
-    </a>
-    <i class="fa-solid fa-right-from-bracket fa-3x" id="p4" style="color: #D6D8DA;top: 8px; right: 125px;position: fixed;"></i>
-
-
+    {{> patient-navbar}}
     <!--mobile headBar-->
     <div class="title">
         <p id="home">Home</p>
@@ -181,6 +147,3 @@
         <i class="fa-solid fa-house-medical fa-3x" style="color: #2D65A4;position: absolute;left: 15px;top: 10px;"></i>
         <i class="fa-solid fa-circle-user fa-3x" id="userIcon"></i>
     </div>
-
-</body>
-</html>

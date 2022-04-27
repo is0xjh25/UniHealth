@@ -609,7 +609,10 @@ li{
     }
     
     .home{
+        font-size: 190%;
+        margin-top: 0.3%;
         color: var(--text-unused);
+        text-decoration:none;
     }
     .userinfo{
         color: #D6D8DA;
@@ -649,10 +652,12 @@ li{
         display: none;
     }
     #reco{
+        margin-top: 13%;
         color: #FFFFFF;font-size: 50px;
         position: absolute;
         left: 130px;
         top: -20px;
+        text-decoration:none;
 
     }
     .bottom{

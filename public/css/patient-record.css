@@ -260,7 +260,10 @@
     }
     
     .home{
-        color: #D6D8DA;
+        font-size: 190%;
+        margin-top: 0.3%;
+        color: var(--text-unused);
+        text-decoration:none;
     }
     
     .userinfo{
