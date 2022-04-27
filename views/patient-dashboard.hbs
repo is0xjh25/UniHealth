@@ -1,0 +1,114 @@
+<link rel="stylesheet" type="text/css" href= "./css/dash.css">
+
+
+<body>
+    {{> patient-navbar}}
+
+    <!--message block--> <!--add support message handlebar-->
+    <div class="message">
+        <p id="message">{{management.supportMessage}}</p>
+    </div>
+
+    <!--mobile message bar-->
+    <div class="messHead">
+        <h1 id="messName">Message</h1>
+        <i class="fa-solid fa-comment-medical fa-3x" style="color: #FFFFFF;position: absolute;left: 20px;"></i>
+    </div>
+
+    <div class="tablet-messHead">
+        <h1 id="messName">Message</h1>
+        <i class="fa-solid fa-comment-medical fa-4x" style="color: #FFFFFF;position: absolute;left: 20px;"></i>
+    </div>
+
+    <!--desktop message bar-->
+    <div class="desk-messHead">
+        <h1 id="messName">Message</h1>
+        <i class="fa-solid fa-comment-medical fa-4x" style="color: #FFFFFF;position: absolute;left: 20px;"></i>
+    </div>
+
+    <!--mobile statistic-->
+    <div class="app-statistic">
+        <i class="fa-solid fa-file-lines fa-6x" style="color: #FFF8F8;position: absolute;left:30px;top:10px;"></i>
+        <p id="stat">Statistic</p>
+    </div>
+
+    <div class="tablet-statistic">
+        <i class="fa-solid fa-file-lines fa-7x" style="color: #FFF8F8;position: absolute;left:50px;top:10px;"></i>
+        <p id="stat">Statistic</p>
+    </div>
+
+    <!--desktop statistic-->
+    <div class="desktop-statistic">
+        <i class="fa-brands fa-hackerrank fa-9x" style="color: #FFFFFF;position: absolute;left:50px;top:15px;"></i>
+        <p id="stat">Statistic</p>
+    </div>
+
+    <!--mobile rank-->
+    <div class="app-rank">
+        <i class="fa-brands fa-hackerrank fa-6x" style="color: #FFF8F8;position: absolute;left:30px;top:10px;"></i>
+        <p id="ran">Rank</p>
+    </div>
+
+    <div class="tablet-rank">
+        <i class="fa-brands fa-hackerrank fa-7x" style="color: #FFF8F8;position: absolute;left:40px;top:10px;"></i>
+        <p id="ran">Rank</p>
+    </div>
+
+    <!--desktop rank-->
+    <div class="desk-rank">
+        <i class="fa-brands fa-hackerrank fa-9x" style="color: #FFFFFF;position: absolute;left:50px;top:15px;"></i>
+        <p id="ran">Rank</p>
+    </div>
+
+    <!--desktop table-->
+    <div class="right">
+        <table>
+            <tr>
+                <th>DATE</th>
+                <th>Blood glucose level</th>
+                <th>Weight</th>
+                <th>Dose of insulin taken</th>
+                <th>Exercise</th>
+            </tr>
+            <tr>
+                <td>{{record.data.uploadBy}}</td> <!--Date change-->
+                <td>{{dailyRecord.bloodGlucoseLevel.data.content}}</td>
+                <td>{{dailyRecord.weight.data.content}}</td>
+                <td>{{dailyRecord.doesesOfInsulinTaken.data.content}}</td>
+                <td>{{dailyRecord.exercise.data.content}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <!--mobile record-->
+    <div class="record">
+        <i class="fa-solid fa-calendar-check fa-3x" style="color: #FFF8F8;position: absolute;left:30px;"></i>
+        <p id="reco">Record</p>
+    </div>
+
+    <div class="tablet-record">
+        <i class="fa-solid fa-calendar-check fa-5x" style="color: #FFF8F8;position: absolute;left:30px;"></i>
+        <p id="reco">Record</p>
+    </div>
+
+    <!--desktop record-->
+    <div class="desk-record">
+        <i class="fa-solid fa-calendar-check fa-4x" style="color: #FFF8F8;position: absolute;left:30px;top: 10px;"></i>
+        <p id="reco">Record</p>
+    </div>
+
+    <!--mobile bottom-->
+    <div class="bottom2">
+        <ul>
+            <li>Blood glucose level</li>
+            <li>Weight</li>
+            <li>Dose of insulin taken</li>
+            <li>Exercise</li>
+        </ul>
+    </div>
+
+    <div class="bottom">
+        <p id="uniHealth">UNI Health</p>
+        <i class="fa-solid fa-house-medical fa-3x" style="color: #2D65A4;position: absolute;left: 15px;top: 10px;"></i>
+        <i class="fa-solid fa-circle-user fa-3x" id="userIcon"></i>
+    </div>

@@ -1,0 +1,518 @@
+:root {
+	--primary: #2763A7;
+	--secondary: #D6D8DA;
+	--link: #0ACCD9;
+	--navigate: #FFAD1F;
+	--text: white;
+	--title-font: "IMPACT";
+	--text-font: "Lato", sans-serif;
+    --text-unused:#D6D8DA;
+}
+   
+/*mobile页面样式 */
+@media screen and (min-width: 300px) and (max-width : 700px) {
+
+    .title{
+        display: flex;                       
+        justify-content: center;            
+        align-items: center; 
+        
+        border:2px solid #2D65A4;
+        background: #D7DBDF;
+        border-radius: 25px;
+        width: 355px;
+        height: 65px;
+    }
+    
+    #home{
+        font-family:Impact;
+        font-weight:900;
+        font-style:normal;
+        font-size:54px;
+        color: #2D65A4;
+    }
+    
+    #mobile-home{
+        height: 50px;
+    }
+    
+    
+    .bottom{
+        display: flex;                       
+        justify-content: space-around;            
+        align-items: center; 
+        border:2px solid #2D65A4;
+        background: #D7DBDF;
+        border-radius: 25px;
+        width: 355px;
+        height: 65px;
+    }
+    
+    .bname{
+        font-family:Impact;
+        font-weight:900;
+        font-style:normal;
+        font-size:35px;
+        color: #FFFFFF;
+    }
+    
+        .topmenu{
+            background-color: white;
+            height: 50px;
+            display: flex;
+            justify-content: flex-start;
+            display: none;
+        }
+    
+        #p4{
+            display: none;
+        }
+        
+        .home{
+            color: #18D9D9;
+        }
+        
+        .userinfo{
+            color: #D6D8DA;
+        }
+        
+        .signout{
+            color: #D6D8DA;
+            top: 5px;
+            right: 20px;
+            position: fixed;
+            display: none;
+        }
+        
+        .shu{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        
+        .date{
+            color:white;
+            display: flex;                       
+            justify-content: center;            
+            align-items: center; 
+        }
+        
+        .blood{
+            line-height:  35px;
+            
+        }
+        
+        .bloodcolor{
+            width: 355px;
+            height: 40px;
+            line-height: 20px;
+            border-style: solid;
+            border-radius: 10px;
+            border-color: #2D65A4;
+            background-color: #FF8D8D;
+        
+            display: flex;                       
+            justify-content: center;            
+            align-items: center; 
+        
+        }
+        
+        .bloodtext{
+            color: white;
+        }
+        
+        
+        .weight{
+            line-height:  35px;
+            
+        }
+        
+        .weightcolor{
+            width: 355px;
+            height: 40px;
+            line-height: 20px;
+            border-style: solid;
+            border-radius: 10px;
+            border-color: #2D65A4;
+            background-color: #F58F68;
+            display: flex;                       
+            justify-content: center;            
+            align-items: center; 
+        }
+        
+        .weighttext{
+            color: white;
+        }
+        
+        
+        .dose{
+          
+            line-height:  35px;
+            
+        }
+        
+        .dosecolor{
+            width: 355px;
+            height: 40px;
+            line-height: 20px;
+            border-style: solid;
+            border-radius: 10px;
+            border-color: #2D65A4;
+            background-color: #FFAD1F;
+            display: flex;                       
+            justify-content: center;            
+            align-items: center; 
+        
+        }
+        
+        .dosetext{
+            color: white;
+        }
+        
+        .exercise{
+            line-height:  35px;
+            
+        }
+        
+        .excolor{
+            width: 355px;
+            height: 40px;
+            line-height: 20px;
+            border-style: solid;
+            border-radius: 10px;
+            border-color: #2D65A4;
+            background-color: #CB716B;
+            display: flex;                       
+            justify-content: center;            
+            align-items: center; 
+        
+        }
+        
+        .extext{
+            color: white;
+        }
+        
+        .underBotton{
+            display: flex;                       
+            justify-content: space-between;            
+            align-items: center; 
+        }
+        
+        .Discard{
+            width:100px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: white;
+            border-width: 7px;
+            border-color: #F26780;
+        
+        }
+        
+        .Confirm{
+            width:100px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: white;
+            border-width: 7px;
+            border-color: #18D9D9;
+        
+        }
+        
+        .Btn{
+            width:100px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: #D6D8DA;
+            border-width: 7px;
+            border-color: #D6D8DA;
+        }
+        
+    }
+
+/*PC样式 */
+@media screen and (min-width: 700px) {
+    .title{
+        display: none;
+    }
+
+    .bottom{
+        display: none;
+    }
+
+
+    .topmenu{
+        background-color: white;
+        height: 50px;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .p1{
+        height: 50px;
+    }
+    
+    .p4{
+        height: 50px;
+        top: 8px;
+        right: 100px;
+        position: fixed;
+    }
+    
+    .home{
+        font-size: 190%;
+        margin-top: 0.3%;
+        color: var(--text-unused);
+        text-decoration:none;
+    }
+    
+    .userinfo{
+        color: #D6D8DA;
+    }
+    
+    .signout{
+        font-size: 200%;
+        color: #D6D8DA;
+        top: 5px;
+        right: 20px;
+        position: fixed;
+    }
+    
+    .shu{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    
+    .date{
+        color:white;
+        display: flex;                       
+        justify-content: center;            
+        align-items: center; 
+    }
+    
+    .blood{
+        line-height:  35px;
+        
+    }
+    
+    .bloodcolor{
+        width: 355px;
+        height: 40px;
+        line-height: 20px;
+        border-style: solid;
+        border-radius: 10px;
+        border-color: #2D65A4;
+        background-color: #FF8D8D;
+    
+        display: flex;                       
+        justify-content: center;            
+        align-items: center; 
+    
+    }
+    
+    .bloodtext{
+        color: white;
+    }
+    
+    
+    .weight{
+        line-height:  35px;
+        
+    }
+    
+    .weightcolor{
+        width: 355px;
+        height: 40px;
+        line-height: 20px;
+        border-style: solid;
+        border-radius: 10px;
+        border-color: #2D65A4;
+        background-color: #F58F68;
+        display: flex;                       
+        justify-content: center;            
+        align-items: center; 
+    }
+    
+    .weighttext{
+        color: white;
+    }
+    
+    
+    .dose{
+      
+        line-height:  35px;
+        
+    }
+    
+    .dosecolor{
+        width: 355px;
+        height: 40px;
+        line-height: 20px;
+        border-style: solid;
+        border-radius: 10px;
+        border-color: #2D65A4;
+        background-color: #FFAD1F;
+        display: flex;                       
+        justify-content: center;            
+        align-items: center; 
+    
+    }
+    
+    .dosetext{
+        color: white;
+    }
+    
+    .exercise{
+        line-height:  35px;
+        
+    }
+    
+    .excolor{
+        width: 355px;
+        height: 40px;
+        line-height: 20px;
+        border-style: solid;
+        border-radius: 10px;
+        border-color: #2D65A4;
+        background-color: #CB716B;
+        display: flex;                       
+        justify-content: center;            
+        align-items: center; 
+    
+    }
+    
+    .extext{
+        color: white;
+    }
+    
+    .underBotton{
+        display: flex;                       
+        justify-content: space-between;            
+        align-items: center; 
+    }
+    
+    .Discard{
+        width:100px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: white;
+        border-width: 7px;
+        border-color: #F26780;
+    
+    }
+    
+    .Confirm{
+        width:100px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: white;
+        border-width: 7px;
+        border-color: #18D9D9;
+    
+    }
+    
+    .Btn{
+        width:100px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: #D6D8DA;
+        border-width: 7px;
+        border-color: #D6D8DA;
+    }
+    
+}
+    
+     
+    
+
+/* 弹窗 (background) */
+.modal {
+    display: none; /* 默认隐藏 */
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+ 
+/* 弹窗内容 */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+ 
+/* 添加动画 */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+ 
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+ 
+/* 关闭按钮 */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+ 
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+ 
+.modal-header {
+    padding: 2px 16px;
+    background-color: #2D65A4;
+    color: white;
+}
+ 
+.modal-body {padding: 2px 16px;}
+ 
+.commentBox{ 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+}
+
+#commentCon{
+    width:100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    border-width: 5px;
+    border-color: #18D9D9; 
+}
+
+.commentBtn{
+    display: flex;                       
+    justify-content: center;            
+    align-items: center; 
+
+}
+
+body{
+    background-color: #2D65A4;
+}

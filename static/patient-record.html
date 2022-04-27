@@ -1,0 +1,189 @@
+
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href= "/public/css/patient-record.css">
+    <!--引入外部网站Icon-->
+    <script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+    <div class = topmenu>
+        <img class = p1 src="/public/images/favicon.png" alt="">
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <i class="fa-solid fa-house-user fa-3x" style="color:#D6D8DA;"></i>
+
+        <a href = patient-dashboard.html class="home">
+            Home
+        </a>
+
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <i class="fa-solid fa-circle-user fa-3x" style="color: #D6D8DA;"></i>
+
+        <h2 class="userinfo">
+            User info
+        </h2>
+
+    </div>
+
+    <a class="signout" href="login_home_page.html">
+        Sign out
+    </a>
+
+    <!--主体代码-->
+    <div class="shu">
+
+       <!--mobile head-->
+       <div class="title">
+           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+           <p id="home">Record</p>
+           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+           <img src="/public/images/favicon.png" id="mobile-home">
+        </div>
+
+        <div class = date>
+            <h2>22.04.2022</h2>
+        </div>
+
+        <div class= blood>
+            <div class = bloodcolor>
+             <h3 class = bloodtext>
+                 Blood Glucose Level 
+             </h3>
+            </div>
+         
+            <form action="">
+                <input type="text">nmol/L
+            </form>
+         </div>
+
+         <div>&nbsp;&nbsp;</div>
+    
+         <div class= weight>
+             <div class="weightcolor">
+              <h3 class = weighttext>
+                 Weight 
+              </h3>
+             </div>
+          
+             <form action="">
+                 <input type="text">Kg 
+             </form>
+          </div>
+    
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+     
+          <div class= dose>
+             <div class="dosecolor">
+              <h3 class = dosetext>
+                 Dose of Insulin Taken
+              </h3>
+             </div>
+          
+             <form action="">
+                 <input type="text">number of doses
+             </form>
+          </div>
+    
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+     
+          <div class= exercise>
+             <div class="excolor">
+              <h3 class = extext>
+                 Exercise
+              </h3>
+             </div>
+          
+             <form action="">
+                 <input type="text">steps
+             </form>
+        </div>
+
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+       
+          <!-- 打开弹窗按钮 -->
+        <button class="Btn" id="myBtn">Comment</button>
+ 
+        <!-- 弹窗 -->
+        <div id="myModal" class="modal">
+ 
+               <!-- 弹窗内容 -->
+            <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h2>Comment</h2>
+                </div>    
+                 <div class="commentBox">
+                    <textarea id="comment" cols="38" rows="10" placeholder="Please enter your comments"></textarea>
+                 </div>
+
+                 <div class = commentBtn>
+                    <button id="commentCon">Confirm</button>
+                 </div>
+
+             </div>
+ 
+         </div>
+
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+        <div class = underBotton>
+            <button class= "Discard">Dsicard</button>
+            <button class= "Confirm">Confirm</button>
+   
+        </div>
+
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+
+        <div class="bottom">
+            <i class="fa-solid fa-house-user fa-3x" style="color:#2763A7;"></i>
+            <p class = bname >UNI Health</p>
+            <i class="fa-solid fa-circle-user fa-3x" style="color:#2763A7;"></i>
+        </div>
+
+
+    </div>
+
+
+    <!--JS代码-->
+    <script>
+        // 获取弹窗
+        var modal = document.getElementById('myModal');
+        // 打开弹窗的按钮对象
+        var btn = document.getElementById("myBtn");
+        // 获取 <span> 元素，用于关闭弹窗 that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        //点击confirm弹窗
+        var btn2 = document.getElementById('commentCon')
+        // 点击按钮打开弹窗
+         btn.onclick = function() {
+             modal.style.display = "block";
+        }
+        btn2.onclick = function(){
+            alert('Submit Successfully');
+        }
+          // 点击 <span> (x), 关闭弹窗
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        // 在用户点击其他地方时，关闭弹窗
+        window.onclick = function(event) {
+           if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
+</body>
+</html>
