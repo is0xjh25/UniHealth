@@ -16,19 +16,9 @@ body {
 }
 
 #navbar{
-    padding-bottom: 2%;
-}
-
-#background{
-    position:absolute;
-    z-index: -1;
-	top:0%;
-    left:0;
-    width:100%;
-    font-size: 600%;
-    color:var(--primary);
     background-color: var(--primary);
 }
+
 
 #favicon{
     height: 2%;
@@ -42,7 +32,6 @@ body {
     position:absolute;
     bottom: -30%;
     left: 150%;
-    color: var(--link);
     font-size: 350%;
     font-family: var(--title-font);
 }
@@ -51,9 +40,8 @@ body {
     position:absolute;
     top:4.5%;
     left: 9%;
-    color: var(--link);
+    color: var(--text-unused);
     font-size: 100%;
-    color: var(--link);
 }
 
 #comment{
@@ -92,12 +80,15 @@ body {
     height:200%;
     font-family: var(--title-font);
 }
+a{
+    color:var(--text-unused);
+}
 
 #go_back{
     position:absolute;
     top:4.6%;
     left: 86%;
-    font-size: 120%;
+    font-size: 110%;
     color:var(--text-unused);
 }
 
@@ -108,7 +99,7 @@ body {
     font-size: 300%;
     white-space:nowrap;
     height:200%;
-    font-family: var(--title-font);
+    font-family: var(--text-unused);
 }
 
 #info_part{

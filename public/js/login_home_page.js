@@ -19,3 +19,15 @@ function back_to_home_s(){
         desktop_staff.style.display = "none"
 };
 
+
+function turn_dashbord(){
+        var role = document.getElementById("desktop-login-role").querySelectorAll("h3")[0].innerText;
+        console.log(role);
+        if(role === "Staff"){
+                // window.location.hearf = "clinician-dashboard.html";
+                window.open("clinician-dashboard.html");
+        }else{
+                // window.location.hearf= "patient-dashboard.html";
+                window.open("patient-dashboard.html");
+        }
+};

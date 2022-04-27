@@ -19,16 +19,7 @@ body {
     padding-bottom: 2%;
 }
 
-#background{
-    position:absolute;
-    z-index: -1;
-	top:0%;
-    left:0;
-    width:100%;
-    font-size: 600%;
-    color:var(--primary);
-    background-color: var(--primary);
-}
+
 
 #favicon{
     height: 2%;

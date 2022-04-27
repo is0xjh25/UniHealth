@@ -500,3 +500,93 @@
 body{
     background-color: #2D65A4;
 }
+
+.navbar{
+	border-style:solid;
+    background-color: white;
+    width: 100%;
+
+}
+
+
+#favicon{
+    margin-top: 5px;
+    padding-left: 5px;
+    height: 2%;
+    width:6%;
+    z-index: 1;
+}
+
+#dashboard_w{
+    position:absolute;
+    bottom: -30%;
+    left: 150%;
+    font-size: 300%;
+    font-family: var(--title-font);
+}
+
+#dashboard{
+    position:absolute;
+    top:4.5%;
+    left: 9%;
+    color: var(--text-unused);
+    font-size: 100%;
+}
+
+#comment{
+    position:absolute;
+    top:5.2%;
+    left: 30%;
+    color: var(--link);
+    font-size: 100%;
+    color:var(--text-unused);
+}
+
+#comment_w{
+    position:absolute;
+    bottom: -17%;
+    left: 150%;
+    font-size: 300%;
+    font-family: var(--title-font);
+}
+
+
+#new_patient{
+    position:absolute;
+    top:4.6%;
+    left: 50%;
+    color: var(--link);
+    font-size: 120%;
+    color:var(--text-unused);
+}
+
+#new_patient_w{
+    position:absolute;
+    bottom: -90%;
+    left: 150%;
+    font-size: 280%;
+    white-space:nowrap;
+    height:200%;
+    font-family: var(--title-font);
+}
+a{
+    color:var(--text-unused);
+}
+
+#go_back{
+    position:absolute;
+    top:4.6%;
+    left: 86%;
+    font-size: 110%;
+    color:var(--text-unused);
+}
+
+#go_back_w{
+    position:absolute;
+    bottom: -90%;
+    left: 100%;
+    font-size: 300%;
+    white-space:nowrap;
+    height:200%;
+    font-family: var(--text-unused);
+}
