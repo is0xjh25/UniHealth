@@ -1,19 +1,12 @@
-    <link rel="stylesheet" type="text/css" href= "/public/css/patient-dashboard.css">
-    <script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href= "./css/dash.css">
 
 
-
-    <!--desktop headBar-->
+<body>
     {{> patient-navbar}}
-    <!--mobile headBar-->
-    <div class="title">
-        <p id="home">Home</p>
-        <img src="/public/images/favicon.png" id="mobile-home">
-    </div>
 
-    <!--message block-->
+    <!--message block--> <!--add support message handlebar-->
     <div class="message">
-        <p id="message">"Good Morning Matt! I am so proud of you. Don't give up yet!"</p>
+        <p id="message">{{management.supportMessage}}</p>
     </div>
 
     <!--mobile message bar-->
@@ -78,39 +71,11 @@
                 <th>Exercise</th>
             </tr>
             <tr>
-                <td>01/01/2022</td>
-                <td>5</td>
-                <td>70</td>
-                <td>4</td>
-                <td>12000</td>
-            </tr>
-            <tr>
-                <td>02/02/2022</td>
-                <td>6</td>
-                <td>71</td>
-                <td>4</td>
-                <td>11678</td>
-            </tr>
-            <tr>
-                <td>02/02/2022</td>
-                <td>6</td>
-                <td>71</td>
-                <td>4</td>
-                <td>11678</td>
-            </tr>
-            <tr>
-                <td>02/02/2022</td>
-                <td>6</td>
-                <td>71</td>
-                <td>4</td>
-                <td>11678</td>
-            </tr>
-            <tr>
-                <td>02/02/2022</td>
-                <td>6</td>
-                <td>71</td>
-                <td>4</td>
-                <td>11678</td>
+                <td>{{record.data.uploadBy}}</td> <!--Date change-->
+                <td>{{dailyRecord.bloodGlucoseLevel.data.content}}</td>
+                <td>{{dailyRecord.weight.data.content}}</td>
+                <td>{{dailyRecord.doesesOfInsulinTaken.data.content}}</td>
+                <td>{{dailyRecord.exercise.data.content}}</td>
             </tr>
         </table>
     </div>
@@ -129,7 +94,7 @@
     <!--desktop record-->
     <div class="desk-record">
         <i class="fa-solid fa-calendar-check fa-4x" style="color: #FFF8F8;position: absolute;left:30px;top: 10px;"></i>
-        <a href = patient-record.html id="reco">Record</a>
+        <p id="reco">Record</p>
     </div>
 
     <!--mobile bottom-->
