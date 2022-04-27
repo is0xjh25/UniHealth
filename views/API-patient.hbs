@@ -1,0 +1,60 @@
+
+<h1>PATIENT</h1>
+<p>Logged in as {{patient.firstname}} {{patient.lastname}} - {{patient.email}}</p>
+<form method="POST" action="/logout">
+	<button>Logout</button> 
+</form>
+<ul>
+    <li>Blood Glucose Level: {{record.bloodGlucoseLevelData}}</li>
+	<li>comment: {{record.bloodGlucoseLevelComment}}</li>
+	<li>Weight: {{record.weightData}}</li>
+	<li>comment: {{record.weightComment}}</li>
+	<li>Doeses Of Insulin Taken: {{record.doesesOfInsulinTakenData}}</li>
+	<li>comment: {{record.doesesOfInsulinTakenComment}}</li>
+	<li>Exercise: {{record.exerciseData}}</li>
+	<li>comment: {{record.exerciseComment}}</li>
+</ul>
+
+<h2>Add Data</h2>
+<form action="/patient/add-data/bloodGlucoseLevel" method="POST">
+	<label for="data">Blood Glucose Level:</label>
+	<input type="number" name="data"/>
+	<input type="submit" value="Submit"/>
+</form>
+<form action="/patient/add-data/weight" method="POST">
+	<label for="data">Weight:</label>
+	<input type="number" name="data"/>
+	<input type="submit" value="Submit"/>
+</form>
+<form action="/patient/add-data/doesesOfInsulinTaken" method="POST">
+	<label for="data">Doeses Of Insulin Taken:</label>
+	<input type="number" name="data"/>
+	<input type="submit" value="Submit"/>
+</form>
+<form action="/patient/add-data/exercise" method="POST">
+	<label for="data">Exercise:</label>
+	<input type="number" name="data"/>
+	<input type="submit" value="Submit"/>
+</form>
+
+<h2>Add Comment</h2>
+<form action="/patient/add-comment/bloodGlucoseLevel" method="POST">
+	<label for="data">Blood Glucose Level:</label>
+	<input type="text" name="data"/>
+	<input type="submit" value="Submit"/>
+</form>
+<form action="/patient/add-comment/weight" method="POST">
+	<label for="data">Weight:</label>
+	<input type="text" name="data"/>
+	<input type="submit" value="Submit"/>
+</form>
+<form action="/patient/add-comment/doesesOfInsulinTaken" method="POST">
+	<label for="data">Doeses Of Insulin Taken:</label>
+	<input type="text" name="data"/>
+	<input type="submit" value="Submit"/>
+</form>
+<form action="/patient/add-comment/exercise" method="POST">
+	<label for="data">Exercise:</label>
+	<input type="text" name="data"/>
+	<input type="submit" value="Submit"/>
+</form>

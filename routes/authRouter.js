@@ -2,6 +2,8 @@ const passport = require('passport')
 const express = require('express')
 const router = express.Router()
 
+const clinicianController = require('../controllers/clinicianController')
+
 const isAuthenticated = (req, res, next) => {
 	if (!req.isAuthenticated()) {
 		return res.redirect('/login') 
@@ -9,18 +11,20 @@ const isAuthenticated = (req, res, next) => {
 	return next() 
 }
 
-//
 router.get('/', isAuthenticated, (req, res) => {
 	if (req.user.role === 'clinician') {
-		res.render('clinician-dashboard', { title: 'Express', user: req.user.toJSON()})
+		res.redirect('/clinician/dashboard')
 	} else if (req.user.role === 'patient') {
-		res.render('patient-dashboard', { title: 'Express', user: req.user.toJSON()})
+		res.redirect('/patient/dashboard')
 	} 
 })
 
+// look up all users
+router.get('/api-home', clinicianController.getAllUsers)
+
 // login page
 router.get('/login', (req, res) => {
-	res.render('login', { flash: req.flash('error'), title: 'Login' })
+	res.render('API-login', { flash: req.flash('error'), title: 'Login' })
 })
 
 // login as clinician

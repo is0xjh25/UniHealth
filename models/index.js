@@ -22,8 +22,6 @@ db.once('open', async () => {
 
 require('./clinician')
 require('./patient')
-require('./record')
-require('./management')
-require('./note')
+require('./dailyRecord')
 
 module.exports = mongooseClient

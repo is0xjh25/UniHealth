@@ -1,25 +1,41 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
-var DailyRecordModel = require('./record.js')
-var ManagementModel = require('./management.js')
 
 const patientSchema = new mongoose.Schema({
     role: {type: String, Enum: ['clinician', 'patient'], default: 'patient', required: true},
-    email: { type: String, required: true, unique: true },
+    email: { type: String, required: true, unique: true, sparse: true },
     password: { type: String, required: true },
-    username: { type: String, required: true, unique: true },
+    username: { type: String, required: true, unique: true, sparse: true },
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
     phone: { type: String, required: true },
-    gender: {
-        type: String,
-        Enum: ['male', 'female', 'others'],
-        required: true,
-    },
+    gender: { type: String, Enum: ['male', 'female', 'others'], required: true},
     yearBorn: { type: Number, min: 1900 },
     biography: { type: String },
-    dailyRecords: [DailyRecordModel.schema],
-    management: ManagementModel.schema,
+    dailyRecords: [{_dailyRecordID: { type: mongoose.Schema.Types.ObjectId, ref: 'DailyRecord'}}],
+    management: {
+        supportMessage: { type: String },
+        bloodGlucoseLevel: {
+            timeSeries: { type: String, Enum: ['moring', 'noon', 'afternoon', 'night'] },
+            upperThreshold: { type: Number },
+            lowerThreshold: { type: Number },
+        },
+        weight: {
+            timeSeries: { type: String, Enum: ['moring', 'noon', 'afternoon', 'night'] },
+            upperThreshold: { type: Number },
+            lowerThreshold: { type: Number },
+        },
+        doesesOfInsulinTaken: {
+            timeSeries: { type: String, Enum: ['moring', 'noon', 'afternoon', 'night'] },
+            upperThreshold: { type: Number },
+            lowerThreshold: { type: Number },
+        },
+        exercise: {
+            timeSeries: { type: String, Enum: ['moring', 'noon', 'afternoon', 'night'] },
+            upperThreshold: { type: Number },
+            lowerThreshold: { type: Number },
+        }
+    }
 })
 
 patientSchema.methods.verifyPassword = function (password, callback) {

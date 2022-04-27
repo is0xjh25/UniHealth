@@ -1,9 +1,6 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 
-var PatientModel = require('./patient.js')
-var NoteModel = require('./note.js')
-
 const clinicianSchema = new mongoose.Schema({
     role: {type: String, Enum: ['clinician', 'patient'], default: 'clinician', required: true},
     email: { type: String, required: true, unique: true },
@@ -11,8 +8,11 @@ const clinicianSchema = new mongoose.Schema({
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
     phone: { type: String, required: true },
-    patients: [PatientModel.schema],
-    notes: [NoteModel.schema],
+    patients: [{_patientID: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient' }}],
+    notes: [{
+        patient: {_patientID: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient'}},
+        content: { type: String, required: true },
+    }]
 })
 
 clinicianSchema.methods.verifyPassword = function (password, callback) {

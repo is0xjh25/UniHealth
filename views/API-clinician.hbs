@@ -1,0 +1,54 @@
+
+<h1>CLINICIAN</h1>
+<p>Logged in as {{clinician.firstname}} {{clinician.lastname}} - {{clinician.email}}</p>
+<form method="POST" action="/logout">
+	<button>Logout</button> 
+</form>
+<h2>All Patients</h2>
+<ul>
+{{#each patients}}
+    <li><b>{{this.patient.firstname}} {{this.patient.lastname}} - {{this.patient.email}}</b></li><br>
+	<li>Blood Glucose Level: {{this.record.bloodGlucoseLevelData}}</li>
+	<li>comment: {{this.record.bloodGlucoseLevelComment}}</li>
+	<li>Threshold: {{this.patient.management.bloodGlucoseLevel.upperThreshold}} to {{this.patient.management.bloodGlucoseLevel.lowerThreshold}}</li><br>
+	<li>Weight: {{this.record.weightData}}</li>
+	<li>comment: {{this.record.weightComment}}</li>
+	<li>Threshold: {{this.patient.management.weight.upperThreshold}} to {{this.patient.management.weight.lowerThreshold}}</li><br>
+	<li>Doeses Of Insulin Taken: {{this.record.doesesOfInsulinTakenData}}</li>
+	<li>comment: {{this.record.doesesOfInsulinTakenComment}}</li>
+	<li>Threshold: {{this.patient.management.doesesOfInsulinTakenComment.upperThreshold}} to {{this.patient.management.doesesOfInsulinTakenComment.lowerThreshold}}</li><br>
+	<li>Exercise: {{this.record.exerciseData}}</li>
+	<li>comment: {{this.record.exerciseComment}}</li>
+	<li>Threshold: {{this.patient.management.exercise.upperThreshold}} to {{this.patient.management.exercise.lowerThreshold}}</li><br>
+	<form method="POST" action="/clinician/patient-management">
+		<input type="hidden" name="patientID" value={{this.patient._id}}>
+		<label for="type">Title:</label>
+		<select name="type">
+  			<option value="bloodGlucoseLevel">bloodGlucoseLevel</option>
+  			<option value="weight">weight</option>
+  			<option value="doesesOfInsulinTaken">doesesOfInsulinTaken</option>
+  			<option value="exercise">exercise</option>
+		</select>
+		<label for="timeSeries">Time Series:</label>
+		<select name="timeSeries">
+  			<option value="morning">morning</option>
+  			<option value="noon">noon</option>
+  			<option value="afternoon">afternoon</option>
+  			<option value="night">night</option>
+		</select>
+		<label for="upperThreshold">Upper:</label>
+		<input type="number" name="upperThreshold"/>
+		<label for="lowerThreshold">Lower:</label>
+		<input type="number" name="lowerThreshold"/>
+		<button>Edit</button>
+	</form> 
+	<br>
+</form>
+{{/each}}
+</ul>
+<h2>Add New Patient</h2>
+<form method="POST" action="/clinician/add-patient">
+	<label for="email">Patient email:</label>
+	<input type="text" name="email" />
+	<button>ADD</button> 
+</form>
