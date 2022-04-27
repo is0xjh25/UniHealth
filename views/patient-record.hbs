@@ -1,0 +1,126 @@
+<script type="text/javascript" src="/public/js/patient-record.js"></script>
+<link rel="stylesheet" type="text/css" href= "/public/css/patient-record.css">
+<body>
+   {{>patient-navbar}}
+
+    <!--主体代码-->
+    <div class="shu">
+
+       <!--mobile head-->
+       <div class="title">
+           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+           <p id="home">Record</p>
+           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+           <img src="/public/images/favicon.png" id="mobile-home">
+        </div>
+
+        <div class = date>
+            <h2>22.04.2022</h2>
+        </div>
+
+        <div class= blood>
+            <div class = bloodcolor>
+             <h3 class = bloodtext>
+                 Blood Glucose Level 
+             </h3>
+            </div>
+         
+            <form action="">
+                <input type="text">nmol/L
+            </form>
+         </div>
+
+         <div>&nbsp;&nbsp;</div>
+    
+         <div class= weight>
+             <div class="weightcolor">
+              <h3 class = weighttext>
+                 Weight 
+              </h3>
+             </div>
+          
+             <form action="">
+                 <input type="text">Kg 
+             </form>
+          </div>
+    
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+     
+          <div class= dose>
+             <div class="dosecolor">
+              <h3 class = dosetext>
+                 Dose of Insulin Taken
+              </h3>
+             </div>
+          
+             <form action="">
+                 <input type="text">number of doses
+             </form>
+          </div>
+    
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+     
+          <div class= exercise>
+             <div class="excolor">
+              <h3 class = extext>
+                 Exercise
+              </h3>
+             </div>
+          
+             <form action="">
+                 <input type="text">steps
+             </form>
+        </div>
+
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+       
+          <!-- 打开弹窗按钮 -->
+        <button class="Btn" id="myBtn">Comment</button>
+ 
+        <!-- 弹窗 -->
+        <div id="myModal" class="modal">
+ 
+               <!-- 弹窗内容 -->
+            <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h2>Comment</h2>
+                </div>    
+                 <div class="commentBox">
+                    <textarea id="comment" cols="38" rows="10" placeholder="Please enter your comments"></textarea>
+                 </div>
+
+                 <div class = commentBtn>
+                    <button id="commentCon">Confirm</button>
+                 </div>
+
+             </div>
+ 
+         </div>
+
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+        <div class = underBotton>
+            <button class= "Discard">Dsicard</button>
+            <button class= "Confirm">Confirm</button>
+   
+        </div>
+
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+
+        <div class="bottom">
+            <i class="fa-solid fa-house-user fa-3x" style="color:#2763A7;"></i>
+            <p class = bname >UNI Health</p>
+            <i class="fa-solid fa-circle-user fa-3x" style="color:#2763A7;"></i>
+        </div>
+
+
+    </div>
+
+
+    
+
+
+</body>
