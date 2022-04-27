@@ -54,7 +54,6 @@ const dashboard = async (req, res, next) => {
         await Promise.all(
             clinician.patients.map(async (p) => {
                 let patient = await Patient.findById(p._id).lean()
-                console.log(patient.management)
                 if (patient) {
         			const record = await DailyRecord.findOne( {$and: [{"_patientID": patient._id}, {"date": today}]}).lean()
                     patients.push({patient: patient, record: record})
