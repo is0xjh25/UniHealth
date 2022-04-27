@@ -1,10 +1,9 @@
 
 <title>clinician-dashboard</title>
 <link rel="stylesheet" type="text/css" href="/public/css/clinician-patient-info.css">
-<link rel="icon" href="/public/images/favicon-1.png">
 <script src="https://kit.fontawesome.com/76a0594e6c.js" crossorigin="anonymous"></script>
 
-{{> navbar}}
+{{> clinician-navbar}}
 
 </section>
 <section class = info>
@@ -30,10 +29,10 @@
             <th>Threshold MAX.</th>
             </tr>
             <tr>
-            <td>{{bloodGlucoseLevel.}}</td>
-            <td>12/4/2022</td>
-            <td>200</td>
-            <td>80</td>
+            <td>{{patient.management.bloodGlucoseLevel.data.content}}</td>
+            <td>{{patient.management.bloodGlucoseLevel.data.uploadBy}}</td>
+            <td>{{patient.management.bloodGlucoseLevel.data. upperThreshold}}</td>
+            <td>{{patient.management.bloodGlucoseLevel.data. lowerThreshold}}</td>
             </tr>
     </table>
     <table id = "weight">
@@ -44,10 +43,10 @@
             <th>Threshold MAX.</th>
             </tr>
             <tr>
-            <td>120</td>
-            <td>12/4/2022</td>
-            <td>200</td>
-            <td>80</td>
+            <td>{{patient.management.weight.data.content}}</td>
+            <td>{{patient.management.weight.data.uploadBy}}</td>
+            <td>{{patient.management.weight.data. upperThreshold}}</td>
+            <td>{{patient.management.weight.data. lowerThreshold}}</td>
             </tr>
     </table>
     <table id = "dose">
@@ -58,10 +57,10 @@
             <th>Threshold MAX.</th>
             </tr>
             <tr>
-            <td>120</td>
-            <td>12/4/2022</td>
-            <td>200</td>
-            <td>80</td>
+            <td>{{patient.management.doesesOfInsulinTaken.data.content}}</td>
+            <td>{{patient.management.doesesOfInsulinTaken.data.uploadBy}}</td>
+            <td>{{patient.management.doesesOfInsulinTaken.data.upperThreshold}}</td>
+            <td>{{patient.management.doesesOfInsulinTaken.data.lowerThreshold}}</td>
             </tr>
     </table>
     <table id = "exercise">
@@ -72,10 +71,10 @@
             <th>Threshold MAX.</th>
             </tr>
             <tr>
-            <td>120</td>
-            <td>12/4/2022</td>
-            <td>200</td>
-            <td>80</td>
+            <td>{{patient.management.exercise.data.content}}</td>
+            <td>{{patient.management.exercise.data.uploadBy}}</td>
+            <td>{{patient.management.exercise.data.upperThreshold}}</td>
+            <td>{{patient.management.exercise.data.lowerThreshold}}</td>
             </tr>
     </table>
     <button id ="note"><i class="fa-solid fa-note-medical fa-3x"></i>Note</button>
@@ -86,5 +85,5 @@
 </section>
 <section class = comment_p>
     <h3>Comment:</h3>
-    <p>With the help of the doctor I feel that my condition is slowly getting better a ha ha aaahaha</p>
+    <p>{{patient.management.supportMessage}}</p>
 </section>
