@@ -15,6 +15,10 @@ body {
 	background-color: white;
 }
 
+#navbar{
+    padding-bottom: 2%;
+}
+
 #background{
     position:absolute;
     z-index: -1;

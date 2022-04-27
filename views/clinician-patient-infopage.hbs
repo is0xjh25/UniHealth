@@ -1,0 +1,90 @@
+
+<title>clinician-dashboard</title>
+<link rel="stylesheet" type="text/css" href="/public/css/clinician-patient-info.css">
+<link rel="icon" href="/public/images/favicon-1.png">
+<script src="https://kit.fontawesome.com/76a0594e6c.js" crossorigin="anonymous"></script>
+
+{{> navbar}}
+
+</section>
+<section class = info>
+    <img id = "photo" src="/public/images/patient.png">
+    <div id = "edit">Edit Profile</div>
+        <br></br>
+    <h1 id = "username"> Username:{{patient.username}}</h1>
+    <h1 id = "fullname"> Full Name:{{patient.firstname}} {{patient.lastname}}</h1>
+    <h1 id = "phone"> Phone:{{patient.phone}}</h1>
+    <h1 id = "email"> Email:{{patient.email}}</h1>
+</section>
+</section>
+<section class = data>
+    <h3 id ="date">27/04/2022</h3>
+    <section id = "calender">
+    <i class="fa-solid fa-calendar-days fa-3x"></i>
+    </section>
+    <table id = "blood">
+        <tr>
+            <th>Blood glucose level (in nmol/L)</th>
+            <th>Record Time</th>
+            <th>Threshold MIN.</th>
+            <th>Threshold MAX.</th>
+            </tr>
+            <tr>
+            <td>{{bloodGlucoseLevel.}}</td>
+            <td>12/4/2022</td>
+            <td>200</td>
+            <td>80</td>
+            </tr>
+    </table>
+    <table id = "weight">
+        <tr>
+            <th>Weight (kg)</th>
+            <th>Record Time</th>
+            <th>Threshold MIN.</th>
+            <th>Threshold MAX.</th>
+            </tr>
+            <tr>
+            <td>120</td>
+            <td>12/4/2022</td>
+            <td>200</td>
+            <td>80</td>
+            </tr>
+    </table>
+    <table id = "dose">
+        <tr>
+            <th>Dose of insulin taken (# doses)</th>
+            <th>Record Time</th>
+            <th>Threshold MIN.</th>
+            <th>Threshold MAX.</th>
+            </tr>
+            <tr>
+            <td>120</td>
+            <td>12/4/2022</td>
+            <td>200</td>
+            <td>80</td>
+            </tr>
+    </table>
+    <table id = "exercise">
+        <tr>
+            <th>Exercise (steps)</th>
+            <th>Record Time</th>
+            <th>Threshold MIN.</th>
+            <th>Threshold MAX.</th>
+            </tr>
+            <tr>
+            <td>120</td>
+            <td>12/4/2022</td>
+            <td>200</td>
+            <td>80</td>
+            </tr>
+    </table>
+    <button id ="note"><i class="fa-solid fa-note-medical fa-3x"></i>Note</button>
+    <button id ="message">Message</button>
+    <br></br>
+    <button id = "data">Data</button>
+    <button id = "back">Back</button>>
+</section>
+<section class = comment_p>
+    <h3>Comment:</h3>
+    <p>With the help of the doctor I feel that my condition is slowly getting better a ha ha aaahaha</p>
+</section>
