@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href= "/public/css/patient-dashboard.css">
+    <script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+
+    <!--desktop headBar-->
+    <div class = topmenu>
+        <img class="p1" src="/public/images/favicon.png">
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <i class="fa-solid fa-house-user fa-3x" style="color:#D6D8DA;"></i>
+
+        <a href = patient-dashboard.html class="home">
+            Home
+        </a>
+
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <i class="fa-solid fa-circle-user fa-3x" style="color: #D6D8DA;"></i>
+
+        <h2 class="userinfo">
+            User info
+        </h2>
+
+    </div>
+
+    <a class="signout" href="login_home_page.html">
+        Sign out
+    </a>
+    <i class="fa-solid fa-right-from-bracket fa-3x" id="p4" style="color: #D6D8DA;top: 8px; right: 125px;position: fixed;"></i>
+
+
+    <!--mobile headBar-->
+    <div class="title">
+        <p id="home">Home</p>
+        <img src="/public/images/favicon.png" id="mobile-home">
+    </div>
+
+    <!--message block-->
+    <div class="message">
+        <p id="message">"Good Morning Matt! I am so proud of you. Don't give up yet!"</p>
+    </div>
+
+    <!--mobile message bar-->
+    <div class="messHead">
+        <h1 id="messName">Message</h1>
+        <i class="fa-solid fa-comment-medical fa-3x" style="color: #FFFFFF;position: absolute;left: 20px;"></i>
+    </div>
+
+    <div class="tablet-messHead">
+        <h1 id="messName">Message</h1>
+        <i class="fa-solid fa-comment-medical fa-4x" style="color: #FFFFFF;position: absolute;left: 20px;"></i>
+    </div>
+
+    <!--desktop message bar-->
+    <div class="desk-messHead">
+        <h1 id="messName">Message</h1>
+        <i class="fa-solid fa-comment-medical fa-4x" style="color: #FFFFFF;position: absolute;left: 20px;"></i>
+    </div>
+
+    <!--mobile statistic-->
+    <div class="app-statistic">
+        <i class="fa-solid fa-file-lines fa-6x" style="color: #FFF8F8;position: absolute;left:30px;top:10px;"></i>
+        <p id="stat">Statistic</p>
+    </div>
+
+    <div class="tablet-statistic">
+        <i class="fa-solid fa-file-lines fa-7x" style="color: #FFF8F8;position: absolute;left:50px;top:10px;"></i>
+        <p id="stat">Statistic</p>
+    </div>
+
+    <!--desktop statistic-->
+    <div class="desktop-statistic">
+        <i class="fa-brands fa-hackerrank fa-9x" style="color: #FFFFFF;position: absolute;left:50px;top:15px;"></i>
+        <p id="stat">Statistic</p>
+    </div>
+
+    <!--mobile rank-->
+    <div class="app-rank">
+        <i class="fa-brands fa-hackerrank fa-6x" style="color: #FFF8F8;position: absolute;left:30px;top:10px;"></i>
+        <p id="ran">Rank</p>
+    </div>
+
+    <div class="tablet-rank">
+        <i class="fa-brands fa-hackerrank fa-7x" style="color: #FFF8F8;position: absolute;left:40px;top:10px;"></i>
+        <p id="ran">Rank</p>
+    </div>
+
+    <!--desktop rank-->
+    <div class="desk-rank">
+        <i class="fa-brands fa-hackerrank fa-9x" style="color: #FFFFFF;position: absolute;left:50px;top:15px;"></i>
+        <p id="ran">Rank</p>
+    </div>
+
+    <!--desktop table-->
+    <div class="right">
+        <table>
+            <tr>
+                <th>DATE</th>
+                <th>Blood glucose level</th>
+                <th>Weight</th>
+                <th>Dose of insulin taken</th>
+                <th>Exercise</th>
+            </tr>
+            <tr>
+                <td>01/01/2022</td>
+                <td>5</td>
+                <td>70</td>
+                <td>4</td>
+                <td>12000</td>
+            </tr>
+            <tr>
+                <td>02/02/2022</td>
+                <td>6</td>
+                <td>71</td>
+                <td>4</td>
+                <td>11678</td>
+            </tr>
+            <tr>
+                <td>02/02/2022</td>
+                <td>6</td>
+                <td>71</td>
+                <td>4</td>
+                <td>11678</td>
+            </tr>
+            <tr>
+                <td>02/02/2022</td>
+                <td>6</td>
+                <td>71</td>
+                <td>4</td>
+                <td>11678</td>
+            </tr>
+            <tr>
+                <td>02/02/2022</td>
+                <td>6</td>
+                <td>71</td>
+                <td>4</td>
+                <td>11678</td>
+            </tr>
+        </table>
+    </div>
+
+    <!--mobile record-->
+    <div class="record">
+        <i class="fa-solid fa-calendar-check fa-3x" style="color: #FFF8F8;position: absolute;left:30px;"></i>
+        <p id="reco">Record</p>
+    </div>
+
+    <div class="tablet-record">
+        <i class="fa-solid fa-calendar-check fa-5x" style="color: #FFF8F8;position: absolute;left:30px;"></i>
+        <p id="reco">Record</p>
+    </div>
+
+    <!--desktop record-->
+    <div class="desk-record">
+        <i class="fa-solid fa-calendar-check fa-4x" style="color: #FFF8F8;position: absolute;left:30px;top: 10px;"></i>
+        <a href = patient-record.html id="reco">Record</a>
+    </div>
+
+    <!--mobile bottom-->
+    <div class="bottom2">
+        <ul>
+            <li>Blood glucose level</li>
+            <li>Weight</li>
+            <li>Dose of insulin taken</li>
+            <li>Exercise</li>
+        </ul>
+    </div>
+
+    <div class="bottom">
+        <p id="uniHealth">UNI Health</p>
+        <i class="fa-solid fa-house-medical fa-3x" style="color: #2D65A4;position: absolute;left: 15px;top: 10px;"></i>
+        <i class="fa-solid fa-circle-user fa-3x" id="userIcon"></i>
+    </div>
+
+</body>
+</html>

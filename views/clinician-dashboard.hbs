@@ -1,0 +1,53 @@
+
+<title>clinician-dashboard</title>
+<link rel="stylesheet" type="text/css" href="/public/css/clinician-dashboard.css">
+<link rel="icon" href="/public/images/favicon-1.png">
+<script src="https://kit.fontawesome.com/76a0594e6c.js" crossorigin="anonymous"></script>
+
+<div>
+    {{> clinician-navbar}}
+    <section id = "info_part">
+            <img id="photo" src="/public/images/docotr_photo.png" >
+            <div id = "edit">Edit Profile</div>
+            <br></br>
+            <section id = "detail">
+            <h1 id = "fullname"> Full Name:{{clinician.firstname}} {{clinician.lastname}}</h1>
+            <h1 id = "phone"> Phone:{{clinician.phone}}</h1>
+            <h1 id = "email"> Email:{{clinician.email}}</h1>
+            </section>
+    </section>
+
+
+
+    <section id = "data">
+        <section id = icon>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        </section>
+        <table id = "record">
+            <h1 id = 'search'>Search By Name or ID...</h1>
+            <h6 id = "date">27/04/2022</h6>
+            <tr>
+              <th>Patient ID</th>
+              <th>Patient Name</th>
+              <th>Gender</th>
+              <th>Blood glucose Level</th>
+              <th>Weight</th>
+              <th>Dose of insulin taken</th>
+              <th>Exercise</th>
+            </tr>
+            
+            <tr>
+                <td>{{patient.firstName}}</td>
+                <td>{{patient.lastName}}</td>
+                <td>{{patient.gender}}</td>
+                <td >{{patient.blood}} </td>
+                <td>{{patient.weight}}</td>
+                <td>{{patient.dose}}</td>
+                <td>{{patient.exercise}}</td>
+            </tr>
+            
+          </table>
+          
+
+    </section>
+</div>
