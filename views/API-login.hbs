@@ -1,0 +1,20 @@
+
+{{#each flash}}
+<p class="alert">{{this}}</p> 
+{{/each}}
+<h1>Log in as Clinician</h1>
+<form action="login-clinician" method="POST">
+	<label for="email">Email:</label>
+	<input type="text" name="email" />
+	<label for="password">Password:</label>
+	<input type="password" name="password"/>
+	<input type="submit" value="Submit" />
+</form>
+<h1>Log in as Patient</h1>
+<form action="login-patient" method="POST">
+	<label for="email">Email:</label>
+	<input type="text" name="email" />
+	<label for="password">Password:</label>
+	<input type="password" name="password"/>
+	<input type="submit" value="Submit" />
+</form>
