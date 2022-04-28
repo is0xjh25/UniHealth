@@ -4,7 +4,13 @@ const flash = require('express-flash')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
 const mongooseClient = require('./models')
+const passport = require('./passport')
+const port = process.env.PORT || 3000
+const authRouter = require('./routes/authRouter')
+const clinicianRouter = require('./routes/clinicianRouter')
+const patientRouter = require('./routes/patientRouter')
 const app = express()
+
 
 app.use(flash())
 
@@ -28,11 +34,7 @@ if (app.get('env') === 'production') {
     app.set('trust proxy', 1); // Trust first proxy
 }
 
-// Initialise Passport.js
-const passport = require('./passport') 
 app.use(passport.authenticate('session'))
-
-// Load authentication router
 
 app.engine(
     'hbs',
@@ -44,15 +46,10 @@ app.engine(
 
 app.set('view engine', 'hbs')
 app.use(express.static(__dirname + '/public'))
-
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-const port = process.env.PORT || 3000
-const authRouter = require('./routes/authRouter')
-const clinicianRouter = require('./routes/clinicianRouter')
-const patientRouter = require('./routes/patientRouter')
-
+/* Routers */
 app.use(authRouter)
 app.use('/clinician', clinicianRouter)
 app.use('/patient', patientRouter)
@@ -65,5 +62,5 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
     console.log(`Uni Health is listening on port ${port}!`)
-}
+    }
 )

@@ -6,7 +6,7 @@ const getAllUsers = async (req, res, next) => {
     try {
         const clinicians = await Clinician.find().lean()
         const patients = await Patient.find().lean()
-        return res.render('API-home', {clinicians: clinicians, patients: patients})
+        return res.render('test-home', {clinicians: clinicians, patients: patients})
     } catch (err) {
         return next(err)
     }
@@ -16,7 +16,7 @@ const createClinician = async (req, res, next) => {
     try {
         newClinician = new Clinician(req.body)
         await newClinician.save()
-        return res.redirect('/api-home')
+        return res.redirect('/test-home')
     } catch (err) {
         return next(err)
     }
@@ -26,7 +26,7 @@ const createPatient = async (req, res, next) => {
     try {
         newPatient = new Patient(req.body)
         await newPatient.save()
-        return res.redirect('/api-home')
+        return res.redirect('/test-home')
     } catch (err) {
         return next(err)
     }
@@ -60,7 +60,7 @@ const dashboard = async (req, res, next) => {
                 } 
             })
         )
-        return res.render('API-clinician', {clinician: clinician, patients: patients})
+        return res.render('test-clinician', {clinician: clinician, patients: patients})
     } catch (err) {
         return next(err)
     }

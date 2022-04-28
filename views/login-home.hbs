@@ -1,5 +1,5 @@
-<link rel="stylesheet"  href="/css/login_homepage.css">
-<script type="text/javascript" src="/js/login_home_page.js"></script>
+<link rel="stylesheet"  href="/css/login-home.css">
+<script type="text/javascript" src="/js/login-home.js"></script>
 	<section id ="desktop-login">
 		<section class="sub">	
 			<img id="favicon" src="/images/favicon.png" >
@@ -13,8 +13,6 @@
 			<a  id = "about_diabetes" href="/about-diabetes" ><i class="fa-solid fa-circle-info fa-1x"></i> About Diabetes</a>
 		</section>
 	</section>
-
-
 
 	<section id ="mobile-login">
 		<section class="sub">	
@@ -31,8 +29,6 @@
 		<a  id = "about_diabetes_m" href="/about-diabetes" ><i class="fa-solid fa-circle-info fa-1x"></i> About Diabetes</a>
 	</section>
 
-
-
 	<section id ="desktop-login-role">
 		<h4 id="goback" onclick=back_to_home_s()><i><i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></i>Back</h4>
 		<section class="sub">	
@@ -44,11 +40,18 @@
 			<h3 id  = "role_ss">Staff</h3>
 		</section>
 		<section class="account-password_s">
-			<input id  = "acc_s" value="Account:"></input>
+			<form action="login-patient" method="POST">
+				<label for="email">Email:</label>
+				<input type="text" name="email" />
+				<label for="password">Password:</label>
+				<input type="password" name="password"/>
+				<input type="submit" value="Submit" />
+			</form>
+			{{!-- <input id  = "acc_s" value="Account:"></input>
 			<br></br>
 			<input id  = "passw_s" value="Password:"></input>
 			<br></br>
-			<button id = 'signin_s' onclick=turn_dashbord()>Sign In</button>
+			<button id = 'signin_s' onclick=turn_dashbord()>Sign In</button> --}}
 
 		</section>
 			<a id = "about_unit_health_s" href="/about-us" > <i class="fa-solid fa-circle-info fa-1x" ></i> About Unit Health</a>

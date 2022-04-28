@@ -1,7 +1,6 @@
 const passport = require('passport')
 const express = require('express')
 const router = express.Router()
-
 const clinicianController = require('../controllers/clinicianController')
 
 const isAuthenticated = (req, res, next) => {
@@ -19,8 +18,15 @@ router.get('/', isAuthenticated, (req, res) => {
 	} 
 })
 
-// look up all users
-router.get('/api-home', clinicianController.getAllUsers)
+// about us
+router.get('/about-us', (req, res) => {
+	res.render('about-us', { flash: req.flash('error'), title: 'Info' })
+})
+
+// about-diabetes
+router.get('/about-diabetes', (req, res) => {
+	res.render('about-diabetes', { flash: req.flash('error'), title: 'Info' })
+})
 
 // login page
 router.get('/login', (req, res) => {
@@ -43,7 +49,11 @@ router.post('/login-patient',
 
 router.post('/logout', (req, res) => {
   req.logout()
-  res.redirect('/')
+  res.redirect('/login')
 })
+
+/* Testint */
+// look up all users
+router.get('/test-home', clinicianController.getAllUsers)
 
 module.exports = router

@@ -1,16 +1,25 @@
 const express = require('express')
+const utilities = require("./utilities");
 const clinicianRouter = express.Router()
 const clinicianController = require('../controllers/clinicianController')
 
-// create new clinician
-clinicianRouter.post('/create-clinician', clinicianController.createClinician)
-// create new patient
-clinicianRouter.post('/create-patient', clinicianController.createPatient)
-// add new patient
-clinicianRouter.post('/add-patient', clinicianController.addPatient)
+/* Applying */
+
 // clinician homepage
-clinicianRouter.get('/dashboard', clinicianController.dashboard)
+clinicianRouter.get('/dashboard', utilities.isLoggedInClinician, clinicianController.dashboard)
+
+/* Testing */
+
+// create new clinician
+clinicianRouter.post('/create-clinician', utilities.isLoggedInClinician, clinicianController.createClinician)
+
+// create new patient
+clinicianRouter.post('/create-patient', utilities.isLoggedInClinician, clinicianController.createPatient)
+
+// add new patient
+clinicianRouter.post('/add-patient', utilities.isLoggedInClinician, clinicianController.addPatient)
+
 // manage patient
-clinicianRouter.post('/patient-management', clinicianController.patientManagement)
+clinicianRouter.post('/patient-management', utilities.isLoggedInClinician, clinicianController.patientManagement)
 
 module.exports = clinicianRouter

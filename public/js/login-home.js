@@ -5,9 +5,12 @@ function switch_role(p){
         desktop_role.style.display = "block";
         if (p === "Staff"){
                 desktop_role.querySelectorAll("h3")[0].innerText="Staff";
+                desktop_role.querySelectorAll("form")[0].action = "login-clinician";
         }else{
                 desktop_role.querySelectorAll("h3")[0].innerText="Patient";
+                desktop_role.querySelectorAll("form")[0].action = "login-patient";
         }
+        console.log(desktop_role.querySelectorAll("form")[0].action);
 };
 
 function back_to_home_s(){
