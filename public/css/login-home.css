@@ -148,7 +148,7 @@ body {
 	}
 
 	#favicon {
-		padding-left: 20%;
+		padding-left: 30%;
 		height: 600px;
 		width:auto;
 	}
@@ -156,7 +156,7 @@ body {
 
 
 	#acc{
-		margin-left: 3%;
+		margin-left: 30%;
 		font-size: 300%;
 		padding-top:7%;
 		padding-bottom: 7%;
@@ -169,7 +169,7 @@ body {
 
 
 	#passw{
-		margin-left: 3%;
+		margin-left: 30%;
 		font-size: 300%;
 		margin-top: 10%;
 		padding-top:7%;
@@ -182,7 +182,7 @@ body {
 	}
 
 	#signin{
-		margin-left: 3%;
+		margin-left: 30%;
 		font-size: 300%;
 		margin-top: 10%;
 		padding-top:7%;

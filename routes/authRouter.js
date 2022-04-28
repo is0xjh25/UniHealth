@@ -24,7 +24,7 @@ router.get('/api-home', clinicianController.getAllUsers)
 
 // login page
 router.get('/login', (req, res) => {
-	res.render('login_home_page', { flash: req.flash('error'), title: 'Login' })
+	res.render('login-home', { flash: req.flash('error'), title: 'Login' })
 })
 
 // login as clinician
