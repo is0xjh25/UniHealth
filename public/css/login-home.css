@@ -25,6 +25,14 @@ body {
 }
 
 
+input{
+	min-width: 340px;
+	min-height: 40px;
+	padding: 3%;
+	font-size: 200%;
+}
+
+
 
 
 
@@ -54,41 +62,18 @@ body {
 
 
 	#acc{
-		padding-top:7%;
-		padding-bottom: 7%;
-		padding-left: 30%;
-		border-radius: 90px;
-		border-style:solid;
-		border-width:1px;
-		background: white;
+		margin-right: 5%;
 		color: #484141;
 		font-size: 300%;
 	}
 
 
 	#passw{
-		margin-top: 10%;
-		padding-top:7%;
-		padding-bottom: 7%;
-		padding-left: 30%;
-		border-radius: 90px;
-		border-style:solid;
-		border-width:1px;
-		background: white;
-		color: #484141;
+		
 		font-size: 300%;
 	}
 
 	#signin{
-		margin-top: 10%;
-		padding-top:7%;
-		padding-bottom: 7%;
-		padding-left: 33%;
-		padding-right: 85%;
-		width:40%;
-		border-radius: 90px;
-		border-style:solid;
-		border-width:1px;
 		background-color: #0ACCD9;
 		font-size: 300%;
 		white-space: nowrap;
@@ -148,7 +133,7 @@ body {
 	}
 
 	#favicon {
-		padding-left: 30%;
+		padding-left: 29%;
 		height: 600px;
 		width:auto;
 	}
@@ -156,42 +141,33 @@ body {
 
 
 	#acc{
-		margin-left: 30%;
+		margin-right: 5%;
+		margin-left: 20%;
 		font-size: 300%;
-		padding-top:7%;
-		padding-bottom: 7%;
-		border-radius: 90px;
-		border-style:solid;
-		border-width:1px;
-		background: white;
 		color: #484141;
 	}
 
 
 	#passw{
-		margin-left: 30%;
+		margin-top: 5%;
+		margin-left: 12%;
 		font-size: 300%;
-		margin-top: 10%;
-		padding-top:7%;
-		padding-bottom: 7%;
-		border-radius: 90px;
-		border-style:solid;
-		border-width:1px;
-		background: white;
 		color: #484141;
 	}
 
 	#signin{
-		margin-left: 30%;
+		margin-left: 50%;
 		font-size: 300%;
 		margin-top: 10%;
-		padding-top:7%;
-		padding-bottom: 7%;
+		padding-top: 3%;
+		padding-bottom: 3%;
+		padding-left: 10%;
+		padding-right: 10%;
 		white-space: nowrap;
-		border-radius: 90px;
 		border-style:solid;
 		border-width:1px;
 		background-color: #0ACCD9;
+		margin-bottom: 5%;
 		
 	}
 
@@ -199,13 +175,14 @@ body {
 		border:none;
 		font-family: var(--text-font);
 		margin-left:0;
-		padding-left: 30%;
+		padding-left: 25%;
 		font-size:200%;
 		width:100%;
 		text-decoration: none;
 		background-color: var(--primary);
 		color:white;
 		margin-top: 10%;
+		margin-left:25%;
 	}
 
 	#about_unit_health_m{
@@ -213,8 +190,8 @@ body {
 		border:none;
 		margin-top: 10%;;
 		font-family: var(--text-font);
-		margin-left:3%;
-		padding-left: 27%;
+		margin-left:25%;
+		padding-left: 25%;
 		font-size: 200%;
 		width:100%;
 		text-decoration: none;
@@ -248,9 +225,16 @@ body {
 		width: auto;
 		height: auto; 
 	  }
+
+	 #favicon {
+		height: 100%;
+		width: 100%;
+	}
 	
-	#favicon {
-		height: 1000px;
+	#favicon_d {
+		margin-left: 10%;
+		height: 900px;
+		width: 900px;
 	}
 	
 	
@@ -258,6 +242,14 @@ body {
 	#sign_in{
 		margin-top: -100%;
 		padding-left: 130%;
+		width:60%;
+		color: var(--text);
+		font-size: 100px;
+	}
+
+	#sign_in_s{
+		margin-top: -80%;
+		padding-left: 110%;
 		width:60%;
 		color: var(--text);
 		font-size: 100px;
@@ -346,50 +338,38 @@ body {
 		background-color: #0ACCD9;
 	}
 
-	#inout{
-		float:right;
-		height: 100%;
-		width: 50%;
-		background-color: #FFAD1F;
-	}
 
 	.account-password_s{
-		font-size: 250%;
-		margin-left: 130%;
+		margin-left: 110%;
 	}
+	
 
 
 
 	#role_ss{
 		background-color: var(--primary);
-		font-size: 150%;
+		font-size: 120%;
         border:none;
-        margin-left: 140%;
+        margin-left: 120%;
 		margin-top: -15%;
 		color:firebrick;
 	}
 
 	#acc_s{
 		margin-right: 10%;
-		border-style:solid;
-		border-width:1px;
-		background: white;
-		color: #484141;
-		font-size: 100%;
+		color: black;
+		font-size: 300%;
 	}
 
 	#passw_s{
 		margin-right: 10%;
-		border-style:solid;
-		border-width:1px;
-		background: white;
-		color: #484141;
-		font-size: 100%;
+		color: black;
+		font-size: 300%;
 		margin-top: 30%;
 	}
 
 	#signin_s{
-		font-size: 100%;
+		font-size: 200%;
 		margin-right: 10%;
 		background-color: #0ACCD9;
 		white-space: nowrap;
@@ -407,19 +387,19 @@ body {
 
 	#about_diabetes_s{
 		background-color: var(--primary);
-		margin-left: 130%;
-		margin-top: 3%;
+		margin-left: 110%;
+		margin-top: 10%;
 		border:none;
 		width: 60%;
 		color:white;
 		white-space: nowrap;
-		font-size: 300%;
+		font-size: 200%;
 	}
 
 	#about_unit_health_s{
-		font-size: 300%;
+		font-size: 200%;
 		background-color: var(--primary);
-		margin-left: 130%;
+		margin-left: 110%;
 		margin-top: 5%;
 		border:none;
 		width: 60%;

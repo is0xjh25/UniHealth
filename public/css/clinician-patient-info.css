@@ -110,6 +110,8 @@ body {
     float: left;
     color: black;
     padding-bottom: 7%;
+    margin-top: 1%;
+
 }
 
 #edit{
@@ -275,7 +277,7 @@ td,th {
 	padding-left: 2%;
     padding-right: 2%;
     margin-left: 75%;
-    margin-top: -45%;
+    margin-top: -44%;
     color: black;
     font-size: 200%;
     padding-bottom: 25%;

@@ -19,11 +19,12 @@
 			<img id="favicon" src="/images/favicon.png" >
 		</section >
 		<section class="account-password">
-			<input id  = "acc_s" value="Account:"></input>
-			<br></br>
-			<input id  = "passw_s" value="Password:"></input>
-			<br></br>
-			<button id = 'signin_s' onclick=turn_dashbord()>Sign In</button>
+			<label for="email" id="acc">Email:</label>
+				<input type="text" name="email" id="enter-email"/>
+				<br></br>
+				<label for="password" id="passw">Password:</label>
+				<input type="password" name="password"/>
+			<button id = 'signin' onclick=turn_dashbord()>Sign In</button>
 		</section>
 		<a id = "about_unit_health_m" href="/about-us" > <i class="fa-solid fa-circle-info fa-1x" ></i> About Unit Health</a>
 		<a  id = "about_diabetes_m" href="/about-diabetes" ><i class="fa-solid fa-circle-info fa-1x"></i> About Diabetes</a>
@@ -32,20 +33,21 @@
 	<section id ="desktop-login-role">
 		<h4 id="goback" onclick=back_to_home_s()><i><i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></i>Back</h4>
 		<section class="sub">	
-			<img id="favicon" src="/images/favicon.png" >
+			<img id="favicon_d" src="/images/favicon.png" >
 		</section >
-		<h4 id  = "sign_in">Sign in as</h4>
+		<h4 id  = "sign_in_s">Sign in as</h4>
 
 		<section class="role">
 			<h3 id  = "role_ss">Staff</h3>
 		</section>
 		<section class="account-password_s">
 			<form action="login-patient" method="POST">
-				<label for="email">Email:</label>
-				<input type="text" name="email" />
-				<label for="password">Password:</label>
+				<label for="email" id="acc_s">Email:</label>
+				<input type="text" name="email" id="enter-email"/>
+				<label for="password" id="passw_s">Password:</label>
 				<input type="password" name="password"/>
-				<input type="submit" value="Submit" />
+				<br></br>
+				<input type="submit" value="Submit" id="signin_s"/>
 			</form>
 			{{!-- <input id  = "acc_s" value="Account:"></input>
 			<br></br>

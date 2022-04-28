@@ -1,13 +1,13 @@
 
 <title>clinician-dashboard</title>
-<link rel="stylesheet" type="text/css" href="/public/css/clinician-patient-info.css">
+<link rel="stylesheet" type="text/css" href="/css/clinician-patient-info.css">
 <script src="https://kit.fontawesome.com/76a0594e6c.js" crossorigin="anonymous"></script>
 
 {{> clinician-navbar}}
 
 </section>
 <section class = info>
-    <img id = "photo" src="/public/images/patient.png">
+    <img id = "photo" src="/images/patient.png">
     <div id = "edit">Edit Profile</div>
         <br></br>
     <h1 id = "username"> Username:{{patient.username}}</h1>
@@ -29,10 +29,10 @@
             <th>Threshold MAX.</th>
             </tr>
             <tr>
-            <td>{{patient.management.bloodGlucoseLevel.data.content}}</td>
-            <td>{{patient.management.bloodGlucoseLevel.data.uploadBy}}</td>
-            <td>{{patient.management.bloodGlucoseLevel.data. upperThreshold}}</td>
-            <td>{{patient.management.bloodGlucoseLevel.data. lowerThreshold}}</td>
+            <td>{{record.bloodGlucoseLevelData}}</td>
+            <td>{{patient.management.bloodGlucoseLevel.timeSeries}}</td>
+            <td>{{patient.management.bloodGlucoseLevel.upperThreshold}}</td>
+            <td>{{patient.management.bloodGlucoseLevel.lowerThreshold}}</td>
             </tr>
     </table>
     <table id = "weight">
@@ -43,10 +43,10 @@
             <th>Threshold MAX.</th>
             </tr>
             <tr>
-            <td>{{patient.management.weight.data.content}}</td>
-            <td>{{patient.management.weight.data.uploadBy}}</td>
-            <td>{{patient.management.weight.data. upperThreshold}}</td>
-            <td>{{patient.management.weight.data. lowerThreshold}}</td>
+            <td>{{record.weightData}}</td>
+            <td>{{patient.management.weight.timeSeries}}</td>
+            <td>{{patient.management.weight.upperThreshold}}</td>
+            <td>{{patient.management.weight.lowerThreshold}}</td>
             </tr>
     </table>
     <table id = "dose">
@@ -57,10 +57,10 @@
             <th>Threshold MAX.</th>
             </tr>
             <tr>
-            <td>{{patient.management.doesesOfInsulinTaken.data.content}}</td>
-            <td>{{patient.management.doesesOfInsulinTaken.data.uploadBy}}</td>
-            <td>{{patient.management.doesesOfInsulinTaken.data.upperThreshold}}</td>
-            <td>{{patient.management.doesesOfInsulinTaken.data.lowerThreshold}}</td>
+            <td>{{record.doesesOfInsulinTakenData}}</td>
+            <td>{{patient.management.doesesOfInsulinTaken.timeSeries}}</td>
+            <td>{{patient.management.doesesOfInsulinTaken.upperThreshold}}</td>
+            <td>{{patient.management.doesesOfInsulinTaken.lowerThreshold}}</td>
             </tr>
     </table>
     <table id = "exercise">
@@ -71,10 +71,10 @@
             <th>Threshold MAX.</th>
             </tr>
             <tr>
-            <td>{{patient.management.exercise.data.content}}</td>
-            <td>{{patient.management.exercise.data.uploadBy}}</td>
-            <td>{{patient.management.exercise.data.upperThreshold}}</td>
-            <td>{{patient.management.exercise.data.lowerThreshold}}</td>
+            <td>{{record.exerciseData}}</td>
+            <td>{{patient.management.exercise.timeSeries}}</td>
+            <td>{{patient.management.exercise.upperThreshold}}</td>
+            <td>{{patient.management.exercise.lowerThreshold}}</td>
             </tr>
     </table>
     <button id ="note"><i class="fa-solid fa-note-medical fa-3x"></i>Note</button>

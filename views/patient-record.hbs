@@ -1,4 +1,4 @@
- <link rel="stylesheet" type="text/css" href= "/public/css/patient-record.css">
+ <link rel="stylesheet" type="text/css" href= "/css/patient-record.css">
     <!--引入外部网站Icon-->
     <script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script>
 
@@ -13,22 +13,21 @@
            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
            <p id="home">Record</p>
            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-           <img src="/public/images/favicon.png" id="mobile-home">
+           <img src="/images/favicon.png" id="mobile-home">
         </div>
 
         <div class = date>
             <h2>22.04.2022</h2>
         </div>
 
+        <form action="/patient/add-data/bloodGlucoseLevel" method="POST">
         <div class= blood>
             <div class = bloodcolor>
-             <h3 class = bloodtext>
+             <label for="data" class = bloodtext>
                  Blood Glucose Level 
-             </h3>
+             </label>
             </div>
-         
-            <form action="">
-                <input type="text">nmol/L
+                <input type="number" name="data">nmol/L
             </form>
          </div>
 
@@ -36,42 +35,36 @@
     
          <div class= weight>
              <div class="weightcolor">
-              <h3 class = weighttext>
+              <label for="data" class = weighttext>
                  Weight 
-              </h3>
+              </label>
              </div>
-          
-             <form action="">
-                 <input type="text">Kg 
-             </form>
+
+                 <input type="number" name="data">Kg 
           </div>
     
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
      
           <div class= dose>
              <div class="dosecolor">
-              <h3 class = dosetext>
+              <label for="data" class = dosetext>
                  Dose of Insulin Taken
-              </h3>
+              </label>
              </div>
           
-             <form action="">
-                 <input type="text">number of doses
-             </form>
+                <input type="number" name="data"/>number of doses
           </div>
     
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
      
           <div class= exercise>
              <div class="excolor">
-              <h3 class = extext>
+              <label for="data" class = extext>
                  Exercise
-              </h3>
+              </label>
              </div>
           
-             <form action="">
-                 <input type="text">steps
-             </form>
+            <input type="number" name="data"/>steps
         </div>
 
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>

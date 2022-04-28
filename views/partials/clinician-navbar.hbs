@@ -1,5 +1,5 @@
 <section id = "navbar">
-        <img id="favicon" src="/public/images/favicon.png" >
+        <img id="favicon" src="/images/favicon.png" >
         <section id = "dashboard">
             <i class="fa-solid fa-house-user fa-3x"></i>
             <div id = "dashboard_w"> Dashboard</div>
@@ -12,8 +12,10 @@
             <i class="fa-solid fa-address-book fa-3x"></i>
             <div id = "new_patient_w"> Add New Patient</div>
         </section>
+        <form method="POST" action="/logout">
          <section id = "go_back">
             <i class="fa-solid fa-arrow-right-from-bracket fa-3x"></i>
-            <a id = "go_back_w" href="login_home_page.html"> Sign Out</a>
+            <a id = "go_back_w" href="/login"> Sign Out</a>
         </section>
+        </form>
     </section>

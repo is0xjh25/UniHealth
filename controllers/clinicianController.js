@@ -60,7 +60,7 @@ const dashboard = async (req, res, next) => {
                 } 
             })
         )
-        return res.render('test-clinician', {clinician: clinician, patients: patients})
+        return res.render('clinician-dashboard', {clinician: clinician, patients: patients})
     } catch (err) {
         return next(err)
     }

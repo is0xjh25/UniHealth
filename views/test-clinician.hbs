@@ -20,6 +20,7 @@
 	<li>Exercise: {{this.record.exerciseData}}</li>
 	<li>comment: {{this.record.exerciseComment}}</li>
 	<li>Threshold: {{this.patient.management.exercise.upperThreshold}} to {{this.patient.management.exercise.lowerThreshold}}</li><br>
+	
 	<form method="POST" action="/clinician/patient-management">
 		<input type="hidden" name="patientID" value={{this.patient._id}}>
 		<label for="type">Title:</label>

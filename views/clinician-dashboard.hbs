@@ -1,13 +1,13 @@
 
 <title>clinician-dashboard</title>
-<link rel="stylesheet" type="text/css" href="/public/css/clinician-dashboard.css">
-<link rel="icon" href="/public/images/favicon-1.png">
+<link rel="stylesheet" type="text/css" href="/css/clinician-dashboard.css">
+<link rel="icon" href="/images/favicon.png">
 <script src="https://kit.fontawesome.com/76a0594e6c.js" crossorigin="anonymous"></script>
 
 <div>
     {{> clinician-navbar}}
     <section id = "info_part">
-            <img id="photo" src="/public/images/docotr_photo.png" >
+            <img id="photo" src="/images/docotr_photo.png" >
             <div id = "edit">Edit Profile</div>
             <br></br>
             <section id = "detail">
@@ -27,7 +27,6 @@
             <h1 id = 'search'>Search By Name or ID...</h1>
             <h6 id = "date">27/04/2022</h6>
             <tr>
-              <th>Patient ID</th>
               <th>Patient Name</th>
               <th>Gender</th>
               <th>Blood glucose Level</th>
@@ -35,19 +34,16 @@
               <th>Dose of insulin taken</th>
               <th>Exercise</th>
             </tr>
-            
+            {{#each patients}}
             <tr>
-                <td>{{patient.firstName}}</td>
-                <td>{{patient.lastName}}</td>
-                <td>{{patient.gender}}</td>
-                <td >{{patient.blood}} </td>
-                <td>{{patient.weight}}</td>
-                <td>{{patient.dose}}</td>
-                <td>{{patient.exercise}}</td>
+            <td>{{this.patient.firstname}} {{this.patient.lastName}}</td>
+            <td>{{this.patient.gender}}</td>
+            <td >{{this.record.bloodGlucoseLevelData}}</td>
+            <td>{{this.record.weightData}}</td>
+            <td>{{this.record.doesesOfInsulinTakenData}}</td>
+            <td>{{this.record.exerciseData}}</td>
             </tr>
-            
+             {{/each}}
           </table>
-          
-
     </section>
 </div>

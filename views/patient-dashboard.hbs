@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href= "./css/dash.css">
+<link rel="stylesheet" type="text/css" href= "/css/patient-dashboard.css">
 
 
 <body>
@@ -6,7 +6,7 @@
 
     <!--message block--> <!--add support message handlebar-->
     <div class="message">
-        <p id="message">{{management.supportMessage}}</p>
+        <p id="message">{{patient.management.supportMessage}}</p>
     </div>
 
     <!--mobile message bar-->
@@ -71,11 +71,11 @@
                 <th>Exercise</th>
             </tr>
             <tr>
-                <td>{{record.data.uploadBy}}</td> <!--Date change-->
-                <td>{{dailyRecord.bloodGlucoseLevel.data.content}}</td>
-                <td>{{dailyRecord.weight.data.content}}</td>
-                <td>{{dailyRecord.doesesOfInsulinTaken.data.content}}</td>
-                <td>{{dailyRecord.exercise.data.content}}</td>
+                <td>{{record.date}}</td>
+                <td>{{record.bloodGlucoseLevelData}}</td>
+                <td>{{record.weightData}}</td>
+                <td>{{record.doesesOfInsulinTakenData}}</td>
+                <td>{{record.exerciseData}}</td>
             </tr>
         </table>
     </div>
@@ -92,10 +92,12 @@
     </div>
 
     <!--desktop record-->
+    <a href="/patient-record">
     <div class="desk-record">
         <i class="fa-solid fa-calendar-check fa-4x" style="color: #FFF8F8;position: absolute;left:30px;top: 10px;"></i>
         <p id="reco">Record</p>
     </div>
+    </a>
 
     <!--mobile bottom-->
     <div class="bottom2">
