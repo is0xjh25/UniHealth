@@ -43,7 +43,7 @@ app.engine(
 )
 
 app.set('view engine', 'hbs')
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'))
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -66,20 +66,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Uni Health is listening on port ${port}!`)
 }
-
-app.get('/about-us', (req, res) => {
-    res.sendFile(__dirname + '/static/' + 'about-us.html')
-})
-
-app.get('/about-diabetes', (req, res) => {
-    res.sendFile(__dirname + '/static/' + 'about-diabetes.html')
-})
-
-app.get('/login_home_page', (req, res) => {
-    res.sendFile(__dirname + '/static/' + 'login_home_page.html')
-})
-
-/* Clinician */
-app.get('/clinican_dashboard', (req, res) => {
-    res.sendFile(__dirname + '/static/' + 'clinician-dashboard.html')
-})
+)

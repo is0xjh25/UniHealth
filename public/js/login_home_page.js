@@ -10,8 +10,6 @@ function switch_role(p){
         }
 };
 
-
-
 function back_to_home_s(){
         var desktop = document.getElementById("desktop-login");
         desktop.style.display="block"
