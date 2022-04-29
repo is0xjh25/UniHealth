@@ -87,12 +87,24 @@ const addComment = async (req, res, next) => {
 			}
 		}			
 	} catch (err) {
-			return next(err)
+		return next(err)
+	}
+}
+
+const record = async (req, res, next) => {
+	try {
+		const today = new Date().toDateString()
+		const patientID = req.session.passport.user
+		const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
+		return res.render('patient-record', {date: today, record: record})
+	} catch (err) {
+		return next(err)
 	}
 }
 
 module.exports = {
 	dashboard,
 	addData,
-	addComment
+	addComment,
+	record
 }

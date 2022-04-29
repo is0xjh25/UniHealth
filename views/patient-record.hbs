@@ -17,57 +17,81 @@
         </div>
 
         <div class = date>
-            <h2>22.04.2022</h2>
+            <h2>{{date}}</h2>
         </div>
 
-        <form action="/patient/add-data/bloodGlucoseLevel" method="POST">
-        <div class= blood>
-            <div class = bloodcolor>
-             <label for="data" class = bloodtext>
-                 Blood Glucose Level 
-             </label>
+        <div class="blood">
+            <div class="bloodcolor">
+                <label for="data" class="bloodtext">Blood Glucose Level</label>
             </div>
-                <input type="number" name="data">nmol/L
+            <form action="/patient/add-data/bloodGlucoseLevel" method="POST">
+                <label for="data">Data</label>
+                <input type="number" name="data" value="{{record.bloodGlucoseLevelData}}"/>
+                <input type="submit" value="Submit"/>
+            </form>
+            <form action="/patient/add-comment/bloodGlucoseLevel" method="POST">
+                <label for="data">Comment:</label>
+                <input type="text" name="data" value="{{record.bloodGlucoseLevelComment}}"/>
+                <input type="submit" value="Submit"/>
             </form>
          </div>
 
          <div>&nbsp;&nbsp;</div>
     
-         <div class= weight>
-             <div class="weightcolor">
-              <label for="data" class = weighttext>
-                 Weight 
-              </label>
-             </div>
-
-                 <input type="number" name="data">Kg 
+         <div class="weight">
+            <div class="weightcolor">
+                <label for="data" class="weighttext">Wieght</label>
+            </div>
+            <form action="/patient/add-data/weight" method="POST">
+                <label for="data">Data:</label>
+                <input type="number" name="data" value="{{record.weightData}}"/>
+                <input type="submit" value="Submit"/>
+            </form>
+            <form action="/patient/add-comment/weight" method="POST">
+	            <label for="data">Comment:</label>
+	            <input type="text" name="data" value="{{record.weightComment}}"/>
+	            <input type="submit" value="Submit"/>
+            </form>
           </div>
     
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
      
-          <div class= dose>
-             <div class="dosecolor">
-              <label for="data" class = dosetext>
-                 Dose of Insulin Taken
-              </label>
-             </div>
-          
-                <input type="number" name="data"/>number of doses
+          <div class="dose">
+            <div class="dosecolor">
+                <label for="data" class="dosetext">Doeses Of Insulin Taken</label>
+            </div>
+            <form action="/patient/add-data/doesesOfInsulinTaken" method="POST">
+                <label for="data">Data:</label>
+                <input type="number" name="data" value="{{record.doesesOfInsulinTakenData}}"/>
+                <input type="submit" value="Submit"/>
+            </form>
+            <form action="/patient/add-comment/doesesOfInsulinTaken" method="POST">
+                <label for="data">Comment</label>
+                <input type="text" name="data" value="{{record.doesesOfInsulinTakenComment}}"/>
+                <input type="submit" value="Submit"/>
+            </form>
           </div>
     
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
      
-          <div class= exercise>
-             <div class="excolor">
-              <label for="data" class = extext>
-                 Exercise
-              </label>
-             </div>
-          
-            <input type="number" name="data"/>steps
+          <div class="exercise">
+            <div class="excolor">
+                <label for="data" class="exercise">Exercise</label>
+            </div>
+            <form action="/patient/add-data/exercise" method="POST">
+                <label for="data">Data:</label>
+                <input type="number" name="data" value="{{record.exerciseData}}"/>
+                <input type="submit" value="Submit"/>
+            </form>
+            <form action="/patient/add-comment/exercise" method="POST">
+                <label for="data">Comment:</label>
+                <input type="text" name="data" value="{{record.exerciseComment}}"/>
+                <input type="submit" value="Submit"/>
+            </form>          
         </div>
 
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <a href="/patient/dashboard">BACK</a>
+        {{!-- <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 
        
           <!-- 打开弹窗按钮 -->
@@ -142,5 +166,5 @@
                 modal.style.display = "none";
             }
         }
-    </script>
+    </script> --}}
 

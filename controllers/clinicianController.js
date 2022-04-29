@@ -60,7 +60,7 @@ const dashboard = async (req, res, next) => {
                 } 
             })
         )
-        return res.render('clinician-dashboard', {clinician: clinician, patients: patients})
+        return res.render('clinician-dashboard', {date: today, clinician: clinician, patients: patients})
     } catch (err) {
         return next(err)
     }
@@ -69,15 +69,25 @@ const dashboard = async (req, res, next) => {
 const patientManagement = async (req, res, next) => {
     try {
         const patient = await Patient.findById(req.body.patientID)
-        const query = {
-            [req.body.type]: {
-                timeSeries: req.body.timeSeries,
-                upperThreshold: req.body.upperThreshold,
-                lowerThreshold: req.body.lowerThreshold
-            }
+        let management = {...patient.management}
+        management[req.body.type] = {
+            timeSeries: req.body.timeSeries,
+            upperThreshold: req.body.upperThreshold,
+            lowerThreshold: req.body.lowerThreshold
         }
-        await patient.updateOne({management: query}, { upsert: true })
-        return res.redirect('/clinician/dashboard')
+        await patient.updateOne({$set: {"management": management}}, { upsert: true })
+        return res.redirect(`/clinician/patient-info/${req.body.patientID}`)
+    } catch (err) {
+        return next(err)
+    }
+}
+
+const patientInfo = async (req, res, next) => {
+    try {
+        const today = new Date().toDateString()
+        const patient = await Patient.findById(req.params.patientID).lean()
+        const record = await DailyRecord.findOne( {$and: [{"_patientID": patient._id}, {"date": today}]}).lean()
+        return res.render('clinician-patient-info', {date: today, patient: patient, record: record})
     } catch (err) {
         return next(err)
     }
@@ -90,4 +100,5 @@ module.exports = {
     addPatient,
     dashboard,
     patientManagement,
+    patientInfo
 }

@@ -72,10 +72,10 @@
             </tr>
             <tr>
                 <td>{{record.date}}</td>
-                <td>{{record.bloodGlucoseLevelData}}</td>
-                <td>{{record.weightData}}</td>
-                <td>{{record.doesesOfInsulinTakenData}}</td>
-                <td>{{record.exerciseData}}</td>
+                {{#checkThreshold record.bloodGlucoseLevelData patient.management.bloodGlucoseLevel}}{{/checkThreshold}}
+                {{#checkThreshold record.weightData patient.management.weight}}{{/checkThreshold}}
+                {{#checkThreshold record.doesesOfInsulinTakenData patient.management.doesesOfInsulinTaken}}{{/checkThreshold}}
+                {{#checkThreshold record.exerciseData patient.management.exercise}}{{/checkThreshold}}
             </tr>
         </table>
     </div>
@@ -92,7 +92,7 @@
     </div>
 
     <!--desktop record-->
-    <a href="/patient-record">
+    <a href="/patient/record">
     <div class="desk-record">
         <i class="fa-solid fa-calendar-check fa-4x" style="color: #FFF8F8;position: absolute;left:30px;top: 10px;"></i>
         <p id="reco">Record</p>

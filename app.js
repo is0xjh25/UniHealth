@@ -41,6 +41,7 @@ app.engine(
     exphbs.engine({
         defaultLayout: 'main',
         extname: 'hbs',
+        helpers: require(__dirname + "/public/js/helpers.js").helpers
     })
 )
 

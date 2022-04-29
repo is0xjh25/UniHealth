@@ -15,6 +15,6 @@ patientRouter.post('/add-data/:type', utilities.isLoggedInPatient, patientContro
 patientRouter.post('/add-comment/:type', utilities.isLoggedInPatient, patientController.addComment)
 
 // patient's record
-patientRouter.get('/record', utilities.isLoggedInPatient, patientController.addComment)
+patientRouter.get('/record', utilities.isLoggedInPatient, patientController.record)
 
 module.exports = patientRouter

@@ -8,6 +8,9 @@ const clinicianController = require('../controllers/clinicianController')
 // clinician homepage
 clinicianRouter.get('/dashboard', utilities.isLoggedInClinician, clinicianController.dashboard)
 
+// patient info
+clinicianRouter.get('/patient-info/:patientID', utilities.isLoggedInClinician, clinicianController.patientInfo)
+
 /* Testing */
 
 // create new clinician

@@ -25,7 +25,7 @@
         </section>
         <table id = "record">
             <h1 id = 'search'>Search By Name or ID...</h1>
-            <h6 id = "date">27/04/2022</h6>
+            <h6 id = "date">{{date}}</h6>
             <tr>
               <th>Patient Name</th>
               <th>Gender</th>
@@ -35,14 +35,14 @@
               <th>Exercise</th>
             </tr>
             {{#each patients}}
-            <tr>
-            <td>{{this.patient.firstname}} {{this.patient.lastName}}</td>
-            <td>{{this.patient.gender}}</td>
-            <td >{{this.record.bloodGlucoseLevelData}}</td>
-            <td>{{this.record.weightData}}</td>
-            <td>{{this.record.doesesOfInsulinTakenData}}</td>
-            <td>{{this.record.exerciseData}}</td>
-            </tr>
+              <tr>
+                <td><a href="/clinician/patient-info/{{this.patient._id}}">{{this.patient.firstname}} {{this.patient.lastname}}</a></td>
+                <td>{{this.patient.gender}}</td>
+                {{#checkThreshold this.record.bloodGlucoseLevelData this.patient.management.bloodGlucoseLevel}}{{/checkThreshold}}
+                {{#checkThreshold this.record.weightData this.patient.management.weight}}{{/checkThreshold}}
+                {{#checkThreshold this.record.doesesOfInsulinTakenData this.patient.management.doesesOfInsulinTaken}}{{/checkThreshold}}
+                {{#checkThreshold this.record.exerciseData this.patient.management.exercise}}{{/checkThreshold}}
+              </tr>
              {{/each}}
           </table>
     </section>
