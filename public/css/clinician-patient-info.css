@@ -31,7 +31,7 @@ body {
     position:absolute;
     bottom: -30%;
     left: 150%;
-    color: var(--link);
+    color: var(--text-unused);
     font-size: 350%;
     font-family: var(--title-font);
 }
@@ -40,9 +40,8 @@ body {
     position:absolute;
     top:4.5%;
     left: 9%;
-    color: var(--link);
     font-size: 100%;
-    color: var(--link);
+    color: var(--text-unused);
 }
 
 #comment{
@@ -98,6 +97,7 @@ body {
     white-space:nowrap;
     height:200%;
     font-family: var(--title-font);
+    color:var(--text-unused);
 }
 
 .info{

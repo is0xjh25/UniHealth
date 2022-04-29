@@ -8,7 +8,7 @@ const dashboard = async (req, res, next) => {
 			if (!patient) return res.send("Error: Patient not found")
 			const today = new Date().toDateString()
 			const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
-			return res.render('patient-dashboard', {patient: patient, record: record})
+			return res.render('patient-dashboard', {date: today, patient: patient, record: record})
 	} catch (err) {
 			return next(err)
 	}

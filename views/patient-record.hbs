@@ -1,20 +1,11 @@
  <link rel="stylesheet" type="text/css" href= "/css/patient-record.css">
-    <!--引入外部网站Icon-->
     <script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script>
 
 
     {{> patient-navbar}}
 
-    <!--主体代码-->
     <div class="shu">
 
-       <!--mobile head-->
-       <div class="title">
-           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-           <p id="home">Record</p>
-           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-           <img src="/images/favicon.png" id="mobile-home">
-        </div>
 
         <div class = date>
             <h2>{{date}}</h2>
@@ -91,80 +82,4 @@
         </div>
 
         <a href="/patient/dashboard">BACK</a>
-        {{!-- <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-
-       
-          <!-- 打开弹窗按钮 -->
-        <button class="Btn" id="myBtn">Comment</button>
- 
-        <!-- 弹窗 -->
-        <div id="myModal" class="modal">
- 
-               <!-- 弹窗内容 -->
-            <div class="modal-content">
-                <div class="modal-header">
-                  <span class="close">&times;</span>
-                  <h2>Comment</h2>
-                </div>    
-                 <div class="commentBox">
-                    <textarea id="comment" cols="38" rows="10" placeholder="Please enter your comments"></textarea>
-                 </div>
-
-                 <div class = commentBtn>
-                    <button id="commentCon">Confirm</button>
-                 </div>
-
-             </div>
- 
-         </div>
-
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-
-        <div class = underBotton>
-            <button class= "Discard">Dsicard</button>
-            <button class= "Confirm">Confirm</button>
-   
-        </div>
-
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-
-
-        <div class="bottom">
-            <i class="fa-solid fa-house-user fa-3x" style="color:#2763A7;"></i>
-            <p class = bname >UNI Health</p>
-            <i class="fa-solid fa-circle-user fa-3x" style="color:#2763A7;"></i>
-        </div>
-
-
-    </div>
-
-
-    <!--JS代码-->
-    <script>
-        // 获取弹窗
-        var modal = document.getElementById('myModal');
-        // 打开弹窗的按钮对象
-        var btn = document.getElementById("myBtn");
-        // 获取 <span> 元素，用于关闭弹窗 that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-        //点击confirm弹窗
-        var btn2 = document.getElementById('commentCon')
-        // 点击按钮打开弹窗
-         btn.onclick = function() {
-             modal.style.display = "block";
-        }
-        btn2.onclick = function(){
-            alert('Submit Successfully');
-        }
-          // 点击 <span> (x), 关闭弹窗
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-        // 在用户点击其他地方时，关闭弹窗
-        window.onclick = function(event) {
-           if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script> --}}
 

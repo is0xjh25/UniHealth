@@ -4,60 +4,98 @@
 <body>
     {{> patient-navbar}}
 
-    <!--message block--> <!--add support message handlebar-->
+    <section class="mobile-dashboard">
+    <div class="table-message">
+        <h1 id="messName"><i class="fa-solid fa-comment-medical fa-2x"></i>Message</h1>
+    </div>
+    <div class="table-stat">
+        <h1 id="statName"><i class="fa-solid fa-database fa-2x"></i>Statistics</h1>
+    </div>
+    <div class="table-rank">
+        <h1 id="rankName"><i class="fa-solid fa-ranking-star fa-2x"></i></i>Rank</h1>
+    </div>
+    <a href="/patient/record">
+    <div class="table-record-m">
+        <h1 id="recordName"><i class="fa-solid fa-calendar-check fa-2x"></i></i>Record</h1>
+    </div>
+    </a>
+
+    <div class="table-right-m">
+        <table>
+            <tr>
+                <th>DATE</th>
+                <th>Blood glucose level</th>
+                <th>Weight</th>
+                <th>Dose of insulin taken</th>
+                <th>Exercise</th>
+            </tr>
+            <tr>
+                <td>{{date}}</td>
+                {{#checkThreshold record.bloodGlucoseLevelData patient.management.bloodGlucoseLevel}}{{/checkThreshold}}
+                {{#checkThreshold record.weightData patient.management.weight}}{{/checkThreshold}}
+                {{#checkThreshold record.doesesOfInsulinTakenData patient.management.doesesOfInsulinTaken}}{{/checkThreshold}}
+                {{#checkThreshold record.exerciseData patient.management.exercise}}{{/checkThreshold}}
+            </tr>
+        </table>
+    </div>
+    </section>
+
+    <section class="table-dashboard">
+    <div class="table-message">
+        <h1 id="messName_s"><i class="fa-solid fa-comment-medical fa-2x"></i>Message</h1>
+    </div>
+    <div class="table-stat">
+        <h1 id="statName"><i class="fa-solid fa-database fa-2x"></i>Statistics</h1>
+    </div>
+    <div class="table-rank">
+        <h1 id="rankName"><i class="fa-solid fa-ranking-star fa-2x"></i></i>Rank</h1>
+    </div>
+    <a href="/patient/record">
+    <div class="table-record">
+        <h1 id="recordName"><i class="fa-solid fa-calendar-check fa-2x"></i></i>Record</h1>
+    </div>
+    </a>
+
+    <div class="table-right">
+        <table>
+            <tr>
+                <th>DATE</th>
+                <th>Blood glucose level</th>
+                <th>Weight</th>
+                <th>Dose of insulin taken</th>
+                <th>Exercise</th>
+            </tr>
+            <tr>
+                <td>{{date}}</td>
+                {{#checkThreshold record.bloodGlucoseLevelData patient.management.bloodGlucoseLevel}}{{/checkThreshold}}
+                {{#checkThreshold record.weightData patient.management.weight}}{{/checkThreshold}}
+                {{#checkThreshold record.doesesOfInsulinTakenData patient.management.doesesOfInsulinTaken}}{{/checkThreshold}}
+                {{#checkThreshold record.exerciseData patient.management.exercise}}{{/checkThreshold}}
+            </tr>
+        </table>
+    </div>
+    </section>
+
+
+
+
+
+    <section class="desktop-dashboard">
     <div class="message">
-        <p id="message">{{patient.management.supportMessage}}</p>
+        <p id="message">{{patient.management.supportMessage}}</p >
     </div>
-
-    <!--mobile message bar-->
-    <div class="messHead">
-        <h1 id="messName">Message</h1>
-        <i class="fa-solid fa-comment-medical fa-3x" style="color: #FFFFFF;position: absolute;left: 20px;"></i>
-    </div>
-
-    <div class="tablet-messHead">
-        <h1 id="messName">Message</h1>
-        <i class="fa-solid fa-comment-medical fa-4x" style="color: #FFFFFF;position: absolute;left: 20px;"></i>
-    </div>
-
-    <!--desktop message bar-->
     <div class="desk-messHead">
         <h1 id="messName">Message</h1>
         <i class="fa-solid fa-comment-medical fa-4x" style="color: #FFFFFF;position: absolute;left: 20px;"></i>
     </div>
-
-    <!--mobile statistic-->
-    <div class="app-statistic">
-        <i class="fa-solid fa-file-lines fa-6x" style="color: #FFF8F8;position: absolute;left:30px;top:10px;"></i>
-        <p id="stat">Statistic</p>
-    </div>
-
-    <div class="tablet-statistic">
-        <i class="fa-solid fa-file-lines fa-7x" style="color: #FFF8F8;position: absolute;left:50px;top:10px;"></i>
-        <p id="stat">Statistic</p>
-    </div>
-
-    <!--desktop statistic-->
     <div class="desktop-statistic">
         <i class="fa-brands fa-hackerrank fa-9x" style="color: #FFFFFF;position: absolute;left:50px;top:15px;"></i>
-        <p id="stat">Statistic</p>
+        <p id="stat">Statistic</p >
     </div>
 
-    <!--mobile rank-->
-    <div class="app-rank">
-        <i class="fa-brands fa-hackerrank fa-6x" style="color: #FFF8F8;position: absolute;left:30px;top:10px;"></i>
-        <p id="ran">Rank</p>
-    </div>
-
-    <div class="tablet-rank">
-        <i class="fa-brands fa-hackerrank fa-7x" style="color: #FFF8F8;position: absolute;left:40px;top:10px;"></i>
-        <p id="ran">Rank</p>
-    </div>
-
-    <!--desktop rank-->
     <div class="desk-rank">
         <i class="fa-brands fa-hackerrank fa-9x" style="color: #FFFFFF;position: absolute;left:50px;top:15px;"></i>
-        <p id="ran">Rank</p>
+        <p id="ran">Rank</p >
     </div>
 
     <!--desktop table-->
@@ -71,7 +109,7 @@
                 <th>Exercise</th>
             </tr>
             <tr>
-                <td>{{record.date}}</td>
+                <td>{{date}}</td>
                 {{#checkThreshold record.bloodGlucoseLevelData patient.management.bloodGlucoseLevel}}{{/checkThreshold}}
                 {{#checkThreshold record.weightData patient.management.weight}}{{/checkThreshold}}
                 {{#checkThreshold record.doesesOfInsulinTakenData patient.management.doesesOfInsulinTaken}}{{/checkThreshold}}
@@ -79,38 +117,11 @@
             </tr>
         </table>
     </div>
-
-    <!--mobile record-->
-    <div class="record">
-        <i class="fa-solid fa-calendar-check fa-3x" style="color: #FFF8F8;position: absolute;left:30px;"></i>
-        <p id="reco">Record</p>
-    </div>
-
-    <div class="tablet-record">
-        <i class="fa-solid fa-calendar-check fa-5x" style="color: #FFF8F8;position: absolute;left:30px;"></i>
-        <p id="reco">Record</p>
-    </div>
-
     <!--desktop record-->
     <a href="/patient/record">
     <div class="desk-record">
         <i class="fa-solid fa-calendar-check fa-4x" style="color: #FFF8F8;position: absolute;left:30px;top: 10px;"></i>
-        <p id="reco">Record</p>
+        <p id="reco">Record</p >
     </div>
     </a>
-
-    <!--mobile bottom-->
-    <div class="bottom2">
-        <ul>
-            <li>Blood glucose level</li>
-            <li>Weight</li>
-            <li>Dose of insulin taken</li>
-            <li>Exercise</li>
-        </ul>
-    </div>
-
-    <div class="bottom">
-        <p id="uniHealth">UNI Health</p>
-        <i class="fa-solid fa-house-medical fa-3x" style="color: #2D65A4;position: absolute;left: 15px;top: 10px;"></i>
-        <i class="fa-solid fa-circle-user fa-3x" id="userIcon"></i>
-    </div>
+    </section>
