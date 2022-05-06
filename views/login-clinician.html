@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/public/images/favicon.png">
+    <script src="https://kit.fontawesome.com/76a0594e6c.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet"  href="/public/css/login-patient.css">
+</head>
+<body>
+	<section id ="desktop-login-role">
+		<h4 id="goback" onclick=back_to_home_s()><i><i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></i>Back</h4>
+		<section class="sub">	
+			<img id="favicon_d" src="/public/images/favicon.png" >
+		</section >
+		<h4 id  = "sign_in_s">Sign in as</h4>
+
+		<section class="role">
+			<h3 id  = "role_ss">Staff</h3>
+		</section>
+		<section class="account-password_s">
+			<form action="login-patient" method="POST">
+				<label for="email" id="acc_s">Email</label>
+				<input type="text" id="enter-email"/>
+				<label for="password" id="passw_s">Password:</label>
+				<input type="password" name="password" required id="enter-pass"/>
+				<br></br>
+				<input type="submit" value="Submit" id="signin_s"/>
+			</form>
+
+		</section>
+			<a id = "about_unit_health_s" href="/about-us" > <i class="fa-solid fa-circle-info fa-1x" ></i> About Unit Health</a>
+			<a  id = "about_diabetes_s" href="/about-diabetes" ><i class="fa-solid fa-circle-info fa-1x"></i> About Diabetes</a>
+		</section>
+</body>
+</html>
