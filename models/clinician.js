@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 
 const clinicianSchema = new mongoose.Schema({
-    role: {type: String, Enum: ['clinician', 'patient'], default: 'clinician', required: true},
+    role: { type: String, Enum: ['clinician', 'patient'], default: 'clinician', required: true },
+    registered: { type: Date, default: Date.now, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     firstname: { type: String, required: true },
@@ -11,6 +12,7 @@ const clinicianSchema = new mongoose.Schema({
     patients: [{_patientID: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient' }}],
     notes: [{
         patient: {_patientID: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient'}},
+        createBy: { type: Date, default: Date.now, required: true },
         content: { type: String, required: true },
     }]
 })

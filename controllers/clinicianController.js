@@ -60,7 +60,7 @@ const dashboard = async (req, res, next) => {
                 } 
             })
         )
-        return res.render('clinician-dashboard', {date: today, clinician: clinician, patients: patients})
+        return res.render('test-clinician', {date: today, clinician: clinician, patients: patients})
     } catch (err) {
         return next(err)
     }
@@ -69,9 +69,10 @@ const dashboard = async (req, res, next) => {
 const patientManagement = async (req, res, next) => {
     try {
         const patient = await Patient.findById(req.body.patientID)
+        const required = (req.body.required === "true")
         let management = {...patient.management}
         management[req.body.type] = {
-            timeSeries: req.body.timeSeries,
+            required: required,
             upperThreshold: req.body.upperThreshold,
             lowerThreshold: req.body.lowerThreshold
         }

@@ -20,7 +20,7 @@ const addData = async (req, res, next) => {
 		const patient = await Patient.findById(patientID)
 		if (!patient) return res.send("Error: Patient not found")
 		const today = new Date().toDateString()
-		const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]})
+		const record = await DailyRecord.findOne({$and: [{"_patientID": patientID}, {"date": today}]})
 		if (record) {
 			try {
 				await record.updateOne({[req.params.type + "Data"]: req.body.data, [req.params.type + "Time"]: new Date(),}, { upsert: true })
@@ -102,9 +102,21 @@ const record = async (req, res, next) => {
 	}
 }
 
+const rank = async (req, res, next) => {
+	try {
+		const today = new Date().toDateString()
+		const patientID = req.session.passport.user
+		const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
+		return res.render('patient-record', {date: today, record: record})
+	} catch (err) {
+		return next(err)
+	}
+}
+
 module.exports = {
 	dashboard,
 	addData,
 	addComment,
-	record
+	record,
+	rank
 }

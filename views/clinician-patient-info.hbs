@@ -25,14 +25,14 @@
         <tr>
             <th>Blood glucose level (in nmol/L)</th>
             <th>Record Time</th>
-            <th>Time Series</th>
+            <th>Required</th>
             <th>Threshold MIN.</th>
             <th>Threshold MAX.</th>
         </tr>
         <tr>
             <td>{{record.bloodGlucoseLevelData}}</td>
             <td>{{#toMelbourneTime record.bloodGlucoseLevelTime}}{{/toMelbourneTime}}</td>
-            <td>{{patient.management.bloodGlucoseLevel.timeSeries}}</td>
+            <td>{{patient.management.bloodGlucoseLevel.required}}</td>
             <td>{{patient.management.bloodGlucoseLevel.upperThreshold}}</td>
             <td>{{patient.management.bloodGlucoseLevel.lowerThreshold}}</td>
         </tr>
@@ -44,14 +44,14 @@
         <tr>
             <th>Weight (kg)</th>
             <th>Record Time</th>
-            <th>Time Series</th>
+            <th>Required</th>
             <th>Threshold MIN.</th>
             <th>Threshold MAX.</th>
         </tr>
         <tr>
             <td>{{record.weightData}}</td>
             <td>{{#toMelbourneTime record.weightTime}}{{/toMelbourneTime}}</td>
-            <td>{{patient.management.weight.timeSeries}}</td>
+            <td>{{patient.management.weight.required}}</td>
             <td>{{patient.management.weight.upperThreshold}}</td>
             <td>{{patient.management.weight.lowerThreshold}}</td>
         </tr>
@@ -63,14 +63,14 @@
         <tr>
             <th>Dose of insulin taken (# doses)</th>
             <th>Record Time</th>
-            <th>Time Series</th>
+            <th>Required</th>
             <th>Threshold MIN.</th>
             <th>Threshold MAX.</th>
         </tr>
         <tr>
             <td>{{record.doesesOfInsulinTakenData}}</td>
             <td>{{#toMelbourneTime record.doesesOfInsulinTakenTime}}{{/toMelbourneTime}}</td>
-            <td>{{patient.management.doesesOfInsulinTaken.timeSeries}}</td>
+            <td>{{patient.management.doesesOfInsulinTaken.required}}</td>
             <td>{{patient.management.doesesOfInsulinTaken.upperThreshold}}</td>
             <td>{{patient.management.doesesOfInsulinTaken.lowerThreshold}}</td>
         </tr>
@@ -82,14 +82,14 @@
         <tr>
             <th>Exercise (steps)</th>
             <th>Record Time</th>
-            <th>Time Series</th>
+            <th>Required</th>
             <th>Threshold MIN.</th>
             <th>Threshold MAX.</th>
         </tr>
         <tr>
             <td>{{record.exerciseData}}</td>
             <td>{{#toMelbourneTime record.exerciseTime}}{{/toMelbourneTime}}</td>
-            <td>{{patient.management.exercise.timeSeries}}</td>
+            <td>{{patient.management.exercise.required}}</td>
             <td>{{patient.management.exercise.upperThreshold}}</td>
             <td>{{patient.management.exercise.lowerThreshold}}</td>
         </tr>
@@ -107,12 +107,10 @@
   			<option value="doesesOfInsulinTaken">doesesOfInsulinTaken</option>
   			<option value="exercise">exercise</option>
 		</select>
-		<label for="timeSeries">Time Series:</label>
-		<select name="timeSeries">
-  			<option value="morning">morning</option>
-  			<option value="noon">noon</option>
-  			<option value="afternoon">afternoon</option>
-  			<option value="night">night</option>
+		<label for="required">Required:</label>
+        <select name="required">
+  			<option value="true">True</option>
+  			<option value="false">False</option>
 		</select>
 		<label for="upperThreshold">Upper:</label>
 		<input type="number" name="upperThreshold"/>
@@ -121,9 +119,4 @@
 		<button>Edit</button>
 	</form> 
 	<br>
-    {{!-- <button id="note"><i class="fa-solid fa-note-medical fa-3x"></i>Note</button>
-    <button id="message">Message</button>
-    <br></br>
-    <button id="data">Data</button>
-    <button id="back">Back</button>> --}}
 </section>
