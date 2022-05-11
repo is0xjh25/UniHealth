@@ -240,13 +240,13 @@ input{
             background-color: var(--primary);
             font-size: 500%;
             border:none;
-            margin-left: 143%;
+            margin-left: 123%;
             margin-top: -15%;
         }
 
         #sign_in_s{
-            margin-top: -90%;
-            margin-left: 130%;
+            margin-top: -80%;
+            margin-left: 110%;
             width:60%;
             color: var(--text);
             font-size: 100px;
@@ -285,7 +285,7 @@ input{
 
         #about_diabetes_s{
             background-color: var(--primary);
-            margin-left: 140%;
+            margin-left: 120%;
             margin-top: 10%;
             border:none;
             width: 60%;
@@ -297,7 +297,7 @@ input{
         #about_unit_health_s{
             font-size: 200%;
             background-color: var(--primary);
-            margin-left: 140%;
+            margin-left: 120%;
             margin-top: 10%;
             border:none;
             width: 60%;
@@ -306,6 +306,6 @@ input{
         }
 
         .account-password_s{
-            margin-left: 140%;
+            margin-left: 120%;
         }
 }

@@ -24,9 +24,12 @@ const createClinician = async (req, res, next) => {
 
 const createPatient = async (req, res, next) => {
     try {
-        newPatient = new Patient(req.body)
+        const clinician = await Clinician.findById(req.session.passport.user)
+        const newPatient = new Patient(req.body)
         await newPatient.save()
-        return res.redirect('/test-home')
+        clinician.patients.addToSet(newPatient._id)
+        clinician.save()
+        return res.redirect('/clinician/dashboard')
     } catch (err) {
         return next(err)
     }
@@ -46,6 +49,15 @@ const addPatient = async (req, res, next) => {
     }
 }
 
+const newPatient = async (req, res, next) => {
+    try{
+        return res.render("clinician-newPatient")
+    }catch(err){
+        return next(err)
+    }
+}
+
+
 const dashboard = async (req, res, next) => {
     try {
         const clinician = await Clinician.findById(req.session.passport.user).lean()
@@ -60,7 +72,7 @@ const dashboard = async (req, res, next) => {
                 } 
             })
         )
-        return res.render('test-clinician', {date: today, clinician: clinician, patients: patients})
+        return res.render('clinician-dashboard', {date: today, clinician: clinician, patients: patients})
     } catch (err) {
         return next(err)
     }
@@ -101,5 +113,6 @@ module.exports = {
     addPatient,
     dashboard,
     patientManagement,
-    patientInfo
+    patientInfo,
+    newPatient,
 }

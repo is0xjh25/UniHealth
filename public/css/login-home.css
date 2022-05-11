@@ -236,15 +236,18 @@ input{
 		height: 900px;
 		width: 900px;
 	}
+
 	
 	
 	
 	#sign_in{
+		white-space: nowrap;
 		margin-top: -100%;
 		padding-left: 130%;
 		width:60%;
 		color: var(--text);
 		font-size: 100px;
+		margin-left: 30%;
 	}
 
 	#sign_in_s{
@@ -253,18 +256,20 @@ input{
 		width:60%;
 		color: var(--text);
 		font-size: 100px;
+		margin-left: 30%;
 	}
 	
 	.role{
 		color: var(--text);
 		font-size: 60px;
+
 	
 	}
 	
 	#role_p{
 		background-color: var(--primary);
 		font-size: 100%;
-		margin-left: 130%;
+		margin-left: 170%;
 		padding-top:3%;
 		padding-bottom: 3%;
 		padding-left: 15%;
@@ -274,6 +279,7 @@ input{
 		border-width:1px;
 		border-color: white;
 		color:white;
+		text-decoration:none;	
 	}
 	#role_p:hover{
 		color: var(--link);
@@ -282,8 +288,8 @@ input{
 	#role_s{
 		background-color: var(--primary);
 		font-size: 100%;
-		margin-left: 130%;
-		margin-top: 5%;
+		margin-left: 170%;
+		margin-top: 10%;
 		padding-top:3%;
 		padding-bottom: 3%;
 		padding-left: 15%;
@@ -293,6 +299,7 @@ input{
 		border-width:1px;
 		border-color: white;
 		color:white;
+		text-decoration:none;
 	}
 	
 	#role_s:hover{
@@ -301,7 +308,7 @@ input{
 	
 	#about_unit_health{
 		background-color: var(--primary);
-		margin-left: 140%;
+		margin-left: 170%;
 		margin-top: 5%;
 		border:none;
 		width: 60%;
@@ -318,7 +325,7 @@ input{
 	
 	#about_diabetes{
 		background-color: var(--primary);
-		margin-left: 140%;
+		margin-left: 170%;
 		margin-top: 3%;
 		border:none;
 		width: 60%;

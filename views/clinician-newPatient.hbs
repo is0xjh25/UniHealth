@@ -1,0 +1,34 @@
+<link rel="icon" href="/images/favicon.png">
+<script src="https://kit.fontawesome.com/76a0594e6c.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="/css/clinician-newPatient.css">
+<div>
+    {{> clinician-navbar}}
+    <form method="POST" action="/clinician/create-patient">
+        <section class = "adding">
+            <h1>Adding New Patient.....<h1>
+                <label for="username"> User Name:</label>
+                <input type="text" id="user-name" name="username"/>
+                <label for="phone"> Phone Number</label>
+                <input type="number" id="phone" name="phone"/>
+                <label for="firstname"> First Name:</label>
+                <input type="text" id="first-name" name="firstname"/>
+                <label for="yearBorn"> Year of Born</label>
+                <input type="number" id="birth" name="yearBorn"/>
+                <label for="gender">Gender:</label>
+                <select name="gender">
+                    <option value="no-genger">-</option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                </select>
+                <label for="lastname"> Last Name:</label>
+                <input type="text" id="last-name" name="lastname"/>
+                <label for="password"> Password:</label>
+                <input type="text" id="password" min ="8"placeholder="At Least 8 Characters" name="password"/>
+                <label id = "email" for="email"> Email:</label>
+                <input type="text" id="email-input" name="email"/>
+                <label> Confirm Password</label>
+                <input type="text" id="pass-confirm"/>
+                <button type="submit" id="submit">Submit</button> 
+            </section>
+        </form>
+    </div>

@@ -34,18 +34,28 @@ router.get('/login', (req, res) => {
 })
 
 // login as clinician
+router.get('/login-clinician', (req, res) => {
+	res.render('login-clinician', { flash: req.flash('error'), title: 'Login' })
+})
+
 router.post('/login-clinician',
   passport.authenticate('clinician-local', {
-		successRedirect: '/', failureRedirect: '/login', failureFlash: true 
+		successRedirect: '/', failureRedirect: '/login-clinician', failureFlash: true 
 	})
+
 )
 
 // login as patient
 router.post('/login-patient',
   passport.authenticate('patient-local', {
-		successRedirect: '/', failureRedirect: '/login', failureFlash: true 
+		successRedirect: '/', failureRedirect: '/login-patient', failureFlash: true 
 	})
+
 )
+
+router.get('/login-patient', (req, res) => {
+	res.render('login-patient', { flash: req.flash('error'), title: 'Login' })
+})
 
 router.post('/logout', (req, res) => {
   req.logout()

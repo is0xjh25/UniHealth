@@ -17,6 +17,7 @@ body {
 
 #navbar{
     background-color: #2763A7;
+    color: var(--text-unused);
 }
 
 
@@ -79,6 +80,7 @@ body {
     white-space:nowrap;
     height:200%;
     font-family: var(--title-font);
+    color: var(--text-unused);
 }
 
 #go_back{
