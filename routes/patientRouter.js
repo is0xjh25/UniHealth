@@ -20,7 +20,10 @@ patientRouter.get('/record', utilities.isLoggedInPatient, patientController.reco
 // patient's rank
 patientRouter.get('/rank', utilities.isLoggedInPatient, patientController.rank)
 
-// patient's info page
+// patient's info
 patientRouter.get('/info', utilities.isLoggedInPatient, patientController.info)
+
+// patient's info
+patientRouter.get('/reset-password', utilities.isLoggedInPatient, patientController.resetPassword)
 
 module.exports = patientRouter

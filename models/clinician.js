@@ -9,6 +9,7 @@ const clinicianSchema = new mongoose.Schema({
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
     phone: { type: String, required: true },
+    bio: { type: String },
     patients: [{_patientID: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient' }}],
     notes: [{
         patient: {_patientID: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient'}},

@@ -104,31 +104,31 @@ const record = async (req, res, next) => {
 
 const rank = async (req, res, next) => {
 	try {
-	 const today = new Date().toDateString()
-	 const patientID = req.session.passport.user
-	 const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
-	 return res.render('patient-rank', {date: today, record: record})
+	 	const today = new Date().toDateString()
+	 	const patientID = req.session.passport.user
+	 	const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
+	 	return res.render('patient-rank', {date: today, record: record})
 	} catch (err) {
-	 return next(err)
+	 	return next(err)
 	}
- }
+}
  
- const info = async (req, res, next) => {
+const info = async (req, res, next) => {
 	try {
-	 const today = new Date().toDateString()
-	 const patientID = req.session.passport.user
-	 const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
-	 return res.render('patient-info', {date: today, record: record})
+		const patientID = req.session.passport.user
+		const patient = await Patient.findById(patientID).lean()
+	 	return res.render('patient-info', {patient: patient})
 	} catch (err) {
-	 return next(err)
+	 	return next(err)
 	}
- }
+}
  
- module.exports = {
+module.exports = {
 	dashboard,
 	addData,
 	addComment,
 	record,
 	rank,
-	info
- }
+	info,
+	resetPassword,
+}
