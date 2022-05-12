@@ -11,55 +11,50 @@
         <div class="info">
             <h2>Username:</h2>
             <!--接口导入姓名-->
-            <h2>name1</h2>
+            <h2>{{patient.username}}</h2>
         </div>
 
         <div class="info">
             <h2>First Name:</h2>
             <!--接口导入姓名-->
-            <h2>name1</h2>
+            <h2>{{patient.firstname}}</h2>
         </div>
 
         <div class="info">
             <h2>Last Name:</h2>
             <!--接口导入姓名-->
-            <h2>name1</h2>
+            <h2>{{patient.lastname}}</h2>
         </div>
 
         <div class="info">
             <h2>Email:</h2>
             <!--接口导入email-->
-            <h2>12345678@gmail.com</h2>
+            <h2>{{patient.email}}</h2>
         </div>
 
         <div class="info">
             <h2>Date Of Birth:</h2>
             <!--接口导入姓名-->
-            <h2>09/10/2001</h2>
+            <h2>{{patient.yearBorn}}</h2>
         </div>
 
         <div class="info">
             <h2>Bio:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
             <!--接口导入简介-->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultricies ex at sagittis accumsan. Aenean gravida convallis ligula, quis elementum
-                 lorem lobortis at. Morbi eu sagittis sapien. Aliquam porta magna nunc</p>
+            <p>{{patient.bio}}</p>
         </div>
 
-       
-        
         <!-- 弹窗 -->
         <div id="myModal" class="modal">
- 
                <!-- 弹窗内容 -->
             <div class="modal-content">
                 <div class="modal-header">
                   <span class="close">&times;</span>
                   <h2>Reset Password</h2>
-
                 </div> 
                 <div>
                     <form class="newPassword">
-                        Old Password: <input type="password" name="pwd1">
+                        Old Password: <input type="password" name="pwd1" min="8">
                     </form>
                     <form class="newPassword">
                         New Password: <input type="password" name="pwd2">
@@ -67,22 +62,14 @@
                      <form class="newPassword">
                         Confirm Password: <input type="password" name="pwd3">
                     </form>
-
                 </div>
-
                  <div class = commentBtn>
                     <button id="commentCon">Confirm</button>
                     <button id="commentDis">Discard</button>
                  </div>
-
              </div>
- 
          </div>
-
     </div>
-
-
-
 
      <!--JS代码-->
      <script>
