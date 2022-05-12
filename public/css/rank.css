@@ -9,7 +9,7 @@ body{
     background-color: #2763A7;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 1023px) {
 
 .bgcolor{
     display: flex;
