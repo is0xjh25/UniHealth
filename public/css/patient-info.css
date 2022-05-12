@@ -1,0 +1,215 @@
+#main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+body{
+    background-color: #2D65A4;
+}
+
+@media screen and (min-width: 375px) {
+
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    width: 330px;
+    height: 40px;
+    line-height: 20px;
+    color: white;
+
+}
+
+#rpBtn{
+    width:120px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    border: 5px solid #18D9D9;
+    background-color: white;
+    color: #18D9D9;
+}
+
+#rpBtn:hover {
+    background-color: #18D9D9; /* Green */
+    color: white;
+}
+
+#outBtn{
+    width:120px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    border: 5px solid #F26780;
+    background-color: white;
+    color: #F26780;
+}
+
+#outBtn:hover {
+    background-color: #F26780; /* Green */
+    color: white;
+}
+
+}
+
+@media screen and (min-width: 1024px) {
+
+
+    .info{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+        width: 500px;
+        height: 40px;
+        line-height: 20px;
+        color: white;
+    
+    }
+    
+    #rpBtn{
+        width:120px;
+        height: 40px;
+        border: none;
+        border-radius: 8px;
+        border: 5px solid #18D9D9;
+        background-color: white;
+        color: #18D9D9;
+    }
+    
+    #rpBtn:hover {
+        background-color: #18D9D9; /* Green */
+        color: white;
+    }
+    
+    #outBtn{
+        width:120px;
+        height: 40px;
+        border: none;
+        border-radius: 8px;
+        border: 5px solid #F26780;
+        background-color: white;
+        color: #F26780;
+    }
+    
+    #outBtn:hover {
+        background-color: #F26780; /* Green */
+        color: white;
+    }
+
+
+}
+
+
+
+/* 弹窗 (background) */
+.modal {
+    display: none; /* 默认隐藏 */
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+ 
+/* 弹窗内容 */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+ 
+/* 添加动画 */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+ 
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+ 
+/* 关闭按钮 */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+ 
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+ 
+.modal-header {
+    padding: 2px 16px;
+    background-color: #2D65A4;
+    color: white;
+}
+ 
+.modal-body {padding: 2px 16px;}
+ 
+#commentCon{
+    width:100px;
+    height: 40px;
+    background-color: white;
+    color: #18D9D9;
+    border: none;
+    border-radius: 8px;
+    border: 5px solid #18D9D9;
+}
+
+#commentCon:hover {
+    background-color: #18D9D9; /* Green */
+    color: white;
+}
+
+
+#commentDis{
+    width:100px;
+    height: 40px;
+    background-color: white;
+    color: #F26780;
+    border: none;
+    border-radius: 8px;
+    border: 5px solid #F26780;
+}
+
+#commentDis:hover {
+    background-color: #F26780; /* Green */
+    color: white;
+}
+
+
+.commentBtn{
+    display: flex;                       
+    justify-content: space-around;            
+    align-items: center; 
+
+}
+
+.newPassword{
+    color: #2763A7;
+    margin: 20px;
+}
+
+

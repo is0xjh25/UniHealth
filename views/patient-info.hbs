@@ -1,0 +1,128 @@
+ <link rel="stylesheet" type="text/css" href= "/css/patient-info.css">
+ <script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script>
+
+  <div id="main">
+         <div class="info">
+            <!-- 打开弹窗按钮 -->
+            <button id="rpBtn">Reset Password</button>
+            <button id="outBtn">Sign Out</button>
+        </div>
+
+        <div class="info">
+            <h2>Username:</h2>
+            <!--接口导入姓名-->
+            <h2>name1</h2>
+        </div>
+
+        <div class="info">
+            <h2>First Name:</h2>
+            <!--接口导入姓名-->
+            <h2>name1</h2>
+        </div>
+
+        <div class="info">
+            <h2>Last Name:</h2>
+            <!--接口导入姓名-->
+            <h2>name1</h2>
+        </div>
+
+        <div class="info">
+            <h2>Email:</h2>
+            <!--接口导入email-->
+            <h2>12345678@gmail.com</h2>
+        </div>
+
+        <div class="info">
+            <h2>Date Of Birth:</h2>
+            <!--接口导入姓名-->
+            <h2>09/10/2001</h2>
+        </div>
+
+        <div class="info">
+            <h2>Bio:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+            <!--接口导入简介-->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultricies ex at sagittis accumsan. Aenean gravida convallis ligula, quis elementum
+                 lorem lobortis at. Morbi eu sagittis sapien. Aliquam porta magna nunc</p>
+        </div>
+
+       
+        
+        <!-- 弹窗 -->
+        <div id="myModal" class="modal">
+ 
+               <!-- 弹窗内容 -->
+            <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h2>Reset Password</h2>
+
+                </div> 
+                <div>
+                    <form class="newPassword">
+                        Old Password: <input type="password" name="pwd1">
+                    </form>
+                    <form class="newPassword">
+                        New Password: <input type="password" name="pwd2">
+                    </form>
+                     <form class="newPassword">
+                        Confirm Password: <input type="password" name="pwd3">
+                    </form>
+
+                </div>
+
+                 <div class = commentBtn>
+                    <button id="commentCon">Confirm</button>
+                    <button id="commentDis">Discard</button>
+                 </div>
+
+             </div>
+ 
+         </div>
+
+    </div>
+
+
+
+
+     <!--JS代码-->
+     <script>
+        // 获取弹窗
+        var modal = document.getElementById('myModal');
+
+        // 打开弹窗的按钮对象
+        var btn = document.getElementById("rpBtn");
+
+        // 获取 <span> 元素，用于关闭弹窗 that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        //点击confirm弹窗
+        var btn2 = document.getElementById('commentCon')
+
+        //点击Discarf弹窗
+        var btn3 = document.getElementById('commentDis')
+
+        // 点击按钮打开弹窗
+         btn.onclick = function() {
+             modal.style.display = "block";
+        }
+
+        btn2.onclick = function(){
+            alert('Submit Successfully');
+        }
+
+        btn3.onclick = function(){
+            modal.style.display = "none";
+        }
+
+          // 点击 <span> (x), 关闭弹窗
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // 在用户点击其他地方时，关闭弹窗
+        window.onclick = function(event) {
+           if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>

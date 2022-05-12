@@ -17,4 +17,10 @@ patientRouter.post('/add-comment/:type', utilities.isLoggedInPatient, patientCon
 // patient's record
 patientRouter.get('/record', utilities.isLoggedInPatient, patientController.record)
 
+// patient's rank
+patientRouter.get('/rank', utilities.isLoggedInPatient, patientController.rank)
+
+// patient's info page
+patientRouter.get('/info', utilities.isLoggedInPatient, patientController.info)
+
 module.exports = patientRouter

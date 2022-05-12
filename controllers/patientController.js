@@ -104,19 +104,31 @@ const record = async (req, res, next) => {
 
 const rank = async (req, res, next) => {
 	try {
-		const today = new Date().toDateString()
-		const patientID = req.session.passport.user
-		const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
-		return res.render('patient-record', {date: today, record: record})
+	 const today = new Date().toDateString()
+	 const patientID = req.session.passport.user
+	 const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
+	 return res.render('patient-rank', {date: today, record: record})
 	} catch (err) {
-		return next(err)
+	 return next(err)
 	}
-}
-
-module.exports = {
+ }
+ 
+ const info = async (req, res, next) => {
+	try {
+	 const today = new Date().toDateString()
+	 const patientID = req.session.passport.user
+	 const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
+	 return res.render('patient-info', {date: today, record: record})
+	} catch (err) {
+	 return next(err)
+	}
+ }
+ 
+ module.exports = {
 	dashboard,
 	addData,
 	addComment,
 	record,
-	rank
-}
+	rank,
+	info
+ }
