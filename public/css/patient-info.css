@@ -9,7 +9,7 @@ body{
     background-color: #2D65A4;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 1023px) {
 
 
 .info{
@@ -204,7 +204,7 @@ body{
     display: flex;                       
     justify-content: space-around;            
     align-items: center; 
-
+    margin: 20px;
 }
 
 .newPassword{
