@@ -130,5 +130,5 @@ module.exports = {
 	record,
 	rank,
 	info,
-	resetPassword,
+	// resetPassword,
 }

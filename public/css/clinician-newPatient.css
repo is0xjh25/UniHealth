@@ -1,161 +1,72 @@
 /* General Setting*/
 :root {
-	--primary: #2763A7;
-	--secondary: #D6D8DA;
-	--link: #0ACCD9;
-	--navigate: #FFAD1F;
-	--text: white;
-	--title-font: "IMPACT";
-	--text-font: "Lato", sans-serif;
-    --text-unused:#D6D8DA;
-}
-
-body {
-	color: var(--text);
-	background-color: white;
-}
-
-br{
-    display:inline;
-    line-height:0.1%;
-}
-
-input{
-    width:300px;
-    height:40px;
-    font-size: 100%;
-    margin-right: 18.5%;
-    margin-top: 6%;
-    color: black;
-}
-
-#password{
-    width:350px;
-}
-#email{
-    margin-left: 2.5%;
-}
-
-
-
-#pass-confirm{
-    white-space: nowrap
-}
-
-#birth{
-    width: 250px;
-    margin-right: 5%;
+    --primary: #2763A7;
+    --secondary: #D6D8DA;
+    --link: #0ACCD9;
+    --navigate: #FFAD1F;
+    --text: white;
+    --title-font: "IMPACT";
+    --text-font: "Lato", sans-serif;
+       --text-unused:#D6D8DA;
+   }
+   
+   body {
+    color: var(--text);
     background-color: white;
-}
-select{
-    font-size: 80%;
-    margin-right: 14%;
-}
-
-#first-name{
-    margin-right: 9%;
-}
-
-#navbar{
-    background-color: var(--primary);
-}
-
-#favicon{
-    height: 2%;
-    width:6%;
-    z-index: 1;
-    /* padding-right: 100%;
-    background-color: #2763A7; */
-}
-
-#dashboard_w{
-    position:absolute;
-    bottom: -30%;
-    left: 150%;
-    font-size: 350%;
-    font-family: var(--title-font);
-}
-
-#dashboard{
-    position:absolute;
-    top:4.5%;
-    left: 9%;
-    color: var(--text-unused);
-    font-size: 100%;
-}
-
-#comment{
-    position:absolute;
-    top:5.2%;
-    left: 30%;
-    color: var(--link);
-    font-size: 100%;
-    color:var(--text-unused);
-}
-
-#comment_w{
-    position:absolute;
-    bottom: -17%;
-    left: 150%;
-    font-size: 370%;
-    font-family: var(--title-font);
-}
-
-
-#new_patient{
-    position:absolute;
-    top:4.6%;
-    left: 50%;
-    color: var(--link);
-    font-size: 120%;
-    color:var(--text-unused);
-}
-
-#new_patient_w{
-    position:absolute;
-    bottom: -90%;
-    left: 150%;
-    font-size: 280%;
-    white-space:nowrap;
-    height:200%;
-    font-family: var(--title-font);
-}
-a{
-    color:var(--text-unused);
-}
-
-#go_back{
-    position:absolute;
-    top:4.6%;
-    left: 86%;
-    font-size: 110%;
-    color:var(--text-unused);
-}
-
-#go_back_w{
-    position:absolute;
-    bottom: -90%;
-    left: 100%;
-    font-size: 300%;
-    white-space:nowrap;
-    height:200%;
-    font-family: var(--text-unused);
-}
-
-.adding{
-    height: 50%;
-    background-color:var(--primary);
-    margin-top: 5%;
-    font-size: 150%;
-    margin-left: 3%;
-    margin-right: 3%;
-}
-
-#submit{
-    font-size: 100%;
-    margin-left: 90%;
-}
-
-/* #enter-email{
-    margin-right: 25%;
-} */
+   }
+   
+   br{
+       display:inline;
+       line-height:0.1%;
+   }
+   
+   input{
+       width:300px;
+       height:40px;
+       font-size: 100%;
+       margin-right: 18.5%;
+       margin-top: 6%;
+       color: black;
+   }
+   
+   #password{
+       width:350px;
+   }
+   #email{
+       margin-left: 2.5%;
+   }
+   
+   
+   
+   #pass-confirm{
+       white-space: nowrap
+   }
+   
+   #birth{
+       width: 250px;
+       margin-right: 5%;
+       background-color: white;
+   }
+   select{
+       font-size: 80%;
+       margin-right: 14%;
+   }
+   
+   #first-name{
+       margin-right: 9%;
+   }
+   
+   
+   .adding{
+       height: 50%;
+       background-color:var(--primary);
+       margin-top: 5%;
+       font-size: 150%;
+       margin-left: 3%;
+       margin-right: 3%;
+   }
+   
+   #submit{
+       font-size: 100%;
+       margin-left: 90%;
+   }

@@ -9,7 +9,6 @@ const clinicianSchema = new mongoose.Schema({
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
     phone: { type: String, required: true },
-    bio: { type: String },
     patients: [{_patientID: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient' }}],
     notes: [{
         patient: {_patientID: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient'}},
@@ -19,9 +18,10 @@ const clinicianSchema = new mongoose.Schema({
 })
 
 clinicianSchema.methods.verifyPassword = function (password, callback) {
-    bcrypt.compare(password, this.password, (err, valid) => {
-        callback(err, valid)
-    })
+    // bcrypt.compare(password, this.password, (err, valid) => {
+    //     callback(err, valid)
+    // })
+    return bcrypt.compareSync(password, this.password)
 }
 
 const SALT_FACTOR = 10

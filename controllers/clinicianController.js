@@ -35,6 +35,10 @@ const createPatient = async (req, res, next) => {
     }
 }
 
+const comment = async (req, res, next) => {
+    return res.render('clinician-comment')
+}
+
 const addPatient = async (req, res, next) => {
     try {
         const clinician = await Clinician.findById(req.session.passport.user)
@@ -67,7 +71,7 @@ const dashboard = async (req, res, next) => {
             clinician.patients.map(async (p) => {
                 let patient = await Patient.findById(p._id).lean()
                 if (patient) {
-        			const record = await DailyRecord.findOne( {$and: [{"_patientID": patient._id}, {"date": today}]}).lean()
+           const record = await DailyRecord.findOne( {$and: [{"_patientID": patient._id}, {"date": today}]}).lean()
                     patients.push({patient: patient, record: record})
                 } 
             })
@@ -115,4 +119,5 @@ module.exports = {
     patientManagement,
     patientInfo,
     newPatient,
+    comment,
 }
