@@ -1,42 +1,45 @@
 <script src="https://kit.fontawesome.com/76a0594e6c.js" crossorigin="anonymous"></script>
 <link rel="stylesheet"  href="/css/login-role.css">
-	<section id ="desktop-login-role">
-		<a id="goback" href="/login"><i><i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></i>Back</a>
-		<section class="sub">	
-			<img id="favicon_d" src="/images/favicon.png" >
-		</section >
-		<h4 id  = "sign_in_s">Sign in as</h4>
+ <section id ="desktop-login-role">
+  <a id="goback" href="/login"><i><i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></i>Back</a>
+  <section class="sub"> 
+   <img id="favicon_d" src="/images/favicon.png" >
+  </section >
+  <h4 id  = "sign_in_s">Sign in as</h4>
 
-		<section class="role">
-			<h3 id  = "role_ss">Staff</h3>
-		</section>
-		<section class="account-password_s">
-			<form action="login-clinician" method="POST">
-				<label for="email" id="acc_s">Email</label>
-				<input type="text" name = "email" id="enter-email_s"/>
-				<label for="password" id="passw_s">Password:</label>
-				<input type="password" name="password" required id="enter-pass"/>
-				<br></br>
-				<input type="submit" value="Submit" id="signin_s"/>
-			</form>
-		</section>
-		<a id = "about_unit_health_s" href="/about-us" > <i class="fa-solid fa-circle-info fa-1x" ></i> About Unit Health</a>
-		<a  id = "about_diabetes_s" href="/about-diabetes" ><i class="fa-solid fa-circle-info fa-1x"></i> About Diabetes</a>
-	</section>
-		</section>
+  <section class="role">
+   <h3 id  = "role_ss">Staff</h3>
+  </section>
+  <section class="account-password_s">
+   {{#if message}}
+          <div id="error" style="color:red;text-align:center;" class="">{{message}}</div>
+        {{/if}}
+   <form action="login-clinician" method="POST">
+    <label for="email" id="acc_s">Email</label>
+    <input type="text" name = "email" id="enter-email_s"/>
+    <label for="password" id="passw_s">Password:</label>
+    <input type="password" name="password" required id="enter-pass"/>
+    <br></br>
+    <input type="submit" value="Submit" id="signin_s"/>
+   </form>
+  </section>
+  <a id = "about_unit_health_s" href="/about-us" > <i class="fa-solid fa-circle-info fa-1x" ></i> About Unit Health</a>
+  <a  id = "about_diabetes_s" href="/about-diabetes" ><i class="fa-solid fa-circle-info fa-1x"></i> About Diabetes</a>
+ </section>
+  </section>
 
-	<section id ="mobile-login">
-		<section class="sub">	
-			<img id="favicon" src="/images/favicon.png" >
-		</section >
-		<section class="account-password">
-			<label for="email" id="acc">Email:</label>
-				<input type="text" name="email" id="enter-email"/>
-				<br></br>
-				<label for="password" id="passw">Password:</label>
-				<input type="password" name="password"/>
-			<button id = 'signin' onclick=turn_dashbord()>Sign In</button>
-		</section>
-		<a id = "about_unit_health_m" href="/about-us" > <i class="fa-solid fa-circle-info fa-1x" ></i> About Unit Health</a>
-		<a  id = "about_diabetes_m" href="/about-diabetes" ><i class="fa-solid fa-circle-info fa-1x"></i> About Diabetes</a>
-	</section>
+ <section id ="mobile-login">
+  <section class="sub"> 
+   <img id="favicon" src="/images/favicon.png" >
+  </section >
+  <section class="account-password">
+   <label for="email" id="acc">Email:</label>
+    <input type="text" name="email" id="enter-email"/>
+    <br></br>
+    <label for="password" id="passw">Password:</label>
+    <input type="password" name="password"/>
+   <button id = 'signin' onclick=turn_dashbord()>Sign In</button>
+  </section>
+  <a id = "about_unit_health_m" href="/about-us" > <i class="fa-solid fa-circle-info fa-1x" ></i> About Unit Health</a>
+  <a  id = "about_diabetes_m" href="/about-diabetes" ><i class="fa-solid fa-circle-info fa-1x"></i> About Diabetes</a>
+ </section>

@@ -24,6 +24,6 @@ patientRouter.get('/rank', utilities.isLoggedInPatient, patientController.rank)
 patientRouter.get('/info', utilities.isLoggedInPatient, patientController.info)
 
 // patient's info
-patientRouter.get('/reset-password', utilities.isLoggedInPatient, patientController.resetPassword)
+// patientRouter.get('/reset-password', utilities.isLoggedInPatient, patientController.resetPassword)
 
 module.exports = patientRouter

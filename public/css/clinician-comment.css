@@ -1,0 +1,58 @@
+/* General Setting*/
+:root {
+    --primary: #2763A7;
+    --secondary: #D6D8DA;
+    --link: #0ACCD9;
+    --navigate: #FFAD1F;
+    --text: white;
+    --title-font: "IMPACT";
+    --text-font: "Lato", sans-serif;
+       --text-unused:#D6D8DA;
+   }
+   
+   body {
+    color: var(--text);
+    background-color: white;
+   }
+   
+   
+   
+   #user{
+       font-size: 200%;
+       color: #0ACCD9;
+       padding-bottom: 0;
+   }
+   #name{
+       margin-top: 1%;
+       margin-left: 7%;
+       font-size: 130%;
+       margin-bottom: -2%;
+       color:black;
+   }
+   .patient-comment{
+       padding-top: 0;
+       
+   }
+   
+   #time{
+       margin-left: 70%;
+       margin-top: -3%;
+       font-size: 120%;
+       margin-bottom: 0%;
+       color: black;
+   }
+   #subject{
+       padding-left: 10%;
+       font-size: 100%;
+       margin-bottom: 0%;
+       color:black;
+       margin-top: 0%;
+   }
+   #sentence{
+       padding-left: 15%;
+       font-size: 90%;
+       margin-bottom: 3%;
+       margin-top: 0;
+       color:black;
+       margin-bottom: 0;
+   }

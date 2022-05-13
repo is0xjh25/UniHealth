@@ -11,8 +11,12 @@ clinicianRouter.get('/dashboard', utilities.isLoggedInClinician, clinicianContro
 // patient info
 clinicianRouter.get('/patient-info/:patientID', utilities.isLoggedInClinician, clinicianController.patientInfo)
 
+// add new patient
 clinicianRouter.get('/add-patient', utilities.isLoggedInClinician, clinicianController.newPatient)
 /* Testing */
+
+// patient comment
+clinicianRouter.get('/comment', utilities.isLoggedInClinician,clinicianController.comment)
 
 // create new clinician
 clinicianRouter.post('/create-clinician',  clinicianController.createClinician)
