@@ -6,7 +6,7 @@ const dailyRecordSchema = new mongoose.Schema({
     date: { type: String, require: true },
     bloodGlucoseLevelData: { type: Number },
     bloodGlucoseLevelComment: { type: String },
-    bloodGlucoseLevelTime: {type: Date },
+    bloodGlucoseLevelTime: { type: Date },
     weightData: { type: Number },
     weightComment: { type: String },
     weightTime: { type: Date },
