@@ -6,26 +6,23 @@
 
 <div>
     {{> clinician-navbar}}
-    <section id = "info_part">
-            <img id="photo" src="/images/docotr_photo.png" >
-            <div id = "edit">Edit Profile</div>
-            <br></br>
-            <section id = "detail">
-            <h1 id = "fullname"> Full Name:{{clinician.firstname}} {{clinician.lastname}}</h1>
-            <h1 id = "phone"> Phone:{{clinician.phone}}</h1>
-            <h1 id = "email"> Email:{{clinician.email}}</h1>
-            </section>
+    <section id="info_part">
+      <img id="photo" src="/images/docotr_photo.png" >
+      <div id="edit">Edit Profile</div>
+      <br></br>
+      <section id = "detail">
+        <h1 id="fullname"> Full Name:{{clinician.firstname}} {{clinician.lastname}}</h1>
+        <h1 id="phone"> Phone:{{clinician.phone}}</h1>
+        <h1 id="email"> Email:{{clinician.email}}</h1>
+      </section>
     </section>
-
-
-
-    <section id = "data">
-        <section id = icon>
+    <section id="data">
+        <section id="icon">
         <i class="fa-solid fa-magnifying-glass"></i>
         </section>
-        <table id = "record">
-            <h1 id = 'search'>Search By Name or ID...</h1>
-            <h6 id = "date">{{date}}</h6>
+        <table id="record">
+            <h1 id="search">Search By Name or ID...</h1>
+            <h6 id="date">{{date}}</h6>
             <tr>
               <th>Patient Name</th>
               <th>Gender</th>
@@ -36,7 +33,7 @@
             </tr>
             {{#each patients}}
               <tr>
-                <td><a href="/clinician/patient-info/{{this.patient._id}}">{{this.patient.firstname}} {{this.patient.lastname}}</a></td>
+                <td><a href="/clinician/patient-info/{{this.patient._id}}&today">{{this.patient.firstname}} {{this.patient.lastname}}</a></td>
                 <td>{{this.patient.gender}}</td>
                 {{#checkThreshold this.record.bloodGlucoseLevelData this.patient.management.bloodGlucoseLevel}}{{/checkThreshold}}
                 {{#checkThreshold this.record.weightData this.patient.management.weight}}{{/checkThreshold}}

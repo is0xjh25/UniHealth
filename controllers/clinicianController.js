@@ -52,8 +52,8 @@ const dashboard = async (req, res) => {
                 } 
             })
         )
-        return res.render('test-clinician', {date: today, clinician: clinician, patients: patients})
-        // return res.render('clinician-dashboard', {date: today, clinician: clinician, patients: patients})
+        // return res.render('test-clinician', {date: today, clinician: clinician, patients: patients})
+        return res.render('clinician-dashboard', {date: today, clinician: clinician, patients: patients})
     } catch (err) {
         console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})

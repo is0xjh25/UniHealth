@@ -14,6 +14,19 @@ const dashboard = async (req, res) => {
 	}
 }
 
+const dashboardByDate = async (req, res) => {
+	try {
+		const patientID = req.session.passport.user
+		const patient = await Patient.findById(patientID).lean()
+		const today = new Date().toDateString()
+		const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
+		return res.render('patient-dashboard', {date: today, patient: patient, record: record})
+	} catch (err) {
+		console.log(err)
+		return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
+	}
+}
+
 const addData = async (req, res) => {
 	try {
 		const patientID = req.session.passport.user
@@ -106,11 +119,11 @@ const rank = async (req, res) => {
 	}
 }
 
-const info = async (req, res, next) => {
+const profile = async (req, res, next) => {
 	try {
 		const patientID = req.session.passport.user
 		const patient = await Patient.findById(patientID).lean()
-		return res.render('patient-info', {patient: patient})
+		return res.render('patient-profile', {patient: patient})
 	} catch (err) {
 		console.log(err)
 		return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
@@ -132,10 +145,11 @@ const resetPassword = async (req, res) => {
  
 module.exports = {
 	dashboard,
+	dashboardByDate,
 	addData,
 	addComment,
 	record,
 	rank,
-	info,
+	profile,
 	resetPassword,
 }
