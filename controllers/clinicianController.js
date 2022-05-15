@@ -52,7 +52,8 @@ const dashboard = async (req, res) => {
                 } 
             })
         )
-        return res.render('clinician-dashboard', {date: today, clinician: clinician, patients: patients})
+        return res.render('test-clinician', {date: today, clinician: clinician, patients: patients})
+        // return res.render('clinician-dashboard', {date: today, clinician: clinician, patients: patients})
     } catch (err) {
         console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
@@ -113,11 +114,56 @@ const newPatient = async (req, res) => {
 
 const comment = async (req, res) => {
     try {
-        return res.render('clinician-comment')
-    } catch {
+        const comments = []
+        const clinician = await Clinician.findById(req.session.passport.user)
+        .populate({
+            path: 'patients._id',
+            model: 'Patient',
+            populate: {
+              path: 'dailyRecords._id',
+              model: 'DailyRecord'
+            }
+        })
+        await Promise.all(
+            clinician.patients.map(async (p) => {
+                const records = p._id.dailyRecords
+                records.map((r) => {
+                    const type = ['bloodGlucoseLevel', 'weight', 'doesesOfInsulinTaken', 'exercise']
+                    type.map((t) => {
+                        if (r._id[(t+"Comment")] !== undefined) {
+                            const comment = {
+                                patientID: p._id,
+                                type: t,
+                                data: r._id[t+"Data"],
+                                comment: r._id[t+"Comment"],
+                                time: r._id[t+"Time"]
+                            }
+                            comments.push(comment)    
+                        }
+                    })
+                })
+            })
+        )
+        comments.sort(({time: a}, {time: b}) => b.getTime() - a.getTime())
+        res.send(comments)
+        // return res.render('clinician-comment', {comments: comments})
+    } catch (err) {
         console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
     }
+}
+
+const resetPassword = async (req, res) => {
+	try {
+    	const clinicianID = req.session.passport.user._id
+        const clinician = await Clinician.findById(clinicianID)
+    	const newPassword = clinician.generateHash(req.body.password)
+    	await Patient.findByIdAndUpdate(patientID,{$set:{"password":newPassword}})		
+		return res.render('clinician-info', {clinician: clinician})
+	} catch (err) {
+		console.log(err)
+    	return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
+	}
 }
 
 module.exports = {
@@ -130,4 +176,5 @@ module.exports = {
     addPatient,
     newPatient,
     comment,
+    resetPassword,
 }

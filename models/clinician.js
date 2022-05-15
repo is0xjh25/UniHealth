@@ -9,9 +9,9 @@ const clinicianSchema = new mongoose.Schema({
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
     phone: { type: String, required: true },
-    patients: [{_patientID: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient' }}],
+    patients: [{_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient' }}],
     notes: [{
-        patient: {_patientID: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient'}},
+        patient: { _id: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient' }},
         createBy: { type: Date, default: Date.now, required: true },
         content: { type: String, required: true },
     }]

@@ -49,7 +49,6 @@ const addComment = async (req, res) => {
 		const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]})
 		if (record) {
 			await record.updateOne({[req.params.type + "Comment"]: req.body.data}, { upsert: true })
-			return res.redirect('/patient/dashboard')      
 		} else {
 			const newRecord = new DailyRecord({
 				_patientID: patientID,
@@ -59,8 +58,8 @@ const addComment = async (req, res) => {
 			await newRecord.save()
 			await patient.dailyRecords.addToSet(newRecord._id)
 			await patient.save()
-			return res.redirect('/patient/dashboard')      
-		}			
+		}
+		return res.redirect('/patient/dashboard')      
 	} catch (err) {
 		console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
@@ -93,6 +92,7 @@ const rank = async (req, res) => {
 				let rate = Math.round(records.length / totalDays * 10000) / 100
 				let info = {
 					_patientID: p._id,
+					username: p.username,
 					records: rate
 				}
 				rank.push(info) 
@@ -119,12 +119,14 @@ const info = async (req, res, next) => {
  
 const resetPassword = async (req, res) => {
 	try {
-		const patientID = req.session.passport.user
-		const patient = await Patient.findById(patientID).lean()
-	 	return res.render('patient-info', {patient: patient})
+    	const patientID = req.session.passport.user._id
+		const patient = await Patient.findById(patientID)
+    	const newPassword = patient.generateHash(req.body.password)
+    	await Patient.findByIdAndUpdate(patientID,{$set:{"password":newPassword}})		
+		return res.render('patient-info', {patient: patient})
 	} catch (err) {
 		console.log(err)
-        return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
+    	return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
 	}
 }
  

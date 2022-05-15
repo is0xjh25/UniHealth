@@ -30,4 +30,7 @@ clinicianRouter.post('/add-patient', utilities.isLoggedInClinician, clinicianCon
 // manage patient
 clinicianRouter.post('/patient-management', utilities.isLoggedInClinician, clinicianController.patientManagement)
 
+// clinician reset password
+clinicianRouter.post('/reset-password', utilities.isLoggedInClinician, clinicianController.resetPassword)
+
 module.exports = clinicianRouter
