@@ -1,6 +1,6 @@
- <link rel="stylesheet" type="text/css" href= "/css/patient-info.css">
+ <link rel="stylesheet" type="text/css" href= "/css/patient-profile.css">
  <script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script>
- <script type="text/javascript" src="/UniHealth/public/js/patient-info.js"></script>
+ <script type="text/javascript" src="/js/patient-profile.js"></script>
 
 {{> patient-navbar}}
   <div id="main">
@@ -56,28 +56,27 @@
                   <h2>Reset Password</h2>
                 </div> 
 
-                <form action="">
+                <form action="/patient/reset-password" method="POST">
                     <div class="newPassword"> 
-                        <label   for="opw">Old Password:</label>
-                        <input type="password" name="data" value="" min="8"/>
+                        <label for="oldPassword">Old Password:</label>
+                        <input type="password" name="oldPassword" min="8"/>
                     </div>   
                         
                     <div class="newPassword"> 
-                         <label for="npw">New Password:</label>
-                        <input type="password" name="data" value="" min="8"/>
+                        <label for="newPassword">New Password:</label>
+                        <input type="password" name="newPassword" min="8"/>
                     </div> 
 
                     <div class="newPassword"> 
-                         <label for="npw">Confirm Password:</label>
-                        <input type="password" name="data" value="" min="8"/>
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" name="confrimPassword" min="8"/>
                     </div> 
 
-                     <div class = commentBtn>
+                     <div class ="commentBtn">
                         <input id="commentCon" type="submit" value="Confirm"/>
                         <button id="commentDis">Discard</button>
                     </div>
                  </form>
-
              </div>
          </div>
     </div>

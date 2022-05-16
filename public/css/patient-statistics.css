@@ -1,0 +1,186 @@
+body{
+    background-color: #2763A7;
+}
+
+@media screen and (min-width: 375px) {
+
+#main{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 360px;
+    height: 600px;
+    line-height: 20px;
+    border-style: solid;
+    border-color: #2D65A4;
+    background-color:#4A7C98;
+    overflow-y:scroll;
+
+}
+
+table
+{
+    width: 330px;
+    border-collapse:collapse;
+    background-color: white;
+}
+
+th{
+    height:50px;
+}
+
+td{
+    text-align: center;
+    height: 30px;
+}
+
+table, th, td
+{
+    border: 1px solid black;
+}
+
+.mainTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboveTable1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.aboveTable2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    #main{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 700px;
+        height: 600px;
+        line-height: 20px;
+        border-style: solid;
+        border-color: #2D65A4;
+        background-color:#4A7C98;
+        overflow-y:scroll;
+    
+    }
+    
+    table
+    {
+        width: 650px;
+        border-collapse:collapse;
+        background-color: white;
+    }
+    
+    th{
+        height:50px;
+    }
+    
+    td{
+        text-align: center;
+        height: 30px;
+    }
+    
+    table, th, td
+    {
+        border: 1px solid black;
+    }
+    
+    .mainTable{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .aboveTable1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    
+    }
+    
+    .aboveTable2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+}
+
+@media screen and (min-width: 1800px) {
+
+    #main{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 1000px;
+        height: 800px;
+        line-height: 20px;
+        border-style: solid;
+        border-color: #2D65A4;
+        background-color:#4A7C98;
+        overflow-y:scroll;
+    
+    }
+    
+    table
+    {
+        width: 900px;
+        border-collapse:collapse;
+        background-color: white;
+    }
+    
+    th{
+        height:50px;
+    }
+    
+    td{
+        text-align: center;
+        height: 30px;
+    }
+    
+    table, th, td
+    {
+        border: 1px solid black;
+    }
+    
+    .mainTable{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .aboveTable1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    
+    }
+    
+    .aboveTable2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    
+    }
