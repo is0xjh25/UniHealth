@@ -17,13 +17,11 @@ clinicianRouter.get('/comment', utilities.isLoggedInClinician, clinicianControll
 // new patient page
 clinicianRouter.get('/add-patient', utilities.isLoggedInClinician, clinicianController.newPatient)
 
-
 // patient note page ***
 clinicianRouter.get('/note/:patientID', utilities.isLoggedInClinician, clinicianController.note)
 
 // create patient note ***
 clinicianRouter.post('/note/:patientID', utilities.isLoggedInClinician, clinicianController.newNote)
-
 
 // edit patient's supporting message
 clinicianRouter.post('/support-message/:patientID', utilities.isLoggedInClinician, clinicianController.supportMessage)

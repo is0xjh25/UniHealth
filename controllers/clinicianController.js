@@ -188,12 +188,11 @@ const newNote = async (req, res) => {
 
 const supportMessage = async (req, res) => {
     try {
-        const clinician = await Clinician.findById(req.session.passport.user)
         const patient = await Patient.findById(req.params.patientID)
-        const content = req.body.content
-        clinician.notes.push({patient: patient, createBy: new Date(), content: content})
-        clinician.save()
-        return res.redirect('/clinician/note')
+        const management = {...patient.management}
+        management[supportMessage] = req.body.content
+        await patient.updateOne({$set: {"management": management}}, { upsert: true })      
+        return res.redirect(`/clinician/patient-info/${patientID}&today`)
     } catch (err) {
         console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
