@@ -17,8 +17,6 @@ clinicianRouter.get('/comment', utilities.isLoggedInClinician, clinicianControll
 // new patient page
 clinicianRouter.get('/add-patient', utilities.isLoggedInClinician, clinicianController.newPatient)
 
-// add an existing patient
-clinicianRouter.post('/add-patient', utilities.isLoggedInClinician, clinicianController.addPatient)
 
 // patient note page ***
 clinicianRouter.get('/note/:patientID', utilities.isLoggedInClinician, clinicianController.note)
@@ -26,20 +24,6 @@ clinicianRouter.get('/note/:patientID', utilities.isLoggedInClinician, clinician
 // create patient note ***
 clinicianRouter.post('/note/:patientID', utilities.isLoggedInClinician, clinicianController.newNote)
 
-// clinician's profile page
-// clinicianRouter.get('/profile', utilities.isLoggedInClinician, clinicianController.profile)
-
-// edit clinician's profile
-// clinicianRouter.post('/profile', utilities.isLoggedInClinician, clinicianController.editProfile)
-
-// clinician reset password ***
-clinicianRouter.post('/reset-password', utilities.isLoggedInClinician, clinicianController.resetPassword)
-
-// patient's profile page
-// clinicianRouter.get('/patient-profile/:patientID', utilities.isLoggedInClinician, clinicianController.patientProfile)
-
-// edit patient's profile
-// clinicianRouter.post('/patient-profile/:patientID', utilities.isLoggedInClinician, clinicianController.editPatientProfile)
 
 // edit patient's supporting message
 clinicianRouter.post('/support-message/:patientID', utilities.isLoggedInClinician, clinicianController.supportMessage)
@@ -54,5 +38,8 @@ clinicianRouter.post('/create-patient',  clinicianController.createPatient)
 
 // manage patient
 clinicianRouter.post('/patient-management', utilities.isLoggedInClinician, clinicianController.patientManagement)
+
+// add an existing patient
+clinicianRouter.post('/add-patient', utilities.isLoggedInClinician, clinicianController.addPatient)
 
 module.exports = clinicianRouter
