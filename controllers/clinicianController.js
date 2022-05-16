@@ -80,9 +80,13 @@ const patientManagement = async (req, res) => {
 
 const patientInfo = async (req, res) => {
     try {
-        const today = new Date().toDateString()
+        if (req.params.date === 'today') {
+            const date = new Date().toDateString()
+        } else {
+            const date = new Date(req.params.date).toDateString()
+        }
         const patient = await Patient.findById(req.params.patientID).lean()
-        const record = await DailyRecord.findOne( {$and: [{"_patientID": patient._id}, {"date": today}]}).lean()
+        const record = await DailyRecord.findOne( {$and: [{"_patientID": patient._id}, {"date": date }]}).lean()
         return res.render('clinician-patient-info', {date: today, patient: patient, record: record})
     } catch (err) {
         console.log(err)
@@ -166,6 +170,35 @@ const resetPassword = async (req, res) => {
 	}
 }
 
+const note = async (req, res) => {
+    try {
+        const clinician = await Clinician.findById(req.session.passport.user)
+        const patient = await Patient.findById(req.params.patientID)
+        const notes = []
+        clinician.notes.map((n) => {
+            if (n.patient === patient) result.push(n)
+        })
+        return res.send(notes)
+    } catch (err) {
+        console.log(err)
+        return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
+    }
+}
+
+const newNote = async (req, res) => {
+    try {
+        const clinician = await Clinician.findById(req.session.passport.user)
+        const patient = await Patient.findById(req.params.patientID)
+        const content = req.body.content
+        clinician.notes.push({patient: patient, createBy: new Date(), content: content})
+        clinician.save()
+        return res.redirect('/clinician/note')
+    } catch (err) {
+        console.log(err)
+        return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
+    }
+}
+
 module.exports = {
     getAllUsers,
     createClinician,
@@ -177,4 +210,7 @@ module.exports = {
     newPatient,
     comment,
     resetPassword,
+    note,
+    newNote,
+    supportMessage
 }

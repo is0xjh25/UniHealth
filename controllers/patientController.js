@@ -18,8 +18,8 @@ const dashboardByDate = async (req, res) => {
 	try {
 		const patientID = req.session.passport.user
 		const patient = await Patient.findById(patientID).lean()
-		const today = new Date().toDateString()
-		const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
+		const date = new Date(req.params.date).toDateString()
+		const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": date}]}).lean()
 		return res.render('patient-dashboard', {date: today, patient: patient, record: record})
 	} catch (err) {
 		console.log(err)
@@ -134,8 +134,11 @@ const resetPassword = async (req, res) => {
 	try {
     	const patientID = req.session.passport.user._id
 		const patient = await Patient.findById(patientID)
-    	const newPassword = patient.generateHash(req.body.password)
-    	await Patient.findByIdAndUpdate(patientID,{$set:{"password":newPassword}})		
+        console.log(req.body.oldPassword)
+        console.log(req.body.newPassword)
+        console.log(req.body.confirmPassword)
+    	// const newPassword = patient.generateHash(req.body.password)
+    	// await Patient.findByIdAndUpdate(patientID,{$set:{"password":newPassword}})		
 		return res.render('patient-info', {patient: patient})
 	} catch (err) {
 		console.log(err)

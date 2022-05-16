@@ -8,7 +8,7 @@ const clinicianController = require('../controllers/clinicianController')
 // clinician homepage
 clinicianRouter.get('/dashboard', utilities.isLoggedInClinician, clinicianController.dashboard)
 
-// patient daily info page ***
+// patient daily info page
 clinicianRouter.get('/patient-info/:patientID&:date', utilities.isLoggedInClinician, clinicianController.patientInfo)
 
 // patient comment page ***
@@ -20,11 +20,11 @@ clinicianRouter.get('/add-patient', utilities.isLoggedInClinician, clinicianCont
 // add an existing patient
 clinicianRouter.post('/add-patient', utilities.isLoggedInClinician, clinicianController.addPatient)
 
-// patient note page
-// clinicianRouter.get('/note/:patientID', utilities.isLoggedInClinician, clinicianController.note)
+// patient note page ***
+clinicianRouter.get('/note/:patientID', utilities.isLoggedInClinician, clinicianController.note)
 
-// edit patient note
-// clinicianRouter.post('/note/:patientID', utilities.isLoggedInClinician, clinicianController.editNote)
+// create patient note ***
+clinicianRouter.post('/note/:patientID', utilities.isLoggedInClinician, clinicianController.newNote)
 
 // clinician's profile page
 // clinicianRouter.get('/profile', utilities.isLoggedInClinician, clinicianController.profile)
@@ -41,10 +41,8 @@ clinicianRouter.post('/reset-password', utilities.isLoggedInClinician, clinician
 // edit patient's profile
 // clinicianRouter.post('/patient-profile/:patientID', utilities.isLoggedInClinician, clinicianController.editPatientProfile)
 
-
 // edit patient's supporting message
-// clinicianRouter.post('/support-message/:patientID', utilities.isLoggedInClinician, clinicianController.editSupportMessage)
-
+clinicianRouter.post('/support-message/:patientID', utilities.isLoggedInClinician, clinicianController.supportMessage)
 
 /* Testing */
 
