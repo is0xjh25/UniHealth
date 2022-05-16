@@ -49,7 +49,6 @@ patientSchema.methods.generateHash = function(password){
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10),null)
 }
 
-
 patientSchema.pre('save', function save(next) {
     const user = this
     if (!user.isModified('password')) return next()

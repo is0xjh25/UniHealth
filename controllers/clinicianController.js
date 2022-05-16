@@ -157,19 +157,6 @@ const comment = async (req, res) => {
     }
 }
 
-const resetPassword = async (req, res) => {
-	try {
-    	const clinicianID = req.session.passport.user._id
-        const clinician = await Clinician.findById(clinicianID)
-    	const newPassword = clinician.generateHash(req.body.password)
-    	await Patient.findByIdAndUpdate(patientID,{$set:{"password":newPassword}})		
-		return res.render('clinician-info', {clinician: clinician})
-	} catch (err) {
-		console.log(err)
-    	return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
-	}
-}
-
 const note = async (req, res) => {
     try {
         const clinician = await Clinician.findById(req.session.passport.user)
@@ -223,7 +210,6 @@ module.exports = {
     addPatient,
     newPatient,
     comment,
-    resetPassword,
     note,
     newNote,
     supportMessage

@@ -123,23 +123,28 @@ const profile = async (req, res) => {
 	try {
 		const patientID = req.session.passport.user
 		const patient = await Patient.findById(patientID).lean()
-		return res.render('patient-profile', {patient: patient})
+		return res.render('patient-profile', {patient: patient, message: req.flash('message')})
 	} catch (err) {
 		console.log(err)
 		return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
 	}
 }
  
-const resetPassword = async (req, res) => {
+const resetPassword = async (req, res, next) => {
 	try {
     	const patientID = req.session.passport.user._id
 		const patient = await Patient.findById(patientID)
-        console.log(req.body.oldPassword)
-        console.log(req.body.newPassword)
-        console.log(req.body.confirmPassword)
-    	// const newPassword = patient.generateHash(req.body.password)
-    	// await Patient.findByIdAndUpdate(patientID,{$set:{"password":newPassword}})		
-		return res.render('patient-info', {patient: patient})
+        if (!patient.verifyPassword(req.body.oldPassword)) {
+            req.flash('message', 'The old passowrd is incorrect.')
+            return res.redirect('/patient/profile')
+        } else if (req.body.newPassword !== req.body.confirmPassword) {
+            req.flash('message', 'New password and confirm password do not match.')
+            return res.redirect('/patient/profile') 
+        }
+    	const newPassword = patient.generateHash(req.body.newPassword)
+    	await Patient.findByIdAndUpdate(patientID, {$set:{"password": newPassword}})
+        req.flash('message', 'Password has been updated successfully.')
+		return res.redirect('/patient/profile')
 	} catch (err) {
 		console.log(err)
     	return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
