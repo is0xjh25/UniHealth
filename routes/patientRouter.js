@@ -8,7 +8,7 @@ const patientController = require('../controllers/patientController')
 // patient homepage
 patientRouter.get('/dashboard', utilities.isLoggedInPatient, patientController.dashboard)
 
-// patient homepage by date ***
+// patient homepage by date
 patientRouter.get('/dashboard/:date', utilities.isLoggedInPatient, patientController.dashboardByDate)
 
 // add data for daily record
@@ -17,7 +17,7 @@ patientRouter.post('/add-data/:type', utilities.isLoggedInPatient, patientContro
 // add comment for daily record
 patientRouter.post('/add-comment/:type', utilities.isLoggedInPatient, patientController.addComment)
 
-// patient's record page ***
+// patient's record page
 patientRouter.get('/record', utilities.isLoggedInPatient, patientController.record)
 
 // patient's rank page ***
