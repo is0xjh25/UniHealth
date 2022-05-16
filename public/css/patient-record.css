@@ -8,9 +8,71 @@
 	--text-font: "Lato", sans-serif;
     --text-unused:#D6D8DA;
 }
+.topmenu{
+    background-color: white;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.home{
+    color: var(--text-unused);
+    font-size: 150%;
+    margin-top: 1%;
+    padding-left: 0.5%;
+}
+#home-w{
+    font-size: 220%;
+    margin-top: -45%;
+    padding-left: 60%;
+    text-decoration: none;
+}
+.p1{
+    height: 85px;
+}
+
+
+body{
+    background-color: #2D65A4;
+}
+a{
+    color: white;
+}
    
 /*mobile页面样式 */
-@media screen and (max-width : 700px) {
+@media screen and (min-width: 375px) {
+    .about-us{
+        display: none;
+    }    
+    
+    .about-diab{
+        display: none;
+    }
+    .userinfo{
+        color: var(--text-unused);
+        font-size: 150%;
+        margin-top: 0.3%;
+        padding-left: 35%;
+    }
+    #user-w{
+        font-size: 220%;
+        margin-top: -39%;
+        padding-left: 55%;
+        white-space: nowrap;
+    
+    }
+    .sign-out{
+        color: var(--text-unused);
+        font-size: 150%;
+        margin-top: 0.3%;
+        padding-left: 80%;
+    }
+    .sign-out-w{
+        font-size: 220%;
+        margin-top: -135%;
+        padding-left: 105%;
+        white-space: nowrap;
+    }
 
     .title{
         display: flex;                       
@@ -22,14 +84,6 @@
         border-radius: 25px;
         width: 355px;
         height: 65px;
-    }
-    
-    #home{
-        font-family:Impact;
-        font-weight:900;
-        font-style:normal;
-        font-size:54px;
-        color: #2D65A4;
     }
     
     #mobile-home{
@@ -56,33 +110,13 @@
         color: #FFFFFF;
     }
     
-        .topmenu{
-            background-color: white;
-            height: 50px;
-            display: flex;
-            justify-content: flex-start;
-            display: none;
-        }
+
     
         #p4{
             display: none;
         }
         
-        .home{
-            color: #18D9D9;
-        }
-        
-        .userinfo{
-            color: #D6D8DA;
-        }
-        
-        .signout{
-            color: #D6D8DA;
-            top: 5px;
-            right: 20px;
-            position: fixed;
-            display: none;
-        }
+
         
         .shu{
             position: absolute;
@@ -231,7 +265,62 @@
     }
 
 /*PC样式 */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1024px) {
+    .about-us{
+        display: block;
+        color: var(--text-unused);
+        font-size: 150%;
+        margin-top: 0.3%;
+        padding-left: 80%;
+    
+    }
+    #us-w{
+        font-size: 220%;
+        margin-top: -145%;
+        padding-left: 165%;
+        white-space: nowrap;
+    }
+    
+    .about-diab{
+        display: block;
+        color: var(--text-unused);
+        font-size: 150%;
+        margin-top: 0.3%;
+        padding-left: 75%;
+    }
+    #diab-w{
+        font-size: 220%;
+        margin-top: -70%;
+        padding-left: 80%;
+        white-space: nowrap;
+    }
+
+    .userinfo{
+        color: var(--text-unused);
+        font-size: 150%;
+        margin-top: 1%;
+        padding-left: 40%;
+    }
+    #user-w{
+        font-size: 220%;
+        margin-top: -50%;
+        padding-left: 55%;
+        white-space: nowrap;
+    
+    }
+
+    .sign-out{
+        color: var(--text-unused);
+        font-size: 150%;
+        margin-top: -0.3%;
+        padding-left: 220%;
+    }
+    .sign-out-w{
+        font-size: 220%;
+        white-space: nowrap;
+        padding-left: 50%;
+        margin-top: -50%;
+    }
     .title{
         display: none;
     }
@@ -241,16 +330,6 @@
     }
 
 
-    .topmenu{
-        background-color: white;
-        height: 50px;
-        display: flex;
-        justify-content: flex-start;
-    }
-    
-    .p1{
-        height: 50px;
-    }
     
     .p4{
         height: 50px;
@@ -259,24 +338,6 @@
         position: fixed;
     }
     
-    .home{
-        font-size: 190%;
-        margin-top: 0.3%;
-        color: var(--text-unused);
-        text-decoration:none;
-    }
-    
-    .userinfo{
-        color: #D6D8DA;
-    }
-    
-    .signout{
-        font-size: 200%;
-        color: #D6D8DA;
-        top: 5px;
-        right: 20px;
-        position: fixed;
-    }
     
     .shu{
         position: absolute;
@@ -511,8 +572,4 @@
     justify-content: center;            
     align-items: center; 
 
-}
-
-body{
-    background-color: #2D65A4;
 }

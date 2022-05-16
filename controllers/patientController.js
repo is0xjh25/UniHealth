@@ -119,7 +119,7 @@ const rank = async (req, res) => {
 	}
 }
 
-const profile = async (req, res, next) => {
+const profile = async (req, res) => {
 	try {
 		const patientID = req.session.passport.user
 		const patient = await Patient.findById(patientID).lean()
