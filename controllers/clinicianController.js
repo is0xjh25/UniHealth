@@ -81,13 +81,21 @@ const patientManagement = async (req, res) => {
 const patientInfo = async (req, res) => {
     try {
         const today = new Date().toDateString()
-        const date = new Date().toDateString()
-        if (req.params.date !== 'today') {
-            date = new Date(req.params.date).toDateString()
-        }
         const patient = await Patient.findById(req.params.patientID).lean()
-        const record = await DailyRecord.findOne( {$and: [{"_patientID": patient._id}, {"date": date }]}).lean()
+        const record = await DailyRecord.findOne( {$and: [{"_patientID": patient._id}, {"date": today }]}).lean()
         return res.render('clinician-patient-info', {date: today, patient: patient, record: record})
+    } catch (err) {
+        console.log(err)
+        return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
+    }
+}
+
+const patientInfoByDate = async (req, res) => {
+    try {
+        const patient = await Patient.findById(req.params.patientID).lean()
+        const date = new Date(req.params.date).toDateString()
+        const record = await DailyRecord.findOne( {$and: [{"_patientID": patient._id}, {"date": date }]}).lean()
+        return res.render('clinician-patient-info', {date: date, patient: patient, record: record})
     } catch (err) {
         console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
@@ -157,19 +165,6 @@ const comment = async (req, res) => {
     }
 }
 
-const resetPassword = async (req, res) => {
-	try {
-    	const clinicianID = req.session.passport.user._id
-        const clinician = await Clinician.findById(clinicianID)
-    	const newPassword = clinician.generateHash(req.body.password)
-    	await Patient.findByIdAndUpdate(patientID,{$set:{"password":newPassword}})		
-		return res.render('clinician-info', {clinician: clinician})
-	} catch (err) {
-		console.log(err)
-    	return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
-	}
-}
-
 const note = async (req, res) => {
     try {
         const clinician = await Clinician.findById(req.session.passport.user)
@@ -201,12 +196,11 @@ const newNote = async (req, res) => {
 
 const supportMessage = async (req, res) => {
     try {
-        const clinician = await Clinician.findById(req.session.passport.user)
         const patient = await Patient.findById(req.params.patientID)
-        const content = req.body.content
-        clinician.notes.push({patient: patient, createBy: new Date(), content: content})
-        clinician.save()
-        return res.redirect('/clinician/note')
+        const management = {...patient.management}
+        management[supportMessage] = req.body.content
+        await patient.updateOne({$set: {"management": management}}, { upsert: true })      
+        return res.redirect(`/clinician/patient-info/${patientID}&today`)
     } catch (err) {
         console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
@@ -220,10 +214,10 @@ module.exports = {
     dashboard,
     patientManagement,
     patientInfo,
+    patientInfoByDate,
     addPatient,
     newPatient,
     comment,
-    resetPassword,
     note,
     newNote,
     supportMessage

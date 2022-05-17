@@ -1,84 +1,80 @@
- <link rel="stylesheet" type="text/css" href= "/css/patient-profile.css">
- <script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script>
- 
+<link rel="stylesheet" type="text/css" href= "/css/patient-profile.css">
+<script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script> 
 
 {{> patient-navbar}}
-  <div id="main">
 
-         <div class="info">
-            <!-- 打开弹窗按钮 -->
-            <button id="rpBtn">Reset Password</button>
-            <button id="outBtn">Sign Out</button>
-        </div>
-
-        <div class="info">
-            <h2>Username:</h2>
-            <!--接口导入姓名-->
-            <h2>{{patient.username}}</h2>
-        </div>
-
-        <div class="info">
-            <h2>First Name:</h2>
-            <!--接口导入姓名-->
-            <h2>{{patient.firstname}}</h2>
-        </div>
-
-        <div class="info">
-            <h2>Last Name:</h2>
-            <!--接口导入姓名-->
-            <h2>{{patient.lastname}}</h2>
-        </div>
-
-        <div class="info">
-            <h2>Email:</h2>
-            <!--接口导入email-->
-            <h2>{{patient.email}}</h2>
-        </div>
-
-        <div class="info">
-            <h2>Date Of Birth:</h2>
-            <!--接口导入姓名-->
-            <h2>{{patient.yearBorn}}</h2>
-        </div>
-
-        <div class="info">
-            <h2>Bio:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
-            <!--接口导入简介-->
-            <p>{{patient.bio}}</p>
-        </div>
-
-        <!-- 弹窗 -->
-        <div id="myModal" class="modal">
-               <!-- 弹窗内容 -->
-            <div class="modal-content">
-                <div class="modal-header">
-                  <span class="close">&times;</span>
-                  <h2>Reset Password</h2>
-                </div> 
-
-                <form action="/patient/reset-password" method="POST">
-                    <div class="newPassword"> 
-                        <label for="oldPassword">Old Password:</label>
-                        <input type="password" name="oldPassword" min="8"/>
-                    </div>   
-                        
-                    <div class="newPassword"> 
-                        <label for="newPassword">New Password:</label>
-                        <input type="password" name="newPassword" min="8"/>
-                    </div> 
-
-                    <div class="newPassword"> 
-                        <label for="confirmPassword">Confirm Password:</label>
-                        <input type="password" name="confrimPassword" min="8"/>
-                    </div> 
-
-                     <div class ="commentBtn">
-                        <input id="commentCon" type="submit" value="Confirm"/>
-                        <button id="commentDis">Discard</button>
-                    </div>
-                 </form>
-             </div>
-         </div>
+<div id="main">
+    {{#if message}}
+        <div style="color:red;text-align:center;" class="">{{message}}</div>
+    {{/if}}
+    <div class="info">
+        <!-- 打开弹窗按钮 -->
+        <button id="rpBtn">Reset Password</button>
+        <button id="outBtn">Sign Out</button>
     </div>
-    
-    <script type="text/javascript" src="/js/patient-profile.js"></script>
+
+    <div class="info">
+        <h2>Username:</h2>
+        <!--接口导入姓名-->
+        <h2>{{patient.username}}</h2>
+    </div>
+
+    <div class="info">
+        <h2>First Name:</h2>
+        <!--接口导入姓名-->
+        <h2>{{patient.firstname}}</h2>
+    </div>
+
+    <div class="info">
+        <h2>Last Name:</h2>
+        <!--接口导入姓名-->
+        <h2>{{patient.lastname}}</h2>
+    </div>
+
+    <div class="info">
+        <h2>Email:</h2>
+        <!--接口导入email-->
+        <h2>{{patient.email}}</h2>
+    </div>
+
+    <div class="info">
+        <h2>Date Of Birth:</h2>
+        <!--接口导入姓名-->
+        <h2>{{patient.yearBorn}}</h2>
+    </div>
+
+    <div class="info">
+        <h2>Bio:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+        <!--接口导入简介-->
+        <p>{{patient.bio}}</p>
+    </div>
+    <!-- 弹窗 -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Reset Password</h2>
+            </div> 
+            <form action="/patient/reset-password" method="POST">
+                <div class="newPassword"> 
+                    <label for="oldPassword">Old Password:</label>
+                    <input type="password" name="oldPassword" min="8"/>
+                </div>
+                <div class="newPassword"> 
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" name="newPassword" min="8"/>
+                </div> 
+                <div class="newPassword"> 
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" name="confirmPassword" min="8"/>
+                </div> 
+                <div class ="commentBtn">
+                    <button id="commentDis">Discard</button>
+                    <input id="commentCon" type="Submit" value="Confirm"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/patient-profile.js"></script>

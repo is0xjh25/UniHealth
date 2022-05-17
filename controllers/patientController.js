@@ -7,7 +7,7 @@ const dashboard = async (req, res) => {
 		const patient = await Patient.findById(patientID).lean()
 		const today = new Date().toDateString()
 		const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
-		return res.render('patient-dashboard', {date: today, patient: patient, record: record})
+		return res.render('patient-dashboard', {date: today, patient: patient, record: record, message: req.flash('message')})
 	} catch (err) {
 		console.log(err)
 		return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
@@ -35,7 +35,6 @@ const addData = async (req, res) => {
 		const record = await DailyRecord.findOne({$and: [{"_patientID": patientID}, {"date": today}]})
 		if (record) {
 			await record.updateOne({[req.params.type + "Data"]: req.body.data, [req.params.type + "Time"]: new Date(),}, { upsert: true })
-			return res.redirect('/patient/dashboard')      
 		} else {
 			const newRecord = new DailyRecord({
 				_patientID: patientID,
@@ -46,8 +45,9 @@ const addData = async (req, res) => {
 			await newRecord.save()
 			await patient.dailyRecords.addToSet(newRecord._id)
 			await patient.save()
-			return res.redirect('/patient/dashboard')      
-		}			
+		}
+        req.flash('message', 'Data has been uploaded.')
+		return res.redirect('/patient/dashboard')      
 	} catch (err) {
 		console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
@@ -72,7 +72,8 @@ const addComment = async (req, res) => {
 			await patient.dailyRecords.addToSet(newRecord._id)
 			await patient.save()
 		}
-		return res.redirect('/patient/dashboard')      
+        req.flash('message', 'Comment has been uploaded.')
+		return res.redirect('/patient/dashboard')     
 	} catch (err) {
 		console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
@@ -123,23 +124,28 @@ const profile = async (req, res) => {
 	try {
 		const patientID = req.session.passport.user
 		const patient = await Patient.findById(patientID).lean()
-		return res.render('patient-profile', {patient: patient})
+		return res.render('patient-profile', {patient: patient, message: req.flash('message')})
 	} catch (err) {
 		console.log(err)
 		return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
 	}
 }
  
-const resetPassword = async (req, res) => {
+const resetPassword = async (req, res, next) => {
 	try {
     	const patientID = req.session.passport.user._id
 		const patient = await Patient.findById(patientID)
-        console.log(req.body.oldPassword)
-        console.log(req.body.newPassword)
-        console.log(req.body.confirmPassword)
-    	// const newPassword = patient.generateHash(req.body.password)
-    	// await Patient.findByIdAndUpdate(patientID,{$set:{"password":newPassword}})		
-		return res.render('patient-info', {patient: patient})
+        if (!patient.verifyPassword(req.body.oldPassword)) {
+            req.flash('message', 'The old passowrd is incorrect.')
+            return res.redirect('/patient/profile')
+        } else if (req.body.newPassword !== req.body.confirmPassword) {
+            req.flash('message', 'New password and confirm password do not match.')
+            return res.redirect('/patient/profile') 
+        }
+    	const newPassword = patient.generateHash(req.body.newPassword)
+    	await Patient.findByIdAndUpdate(patientID, {$set:{"password": newPassword}})
+        req.flash('message', 'Password has been updated.')
+		return res.redirect('/patient/profile')
 	} catch (err) {
 		console.log(err)
     	return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})

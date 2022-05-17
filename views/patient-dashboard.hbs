@@ -1,6 +1,5 @@
 <link rel="stylesheet" type="text/css" href= "/css/patient-dashboard.css">
 
-
 <body>
     {{> patient-navbar}}
 
@@ -19,6 +18,9 @@
         <h1 id="recordName"><i class="fa-solid fa-calendar-check fa-2x"></i></i>Record</h1>
     </div>
     </a>
+    {{#if message}}
+        <div style="color:red;text-align:center;">{{message}}</div>
+    {{/if}}
 
     <div class="table-right-m">
         <table>
@@ -77,9 +79,6 @@
     </section>
 
 
-
-
-
     <section class="desktop-dashboard">
     <div class="message">
         <p id="message">{{patient.management.supportMessage}}</p >
@@ -97,7 +96,7 @@
         <i class="fa-brands fa-hackerrank fa-9x" style="color: #FFFFFF;position: absolute;left:50px;top:15px;"></i>
         <p id="ran">Rank</p >
     </div>
-
+    
     <!--desktop table-->
     <div class="right">
         <table>
@@ -116,6 +115,9 @@
                 {{#checkThreshold record.exerciseData patient.management.exercise}}{{/checkThreshold}}
             </tr>
         </table>
+        {{#if message}}
+            <div style="color:red;text-align:center;">{{message}}</div>
+        {{/if}}
     </div>
     <!--desktop record-->
     <a href="/patient/record">
