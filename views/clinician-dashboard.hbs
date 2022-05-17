@@ -33,7 +33,7 @@
             </tr>
             {{#each patients}}
               <tr>
-                <td><a href="/clinician/patient-info/{{this.patient._id}}&today">{{this.patient.firstname}} {{this.patient.lastname}}</a></td>
+                <td><a href="/clinician/patient-info/{{this.patient._id}}">{{this.patient.firstname}} {{this.patient.lastname}}</a></td>
                 <td>{{this.patient.gender}}</td>
                 {{#checkThreshold this.record.bloodGlucoseLevelData this.patient.management.bloodGlucoseLevel}}{{/checkThreshold}}
                 {{#checkThreshold this.record.weightData this.patient.management.weight}}{{/checkThreshold}}

@@ -8,8 +8,11 @@ const clinicianController = require('../controllers/clinicianController')
 // clinician homepage
 clinicianRouter.get('/dashboard', utilities.isLoggedInClinician, clinicianController.dashboard)
 
+// patient today info page
+clinicianRouter.get('/patient-info/:patientID', utilities.isLoggedInClinician, clinicianController.patientInfo)
+
 // patient daily info page
-clinicianRouter.get('/patient-info/:patientID&:date', utilities.isLoggedInClinician, clinicianController.patientInfo)
+clinicianRouter.get('/patient-info/:patientID/:date', utilities.isLoggedInClinician, clinicianController.patientInfoByDate)
 
 // patient comment page ***
 clinicianRouter.get('/comment', utilities.isLoggedInClinician, clinicianController.comment)
@@ -23,7 +26,7 @@ clinicianRouter.get('/note/:patientID', utilities.isLoggedInClinician, clinician
 // create patient note ***
 clinicianRouter.post('/note/:patientID', utilities.isLoggedInClinician, clinicianController.newNote)
 
-// edit patient's supporting message
+// edit patient's supporting message ***
 clinicianRouter.post('/support-message/:patientID', utilities.isLoggedInClinician, clinicianController.supportMessage)
 
 /* Testing */
