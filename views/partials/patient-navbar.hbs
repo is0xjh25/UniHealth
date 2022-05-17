@@ -1,46 +1,41 @@
-<section class = topmenu>
-        <img class="p1" src="/images/favicon.png">
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<link rel="stylesheet" type="text/css" href="/css/patient-navbar.css">
+<section id = "navbar">
+        <img id="favicon" src="/images/favicon.png" >
 
-        
-        <a href = "/patient/dashboard">
-        <div class="home">
+        <a href="/patient/dashboard">
+        <section id = "dashboard">
             <i class="fa-solid fa-house-user fa-3x"></i>
-            <h1 id="home-w">Home</h1>
-        </div>
+            <div id = "dashboard_w"> Home</div>
+        </section>
         </a>
 
-
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-
-        <a href ="/patient/info">
-        <div class="userinfo">
-             <i class="fa-solid fa-circle-user fa-3x"></i>
-             <h1 id="user-w">User info</h1>
-        </div>
+        <a href="/patient/profile">
+        <section id = "comment">
+            <i class="fa-solid fa-message fa-3x"></i>
+            <div id = "comment_w"> User Info</div>
+        </section>
         </a>
-       
+
         <a href="/about-us">
-        <div class="about-us">
-            <i class="fa-solid fa-circle-exclamation fa-3x"></i>
-            <h1 id="us-w">About us</h1>
-        </div>
+        <section id = "about-us">
+            <i class="fa-solid fa-circle-info fa-3x"></i>
+            <div id = "new_patient_w"> About Us</div>
+        </section>
         </a>
-        
+
         <a href="/about-diabetes">
-        <div class="about-diab">
-            <i class="fa-solid fa-circle-exclamation fa-3x"></i>
-            <h1 id="diab-w">About Diabetes</h1>
-        </div>
+        <section id = "about-diabetes">
+            <i class="fa-solid fa-circle-info fa-3x"></i>
+            <div id = "new_patient_w"> About Diabetes</div>
+        </section>
         </a>
-        
 
         <form method="POST" action="/logout">
         <a href="/login">
-        <div class="sign-out">
-            <i class="fa-solid fa-right-from-bracket fa-3x"></i>
-            <h1 class="sign-out-w">Sign Out</h1>
-        </div>
+         <section id = "go_back">
+            <i class="fa-solid fa-arrow-right-from-bracket fa-3x"></i>
+            <div id = "go_back_w" href="/login"> Sign Out</div>
+        </section>
         </a>
         </form>
 </section>
