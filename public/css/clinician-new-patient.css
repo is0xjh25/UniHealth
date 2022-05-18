@@ -14,6 +14,10 @@
     color: var(--text);
     background-color: white;
    }
+
+   h1{
+       margin-bottom: 0%;
+   }
    
    br{
        display:inline;
@@ -60,13 +64,28 @@
    .adding{
        height: 50%;
        background-color:var(--primary);
-       margin-top: 5%;
-       font-size: 150%;
+       font-size: 140%;
        margin-left: 3%;
        margin-right: 3%;
    }
-   
+   #header{
+       margin-bottom: 0%;
+   }
    #submit{
        font-size: 100%;
        margin-left: 90%;
+   }
+   #biotext{
+       margin-left: 50%;
+       margin-top:-6%;
+   }
+
+   #bio{
+       height:200px;
+       margin: 0%;
+       width:700px;
+   }
+
+   #com-pas{
+       margin-top: -5%;
    }

@@ -2,6 +2,7 @@
 <title>clinician-dashboard</title>
 <link rel="stylesheet" type="text/css" href="/css/clinician-patient-info.css">
 <script src="https://kit.fontawesome.com/76a0594e6c.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/clincian-patient-info.js"></script>
 
 {{> clinician-navbar}}
 
@@ -117,5 +118,13 @@
 		<input type="number" name="lowerThreshold"/>
 		<button>Edit</button>
 	</form> 
-	<br>
+    <section class = "note">
+        <h1>Clincian Note</h1>
+        <input type ="text" id="note-c" name="note">
+        <button id="add-new-note" onclick="show()">Add New Note</button>
+        <p id = "demo"></p>
+        <h1 id="support-message">Support Message</h1>
+        <input type ="text" id="note-c" name="note">
+        <button type="submit" id = confirm> Confirm</button>
+    </section>
 </section>
