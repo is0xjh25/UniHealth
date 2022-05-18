@@ -35,10 +35,10 @@
               <tr>
                 <td><a href="/clinician/patient-info/{{this.patient._id}}">{{this.patient.firstname}} {{this.patient.lastname}}</a></td>
                 <td>{{this.patient.gender}}</td>
-                {{#checkThreshold this.record.bloodGlucoseLevelData this.patient.management.bloodGlucoseLevel}}{{/checkThreshold}}
-                {{#checkThreshold this.record.weightData this.patient.management.weight}}{{/checkThreshold}}
-                {{#checkThreshold this.record.doesesOfInsulinTakenData this.patient.management.doesesOfInsulinTaken}}{{/checkThreshold}}
-                {{#checkThreshold this.record.exerciseData this.patient.management.exercise}}{{/checkThreshold}}
+                {{#checkThreshold this.record.bloodGlucoseLevelData this.patient.management.bloodGlucoseLevel.required}}{{/checkThreshold}}
+                {{#checkThreshold this.record.weightData this.patient.management.weight.required}}{{/checkThreshold}}
+                {{#checkThreshold this.record.doesesOfInsulinTakenData this.patient.management.doesesOfInsulinTaken.required}}{{/checkThreshold}}
+                {{#checkThreshold this.record.exerciseData this.patient.management.exercise.required}}{{/checkThreshold}}
               </tr>
              {{/each}}
           </table>

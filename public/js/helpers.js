@@ -11,9 +11,13 @@ var register = function(Handlebars) {
 			var start = '<td>'
 			var content = data
 			const end = '</td>'
-			if (!data) content = ""  
-			if (!management) return start + content + end
-			if (content < management.lowerThreshold || content > management.upperThreshold) {
+			if (!management.required) {
+				start = '<td style="background-color:gray;">'
+				content = ""
+			} else if (!data & management.required) {
+				content = "missing"
+				start = '<td style="color:red;">'
+			} else if (content < management.lowerThreshold || content > management.upperThreshold) {
 				start = '<td style="color:red;">'
 			}
 			return start + content + end

@@ -33,10 +33,10 @@
             </tr>
             <tr>
                 <td>{{date}}</td>
-                {{#checkThreshold record.bloodGlucoseLevelData patient.management.bloodGlucoseLevel}}{{/checkThreshold}}
-                {{#checkThreshold record.weightData patient.management.weight}}{{/checkThreshold}}
-                {{#checkThreshold record.doesesOfInsulinTakenData patient.management.doesesOfInsulinTaken}}{{/checkThreshold}}
-                {{#checkThreshold record.exerciseData patient.management.exercise}}{{/checkThreshold}}
+                {{#checkThreshold record.bloodGlucoseLevelData patient.management.bloodGlucoseLevel.required}}{{/checkThreshold}}
+                {{#checkThreshold record.weightData patient.management.weight.required}}{{/checkThreshold}}
+                {{#checkThreshold record.doesesOfInsulinTakenData patient.management.doesesOfInsulinTaken.required}}{{/checkThreshold}}
+                {{#checkThreshold record.exerciseData patient.management.exercise.required}}{{/checkThreshold}}
             </tr>
         </table>
     </div>
@@ -69,10 +69,10 @@
             </tr>
             <tr>
                 <td>{{date}}</td>
-                {{#checkThreshold record.bloodGlucoseLevelData patient.management.bloodGlucoseLevel}}{{/checkThreshold}}
-                {{#checkThreshold record.weightData patient.management.weight}}{{/checkThreshold}}
-                {{#checkThreshold record.doesesOfInsulinTakenData patient.management.doesesOfInsulinTaken}}{{/checkThreshold}}
-                {{#checkThreshold record.exerciseData patient.management.exercise}}{{/checkThreshold}}
+                {{#checkThreshold record.bloodGlucoseLevelData patient.management.bloodGlucoseLevel.required}}{{/checkThreshold}}
+                {{#checkThreshold record.weightData patient.management.weight.required}}{{/checkThreshold}}
+                {{#checkThreshold record.doesesOfInsulinTakenData patient.management.doesesOfInsulinTaken.required}}{{/checkThreshold}}
+                {{#checkThreshold record.exerciseData patient.management.exercise.required}}{{/checkThreshold}}
             </tr>
         </table>
     </div>
