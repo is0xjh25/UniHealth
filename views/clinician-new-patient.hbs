@@ -1,6 +1,6 @@
 <link rel="icon" href="/images/favicon.png">
 <script src="https://kit.fontawesome.com/76a0594e6c.js" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/js/clinician-addPatient.js"></script>
+<script type="text/javascript" src="/js/password-check.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/css/clinician-new-patient.css">
 <div>
@@ -9,36 +9,38 @@
         <section class = "adding">
             <h1 id = "hearder">Adding New Patient.....<h1>
             <label for="username"> User Name:</label>
-            <input type="text" id="user-name" name="username" required="required"/>
+            <input type="text" id="user-name" name="username" required/>
             <label for="phone"> Phone Number</label>
-            <input type="number" id ="phone" name ="phone" required ="required"/>
+            <input type="number" id ="phone" name ="phone" required />
             <label for="firstname"> First Name:</label>
             <input type="text" id ="first-name" name="firstname" required= "required"/>
             <label for="yearBorn"> Year of Born</label>
-            <input type="number" id="birth" name ="yearBorn" required ="required"/>
+            <input type="number" id="birth" name ="yearBorn" required/>
             <label for="gender">Gender:</label>
             <select name="gender">
-                <option value="no-genger">-</option>
                 <option value="male">male</option>
                 <option value="female">female</option>
                 <option value="other">other</option>
             </select>
-            <label for ="lastname"> Last Name:</label>
-            <input type ="text" id="last-name" name="lastname" required="required"/>
-            <label for ="password"> Password:</label>
-            <input type ="text" id ="password" min = "8" placeholder= "At Least 8 Characters" name ="password" required ="required"/>
-            <label id = "email" for ="email"> Email:</label>
-            <input type ="text" id ="email-input" name="email" required="required"/>
+            <label for="lastname"> Last Name:</label>
+            <input type="text" id="last-name" name="lastname" required/>
+            <label for="password"> Password:</label>
+            <input type="password" id ="password" minlength="8" placeholder= "At Least 8 Characters" name ="password" onkeyup="check()" required />
+            <label id="email" for="email"> Email:</label>
+            <input type ="text" id="email-input" name="email" required/>
             <div id = "biotext">
             <label for ="bio"> Bio:</label>
-            <input type ="text" id="bio" name="bio" required="required"/>
+            <input type ="text" id="bio" name="bio"/>
             </div>
             <div id = "com-pas">
             <label> Confirm Password</label>
-            <input type ="text" id="pass-confirm" required="required" onkeydown="validate()"/>
-            <span id ="warning"></span>
+            <input type="password" id="password-confirm" name="confirmPassword" required onkeyup="check()"/>
+            <span id="warning"></span>
+            {{#if message}}
+                <div style="color:red;text-align:center;" class="">{{message}}</div>
+            {{/if}}
             </div>
-            <button type ="submit" id ="submit">Submit</button> 
+            <button type="submit" id="submit" class="submit">Submit</button> 
             </section>
         </form>
     </div>

@@ -124,7 +124,9 @@
         <button id="add-new-note" onclick="show()">Add New Note</button>
         <p id = "demo"></p>
         <h1 id="support-message">Support Message</h1>
-        <input type ="text" id="note-c" name="note">
-        <button type="submit" id = confirm> Confirm</button>
+        <form method="POST" action="/clinician/support-message/{{patient._id}}">
+            <input type="textbox" id="note-c" name="supportMessage" value={{patient.management.supportMessage}}>
+            <button type="submit" id=confirm>Update</button>
+        </form>
     </section>
 </section>

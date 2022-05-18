@@ -15,7 +15,7 @@ const patientSchema = new mongoose.Schema({
     biography: { type: String },
     dailyRecords: [{ _id: { type: mongoose.Schema.Types.ObjectId, ref: 'DailyRecord'}}],
     management: {
-        supportMessage: { type: String },
+        supportMessage: { type: String, default: "" },
         bloodGlucoseLevel: {
             required: { type: Boolean, default: false, required: true },
             upperThreshold: { type: Number },

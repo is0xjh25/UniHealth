@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href= "/css/patient-profile.css">
 <script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script> 
+<script type="text/javascript" src="/js/password-check.js"></script>
 
 {{> patient-navbar}}
 
@@ -56,21 +57,22 @@
                 <h2>Reset Password</h2>
             </div> 
             <form action="/patient/reset-password" method="POST">
+                <div id="warning"></div>
                 <div class="newPassword"> 
                     <label for="oldPassword">Old Password:</label>
-                    <input type="password" name="oldPassword" min="8"/>
+                    <input type="password" name="oldPassword" required/>
                 </div>
                 <div class="newPassword"> 
                     <label for="newPassword">New Password:</label>
-                    <input type="password" name="newPassword" min="8"/>
+                    <input id="password" type="password" name="newPassword" minlength="8" onkeyup="check()" required/>
                 </div> 
                 <div class="newPassword"> 
                     <label for="confirmPassword">Confirm Password:</label>
-                    <input type="password" name="confirmPassword" min="8"/>
+                    <input id="password-confirm" type="password" name="confirmPassword" minlength="8" onkeyup="check()" required/>
                 </div> 
                 <div class ="commentBtn">
                     <button id="commentDis">Discard</button>
-                    <input id="commentCon" type="Submit" value="Confirm"/>
+                    <input id="commentCon" class="submit" type="Submit" value="Confirm"/>
                 </div>
             </form>
         </div>
