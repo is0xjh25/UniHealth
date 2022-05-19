@@ -7,11 +7,6 @@
 {{> clinician-navbar}}
 
 <section>
-    <form method="GET" action="/clinician/patient-info/{{patient._id}}">
-        <label for="start">Pick Date:</label>
-        <input type="date" id="start" name="date" min="2022-01-01" max="2099-12-31">
-        <button type="submit">View</button>
-    </form>
     <section class="info">
         <img id = "photo" src="/images/patient.png">
             <br></br>
@@ -22,7 +17,15 @@
     </section>
 </section>
 <section class="data">
-    <h3 id ="date">{{date}}</h3>
+
+    <form method="GET" action="/clinician/patient-info/{{patient._id}}"></form>
+    <h3 id ="date">
+    <input type="date" id="start" name="date" min="2022-01-01" max="2099-12-31">
+    <button type="submit" id="view">View</button>
+    {{date}}
+    </h3>
+    </form>
+
     <table id = "blood">
         <tr>
             <th>Blood glucose level (in nmol/L)</th>
@@ -129,6 +132,7 @@
         <a href="/clinician/note/{{patient._id}}">
         <button id="view-history-note" > History Note</button>
         </a>
+
         <p id = "demo"></p>
         <h1 id="support-message">Support Message</h1>
         <form method="POST" action="/clinician/support-message/{{patient._id}}">
@@ -138,3 +142,4 @@
     </section>
 
 </section>
+
