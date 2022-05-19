@@ -43,6 +43,11 @@ body{
         background-color: white;
         font-size: 200%;
     }
+    #mobile-messName{
+        padding-left: 18%;
+        padding-top: -2%;
+        margin-top: 1%;
+    }
     .table-stat{
         border-color:#E8D810;
         color:white;
