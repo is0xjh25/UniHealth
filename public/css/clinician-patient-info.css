@@ -354,6 +354,9 @@
         color: #2763A7;
         margin: 20px;
     }
-    
-    
-    
+    #start{
+        font-size: 70%;
+    }
+    #view{
+        font-size: 70%;
+    }
