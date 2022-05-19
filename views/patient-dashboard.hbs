@@ -4,18 +4,30 @@
     {{> patient-navbar}}
 
     <section class="mobile-dashboard">
+    <div>
+        <p id="mobile-rate">Engagement Rate: {{rate}}%</p>
+        {{#compare rate "gt" 80}}
+        <i class="fa-solid fa-medal fa-8x" id="mobile-medal"></i>
+        {{/compare}}
+    </div>
+
     <div class="table-message">
-        <h1 id="messName"><i class="fa-solid fa-comment-medical fa-2x"></i>Message</h1>
+        <h1 id="mobile-messName"><i class="fa-solid fa-comment-medical fa-2x"></i>Message</h1>
+        <p id="mess">{{patient.management.supportMessage}}</p >
     </div>
     <div class="table-stat">
         <h1 id="statName"><i class="fa-solid fa-database fa-2x"></i>Statistics</h1>
     </div>
+
+    <a href="/patient/rank">
     <div class="table-rank">
         <h1 id="rankName"><i class="fa-solid fa-ranking-star fa-2x"></i></i>Rank</h1>
     </div>
+    </a>
+
     <a href="/patient/record">
     <div class="table-record-m">
-        <h1 id="recordName"><i class="fa-solid fa-calendar-check fa-2x"></i></i>Record</h1>
+        <h1 id="recordName"><i class="fa-solid fa-calendar-check fa-2x"></i>Record</h1>
     </div>
     </a>
     {{#if message}}
@@ -49,9 +61,13 @@
     <div class="table-stat">
         <h1 id="statName"><i class="fa-solid fa-database fa-2x"></i>Statistics</h1>
     </div>
+
+    <a href="/patient/rank">
     <div class="table-rank">
         <h1 id="rankName"><i class="fa-solid fa-ranking-star fa-2x"></i></i>Rank</h1>
     </div>
+    </a>
+
     <a href="/patient/record">
     <div class="table-record">
         <h1 id="recordName"><i class="fa-solid fa-calendar-check fa-2x"></i></i>Record</h1>
@@ -80,6 +96,12 @@
 
 
     <section class="desktop-dashboard">
+    <div>
+        <p id="desk-rate">Engagement Rate: {{rate}}%</p>
+        {{#compare rate "gt" 80}}
+        <i class="fa-solid fa-medal fa-8x" id="desk-medal"></i>
+        {{/compare}}
+    </div>
     <div class="message">
         <p id="message">{{patient.management.supportMessage}}</p >
     </div>
@@ -92,10 +114,14 @@
         <p id="stat">Statistic</p >
     </div>
 
+    <a href="/patient/rank">
     <div class="desk-rank">
         <i class="fa-brands fa-hackerrank fa-9x" style="color: #FFFFFF;position: absolute;left:50px;top:15px;"></i>
         <p id="ran">Rank</p >
     </div>
+    </a>
+
+
     
     <!--desktop table-->
     <div class="right">

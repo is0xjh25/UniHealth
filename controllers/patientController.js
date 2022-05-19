@@ -3,16 +3,23 @@ const DailyRecord = require('../models/dailyRecord.js')
 
 const dashboard = async (req, res) => {
 	try {
-		const patientID = req.session.passport.user
-		const patient = await Patient.findById(patientID).lean()
-		const today = new Date().toDateString()
-		const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
-		return res.render('patient-dashboard', {date: today, patient: patient, record: record, message: req.flash('message')})
+	 const patientID = req.session.passport.user
+	 const patient = await Patient.findById(patientID).lean()
+	 const today = new Date().toDateString()
+	 const record = await DailyRecord.findOne({$and: [{"_patientID": patientID}, {"date": today}]}).lean()
+	 const badge = false
+	 let difference = new Date().getTime() - patient.registered.getTime() 
+	 let totalDays = Math.ceil(difference / (1000 * 3600 * 24))
+	 if (totalDays === 0) totalDays = 1
+	 let records = await DailyRecord.find({$and: [{"_patientID": patientID}]}).lean()    
+	 //let rate = Math.round(records.length / totalDays * 10000) / 100
+	 const rate = 81
+	 return res.render('patient-dashboard', {date: today, patient: patient, record: record, rate: rate, message: req.flash('message')})
 	} catch (err) {
-		console.log(err)
-		return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
+	 console.log(err)
+	 return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
 	}
-}
+   }
 
 const dashboardByDate = async (req, res) => {
 	try {
