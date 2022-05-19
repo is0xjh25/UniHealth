@@ -1,10 +1,22 @@
 var register = function(Handlebars) {
 	var helpers = { // add all helpers as key: value pairs
+		
 		toMelbourneTime: function(time) {
 			if (time) {
 				return time.toLocaleString("en-US", {timeZone: "Australia/Melbourne"})
 			}
 			return ""     
+		},
+
+		dateToString: function(time) {
+			if (time === "today") time = new Date()
+			var date = time.getDate()
+			var month = time.getMonth() + 1
+			var year = time.getFullYear()
+			if (date < 10) date = "0" + date
+			if (month < 10) month = "0" + month
+			const newTime =  year + "-" + month + "-" + date 
+			return newTime
 		},
 
 		checkThreshold: function(data, management) {
@@ -36,7 +48,7 @@ var register = function(Handlebars) {
 		  
 			if (result) return options.fn(this);
 			else  return options.inverse(this);
-		  }
+		}
 	}
 
 	if (Handlebars && typeof Handlebars.registerHelper === "function") {

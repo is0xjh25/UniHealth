@@ -107,12 +107,13 @@ const rank = async (req, res) => {
 				let info = {
 					_patientID: p._id,
 					username: p.username,
-					records: rate
+					record: rate
 				}
 				rank.push(info) 
             })
         )
-		rank.sort(({records: a}, {records: b}) => b - a)
+		rank.sort(({record: a}, {record: b}) => b - a)
+		// return res.send(rank)
 	 	return res.render('patient-rank', {rank: rank})
 	} catch (err) {
 		console.log(err)
@@ -157,7 +158,6 @@ const statistics = async (req, res) => {
 		const patientID = req.session.passport.user
 		const patient = await Patient.findById(patientID).lean()
 		const records = await DailyRecord.find({"_patientID": patientID}).lean()
-		// return res.send(records)
 		return res.render('patient-statistics', {patient: patient, records: records})
 	} catch (err) {
 		console.log(err)
