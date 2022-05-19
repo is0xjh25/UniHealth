@@ -14,6 +14,10 @@
     color: var(--text);
     background-color: white;
    }
+
+   h1{
+       margin-bottom: 0%;
+   }
    
    br{
        display:inline;
@@ -21,52 +25,73 @@
    }
    
    input{
-       width:300px;
+       width:210px;
        height:40px;
        font-size: 100%;
        margin-right: 18.5%;
-       margin-top: 6%;
        color: black;
+       margin-top: 5.5%;
+       margin-right: 10%;
    }
    
    #password{
-       width:350px;
+       width:400px;
+       margin-right: 50%;
    }
-   #email{
-       margin-left: 2.5%;
+   #email-box{
+       margin-top: 10%;
    }
    
+   #userName{
+       margin-top: 4%;
+   }
    
-   
-   #pass-confirm{
-       white-space: nowrap
+   #password-confirm{
+       white-space: nowrap;
    }
    
    #birth{
-       width: 250px;
-       margin-right: 5%;
-       background-color: white;
+    width: 250px;
+    margin-right: 5%;
+    background-color: white;
    }
    select{
        font-size: 80%;
-       margin-right: 14%;
+       margin-right: 16%;
    }
    
    #first-name{
-       margin-right: 9%;
+    margin-right: 9%;
    }
    
    
    .adding{
+       margin-top: 2%;
        height: 50%;
        background-color:var(--primary);
-       margin-top: 5%;
-       font-size: 150%;
+       font-size: 140%;
        margin-left: 3%;
        margin-right: 3%;
    }
-   
+   #header{
+       margin-bottom: 0%;
+   }
    #submit{
        font-size: 100%;
        margin-left: 90%;
+   }
+   #biotext{
+       margin-left: 40%;
+       margin-top:-3%;
+   }
+
+   #bio{
+       height:200px;
+       margin: 0%;
+       width:700px;
+   }
+
+   #com-pas{
+       margin-top: -6%;
+       margin-left: 35%;
    }

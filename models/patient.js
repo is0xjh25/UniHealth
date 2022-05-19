@@ -10,12 +10,12 @@ const patientSchema = new mongoose.Schema({
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
     phone: { type: String, required: true },
-    gender: { type: String, Enum: ['male', 'female', 'others'], required: true },
+    gender: { type: String, Enum: ['male', 'female', 'other'], required: true },
     yearBorn: { type: Number, min: 1900 },
     biography: { type: String },
     dailyRecords: [{ _id: { type: mongoose.Schema.Types.ObjectId, ref: 'DailyRecord'}}],
     management: {
-        supportMessage: { type: String },
+        supportMessage: { type: String, default: "" },
         bloodGlucoseLevel: {
             required: { type: Boolean, default: false, required: true },
             upperThreshold: { type: Number },
@@ -48,7 +48,6 @@ patientSchema.methods.verifyPassword = function (password, callback) {
 patientSchema.methods.generateHash = function(password){
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10),null)
 }
-
 
 patientSchema.pre('save', function save(next) {
     const user = this

@@ -3,6 +3,16 @@
 
  // 打开弹窗的按钮对象
  var btn = document.getElementById("rpBtn");
+ var signout = document.getElementById("outBtn");
+
+ signout.addEventListener('click', async _ => { 
+     console.log("try");   
+      const response = await fetch('/logout', {
+        method: 'post',
+      });
+      window.location.href = '/login';
+      console.log('Completed!', response);
+  });
 
  // 获取 <span> 元素，用于关闭弹窗 that closes the modal
  var span = document.getElementsByClassName("close")[0];
@@ -18,9 +28,9 @@
       modal.style.display = "block";
  }
 
- btn2.onclick = function(){
-     alert('Submit Successfully');
- }
+//  btn2.onclick = function(){
+//      alert('Submit Successfully');
+//  }
 
  btn3.onclick = function(){
      modal.style.display = "none";

@@ -26,6 +26,9 @@ patientRouter.get('/rank', utilities.isLoggedInPatient, patientController.rank)
 // patient's profile page
 patientRouter.get('/profile', utilities.isLoggedInPatient, patientController.profile)
 
+// patient's statistics page
+patientRouter.get('/statistics', utilities.isLoggedInPatient, patientController.statistics)
+
 // patient reset password ***
 patientRouter.post('/reset-password', utilities.isLoggedInPatient, patientController.resetPassword)
 

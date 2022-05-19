@@ -40,7 +40,7 @@ function(req, email, password, done) {
    if (err)
     return done(err);
    if (!user){
-    return done(null, false, req.flash('loginMessage', 'Account not found, please signup first'))
+    return done(null, false, req.flash('loginMessage', 'Account not found'))
    };
    if (!user.verifyPassword(password)){
     return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
@@ -91,7 +91,7 @@ function(req, email, password, done) {
    if (err)
     return done(err);
    if (!user){
-    return done(null, false, req.flash('loginMessage', 'Account not found, please signup first'))
+    return done(null, false, req.flash('loginMessage', 'Account not found'))
    };
    if (!user.verifyPassword(password)){
     // false in done() indicates to the strategy that authentication has
