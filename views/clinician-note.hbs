@@ -1,0 +1,17 @@
+<title>clinician-dashboard</title>
+<link rel="stylesheet" type="text/css" href="/css/clinician-note.css">
+<script src="https://kit.fontawesome.com/76a0594e6c.js" crossorigin="anonymous"></script>
+
+{{> clinician-navbar}}
+<section>
+    <section class ="clinician-note">
+        <p id="name"><a href="/clinician/patient-info/{{patient._id}}"><i class="fa-solid fa-notes" style="color:red;"></i>Patient Name: {{patient.firstname}}  {{patient.lastname}}</a></p>
+        <p id = "hearder">Rencent Note:</p>
+        {{#each notes}}
+            <section id="user">
+                <h6 id="time">{{#toMelbourneTime this.createBy}}{{/toMelbourneTime}}</h6>
+                <p id="note">{{this.content}}</p>
+            </section>
+        {{/each}}
+    </section>
+</section>

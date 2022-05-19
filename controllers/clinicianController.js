@@ -163,27 +163,30 @@ const comment = async (req, res) => {
 
 const note = async (req, res) => {
     try {
-        const clinician = await Clinician.findById(req.session.passport.user)
-        const patient = await Patient.findById(req.params.patientID)
+        const clinician = await Clinician.findById(req.session.passport.user).lean()
+        const patient = await Patient.findById(req.params.patientID).lean()
         const notes = []
+        
         clinician.notes.map((n) => {
-            if (n.patient === patient) result.push(n)
+            if (n.patient._id.toString() === patient._id.toString()) notes.push(n)
         })
-        return res.send(notes)
+        // return res.send(notes)
+        return res.render("clinician-note", {patient: patient, notes: notes})
     } catch (err) {
         console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
     }
 }
 
+
 const newNote = async (req, res) => {
     try {
         const clinician = await Clinician.findById(req.session.passport.user)
         const patient = await Patient.findById(req.params.patientID)
-        const content = req.body.content
+        const content = req.body.note
         clinician.notes.push({patient: patient, createBy: new Date(), content: content})
         clinician.save()
-        return res.redirect('/clinician/note')
+        return res.redirect(`/clinician/patient-info/${req.params.patientID}`)
     } catch (err) {
         console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
@@ -215,5 +218,5 @@ module.exports = {
     comment,
     note,
     newNote,
-    supportMessage
+    supportMessage,
 }

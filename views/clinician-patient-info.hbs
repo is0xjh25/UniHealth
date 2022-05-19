@@ -122,8 +122,13 @@
 	</form> 
     <section class = "note">
         <h1>Clinician Note</h1>
-        <input type ="text" id="note-c" name="note">
-        <button id="add-new-note" onclick="show()">Add New Note</button>
+        <form method="POST" action="/clinician/note/{{patient._id}}">
+        <input type ="textarea" id="note-c" name="note">
+            <button id="add-new-note">Add New Note</button>
+        </form>
+        <a href="/clinician/note/{{patient._id}}">
+        <button id="view-history-note" > History Note</button>
+        </a>
         <p id = "demo"></p>
         <h1 id="support-message">Support Message</h1>
         <form method="POST" action="/clinician/support-message/{{patient._id}}">
@@ -133,23 +138,3 @@
     </section>
 
 </section>
-<script type="text/javascript" src="/js/password-check.js"></script>
-        <button id="rpBtn">Adding new note</button>
-        <button id="outBtn">Sign Out</button>
-    </div>
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Adding New Note</h2>
-            </div> 
-            <div>
-                <input type="textbox" id="note-input" id="note" value={{}}>
-            </div>
-            <div class ="commentBtn">
-                <button id="commentDis">Discard</button>
-                <input id="commentCon" class="submit" type="Submit" value="Confirm"/>
-            </div>
-        </div>
-
-<script type="text/javascript" src="/js/clincian-patient-info.js"></script>
