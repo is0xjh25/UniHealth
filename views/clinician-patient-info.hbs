@@ -18,9 +18,6 @@
 </section>
 <section class="data">
     <h3 id ="date">{{date}}</h3>
-    {{!-- <section id = "calender">
-    <i class="fa-solid fa-calendar-days fa-3x"></i>
-    </section> --}}
     <table id = "blood">
         <tr>
             <th>Blood glucose level (in nmol/L)</th>
@@ -120,13 +117,34 @@
 	</form> 
     <section class = "note">
         <h1>Clincian Note</h1>
-        <input type ="text" id="note-c" name="note">
-        <button id="add-new-note" onclick="show()">Add New Note</button>
+        <input type ="textbox" id="note-c" name="note">
+        {{!-- <button id="add-new-note" onclick="show()">Add New Note</button> --}}
         <p id = "demo"></p>
         <h1 id="support-message">Support Message</h1>
         <form method="POST" action="/clinician/support-message/{{patient._id}}">
-            <input type="textbox" id="note-c" name="supportMessage" value={{patient.management.supportMessage}}>
+            <input type="textbox" id="supportmessage" name="supportMessage" value={{patient.management.supportMessage}}>
             <button type="submit" id=confirm>Update</button>
         </form>
     </section>
+
 </section>
+<script type="text/javascript" src="/js/password-check.js"></script>
+        <button id="rpBtn">Adding new note</button>
+        <button id="outBtn">Sign Out</button>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Adding New Note</h2>
+            </div> 
+            <div>
+                <input type="textbox" id="note-input" id="note" value={{}}>
+            </div>
+            <div class ="commentBtn">
+                <button id="commentDis">Discard</button>
+                <input id="commentCon" class="submit" type="Submit" value="Confirm"/>
+            </div>
+        </div>
+
+<script type="text/javascript" src="/js/clincian-patient-info.js"></script>
