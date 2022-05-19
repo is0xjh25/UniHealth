@@ -1,6 +1,7 @@
- <link rel="stylesheet" type="text/css" href= "/UniHealth/public/css/patient-statistics.css">
+ <link rel="stylesheet" type="text/css" href= "/css/patient-statistics.css">
  <script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script>
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+ <script src="/UniHealth/public/js/helpers.js"></script>
 
 <div id="main"> 
         <div class = "aboveTable1">
@@ -21,197 +22,15 @@
                 <th>Exercise</th>
             </tr>
 
-            <tr>
-                <td>03/03/2022</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-            </tr>
-
-            <tr>
-                <td>4</td>
-                <td>4</td>
-                <td>4</td>
-                <td>4</td>
-                <td>4</td>
-            </tr>
-
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-            
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-
-            <tr>
-                <td>03/03/2022</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-            </tr>
-
-            <tr>
-                <td>4</td>
-                <td>4</td>
-                <td>4</td>
-                <td>4</td>
-                <td>4</td>
-            </tr>
-
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-            
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-
-            <tr>
-                <td>03/03/2022</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-            </tr>
-
-            <tr>
-                <td>4</td>
-                <td>4</td>
-                <td>4</td>
-                <td>4</td>
-                <td>4</td>
-            </tr>
-
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-            
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-
-            <tr>
-                <td>03/03/2022</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-            </tr>
-
-            <tr>
-                <td>4</td>
-                <td>4</td>
-                <td>4</td>
-                <td>4</td>
-                <td>4</td>
-            </tr>
-
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-            
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
+            {{#each record}}
+                <tr>
+                    <td>{{date}}</td>
+                    <td>{{record.bloodGlucoseLevelData}}</td>
+                    <td>{{record.weightData}}</td>
+                    <td>{{record.doesesOfInsulinTakenData}}</td>
+                    <td>{{record.exerciseData}}</td>          
+                </tr>
+            {{/list}}
 
         </table>
     </div>

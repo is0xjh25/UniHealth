@@ -37,6 +37,7 @@ var register = function(Handlebars) {
 	}
 };
 
+
 // export helpers to be used in our express app
 module.exports.register = register;
 module.exports.helpers = register(null); 
