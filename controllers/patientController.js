@@ -131,7 +131,7 @@ const profile = async (req, res) => {
 	}
 }
  
-const resetPassword = async (req, res, next) => {
+const resetPassword = async (req, res) => {
 	try {
     	const patientID = req.session.passport.user._id
 		const patient = await Patient.findById(patientID)
@@ -151,6 +151,19 @@ const resetPassword = async (req, res, next) => {
     	return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
 	}
 }
+
+const statistics = async (req, res) => {
+	try {
+		const patientID = req.session.passport.user
+		const patient = await Patient.findById(patientID).lean()
+		const records = await DailyRecord.find({"_patientID": patientID}).lean()
+		// return res.send(records)
+		return res.render('patient-statistics', {patient: patient, records: records})
+	} catch (err) {
+		console.log(err)
+		return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
+	}
+}
  
 module.exports = {
 	dashboard,
@@ -161,4 +174,5 @@ module.exports = {
 	rank,
 	profile,
 	resetPassword,
+	statistics
 }
