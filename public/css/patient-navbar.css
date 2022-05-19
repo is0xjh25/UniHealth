@@ -92,7 +92,7 @@ a{
     font-size: 300%;
     white-space:nowrap;
     height:200%;
-    font-family: var(--text-unused);
+    font-family: var(--title-font);
 }
 }
 
@@ -175,10 +175,10 @@ a{
 #go_back_w{
     position:absolute;
     bottom: -90%;
-    left: 100%;
+    left: 103%;
     font-size: 300%;
     white-space:nowrap;
     height:200%;
-    font-family: var(--text-unused);
+    font-family: var(--title-font);;
 }
 }

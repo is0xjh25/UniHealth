@@ -5,6 +5,13 @@
     {{> patient-navbar}}
 
     <section class="mobile-dashboard">
+    <div>
+        <p id="mobile-rate">Engagement Rate: {{rate}}%</p>
+        {{#compare rate "gt" 80}}
+        <i class="fa-solid fa-medal fa-8x" id="mobile-medal"></i>
+        {{/compare}}
+    </div>
+
     <div class="table-message">
         <h1 id="mobile-messName"><i class="fa-solid fa-comment-medical fa-2x"></i>Message</h1>
         <p id="mess">{{patient.management.supportMessage}}</p >
@@ -21,7 +28,7 @@
 
     <a href="/patient/record">
     <div class="table-record-m">
-        <h1 id="recordName"><i class="fa-solid fa-calendar-check fa-2x"></i></i>Record</h1>
+        <h1 id="recordName"><i class="fa-solid fa-calendar-check fa-2x"></i>Record</h1>
     </div>
     </a>
 
@@ -90,6 +97,12 @@
 
 
     <section class="desktop-dashboard">
+    <div>
+        <p id="desk-rate">Engagement Rate: {{rate}}%</p>
+        {{#compare rate "gt" 80}}
+        <i class="fa-solid fa-medal fa-8x" id="desk-medal"></i>
+        {{/compare}}
+    </div>
     <div class="message">
         <p id="message">{{patient.management.supportMessage}}</p >
     </div>
@@ -130,9 +143,6 @@
         {{#if message}}
             <div style="color:red;text-align:center;">{{message}}</div>
         {{/if}}
-
-        <i class="fa-solid fa-medal fa-8x" style="color: red;"></i>
-
     </div>
     <!--desktop record-->
     <a href="/patient/record">

@@ -31,6 +31,18 @@ body{
     .mobile-dashboard{
         display: block;
     }
+    #mobile-rate{
+        color: white;
+        margin-left: 35%;
+        margin-top: 10%;
+        font-size: 280%;
+    }
+    #mobile-medal{
+        color: gold;
+        position: absolute;
+        margin-left: 15%;
+        margin-top: -15%;
+    }
     .table-message{
         border-color: #FF8D8D;
         border-radius: 30px;
@@ -38,8 +50,9 @@ body{
         width:60%;
         color:#FF8D8D;
         margin-top: 10%;
-        margin-left: 20%;
-        padding-bottom: 30%;
+        margin-left: 15%;
+        padding-bottom: 20%;
+        padding-left: 10%;
         background-color: white;
         font-size: 200%;
     }
@@ -47,6 +60,12 @@ body{
         padding-left: 18%;
         padding-top: -2%;
         margin-top: 1%;
+    }
+    #mess{
+        font-size: 150%;
+        margin-left: -10%;
+        margin-top: 5%;
+        color: #2763A7;
     }
     .table-stat{
         border-color:#E8D810;
@@ -88,9 +107,8 @@ body{
         margin-left: 30%;
         padding-left: 20%;
         margin-top: 5%;
-
+        font-size: 180%;
     }
-
     .table-right-m{
         display: block;
         border-style: solid;
@@ -236,7 +254,20 @@ body{
        body{
            background-color: #2D65A4;
        }
-   
+
+       #desk-medal{
+           color: gold;
+           padding-left: 2%;
+           padding-top: 3%;
+       }
+       #desk-rate{
+           color: white;
+           position: absolute;
+           font-size: 230%;
+           margin-top: 6%;
+           margin-left: 9%;
+       }
+
        .message{
            border-style: solid;
            border-color: #FF8D8D;
@@ -246,7 +277,7 @@ body{
            width: 519px;
            height: 300px;
            left: 37px;
-           top: 200px;
+           top: 340px;
        }
        
        #message{
@@ -267,7 +298,7 @@ body{
            width: 270px;
            height: 70px;
            left: 170px;
-           top: 170px;
+           top: 310px;
        }
        #messName{
            color:#FFFFFF;
@@ -288,7 +319,7 @@ body{
            width: 232px;
            height: 248px;
            left: 37px;
-           top: 595px;
+           top: 720px;
        }
        
        #stat{
@@ -319,7 +350,7 @@ body{
            width: 232px;
            height: 248px;
            left: 325px;
-           top: 595px;
+           top: 720px;
        }
    
        
@@ -380,7 +411,7 @@ body{
            color: #FFFFFF;font-size: 50px;
            position: absolute;
            left: 130px;
-           top: -20px;
+           top: -35px;
            text-decoration:none;
    
        }
