@@ -8,13 +8,15 @@
     <form method="POST" action="/clinician/create-patient">
         <section class = "adding">
             <h1 id = "hearder">Adding New Patient.....<h1>
-            <label for="username"> User Name:</label>
+            <label for="username" id="userName"> User Name:</label>
             <input type="text" id="user-name" name="username" required/>
-            <label for="phone"> Phone Number</label>
-            <input type="number" id ="phone" name ="phone" required />
             <label for="firstname"> First Name:</label>
             <input type="text" id ="first-name" name="firstname" required= "required"/>
-            <label for="yearBorn"> Year of Born</label>
+            <label for="lastname"> Last Name:</label>
+            <input type="text" id="last-name" name="lastname" required/>
+            <label for="phone"> Phone:</label>
+            <input type="number" id ="phone" name ="phone" required min="10"/>
+            <label for="yearBorn"> Year of Born:</label>
             <input type="number" id="birth" name ="yearBorn" required/>
             <label for="gender">Gender:</label>
             <select name="gender">
@@ -22,16 +24,8 @@
                 <option value="female">female</option>
                 <option value="other">other</option>
             </select>
-            <label for="lastname"> Last Name:</label>
-            <input type="text" id="last-name" name="lastname" required/>
             <label for="password"> Password:</label>
             <input type="password" id ="password" minlength="8" placeholder= "At Least 8 Characters" name ="password" onkeyup="check()" required />
-            <label id="email" for="email"> Email:</label>
-            <input type ="text" id="email-input" name="email" required/>
-            <div id = "biotext">
-            <label for ="bio"> Bio:</label>
-            <input type ="text" id="bio" name="bio"/>
-            </div>
             <div id = "com-pas">
             <label> Confirm Password</label>
             <input type="password" id="password-confirm" name="confirmPassword" required onkeyup="check()"/>
@@ -40,7 +34,13 @@
                 <div style="color:red;text-align:center;" class="">{{message}}</div>
             {{/if}}
             </div>
-            <button type="submit" id="submit" class="submit">Submit</button> 
+             <label id="email" for="email"> Email:</label>
+            <input type ="email" id="email-input" name="email" id="email-box" required/> 
+            <div id = "biotext">
+            <label for ="bio"> Bio:</label>
+            <input type ="text" id="bio" name="bio"/>
+            </div> 
+            <button type="submit" id="submit" class="submit">Submit</button>
             </section>
         </form>
     </div>

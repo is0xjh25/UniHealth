@@ -19,31 +19,31 @@
    
    
    #navbar{
-       background-color: var(--primary);
+    background-color: var(--primary);
    }
    
    #favicon{
-       height: 2%;
-       width:6%;
-       z-index: 1;
+    height: 2%;
+    width:6%;
+    z-index: 1;
    
    }
    
    #dashboard_w{
-       position:absolute;
-       bottom: -10%;
-       left: 150%;
-       font-size: 300%;
-       font-family: var(--title-font);
-   
+    position:absolute;
+    bottom: -10%;
+    left: 150%;
+    font-size: 300%;
+    font-family: var(--title-font);
+        
    }
    
    #dashboard{
-       position:absolute;
-       top:5.4%;
-       left: 9%;
-       color: var(--text-unused);
-       font-size: 80%;
+    position:absolute;
+    top:5.4%;
+    left: 9%;
+    color: var(--text-unused);
+    font-size: 80%;
    }
    
    #comment{
@@ -56,68 +56,65 @@
    }
    
    #comment_w{
-       position:absolute;
-       bottom: -17%;
-       left: 150%;
-       font-size: 370%;
-       font-family: var(--title-font);
+    position:absolute;
+    bottom: -17%;
+    left: 150%;
+    font-size: 370%;
+    font-family: var(--title-font);
    }
    
    
    #new_patient{
-       position:absolute;
-       top:5.5%;
-       left: 40%;
-       color: var(--link);
-       font-size: 80%;
-       color:var(--text-unused);
+    position:absolute;
+    top:5.5%;
+    left: 40%;
+    color: var(--link);
+    font-size: 80%;
+    color:var(--text-unused);
    }
    
    #new_patient_w{
-       position:absolute;
-       bottom: -90%;
-       left: 150%;
-       font-size: 280%;
-       white-space:nowrap;
-       height:200%;
-       font-family: var(--title-font);
+    position:absolute;
+    bottom: -90%;
+    left: 150%;
+    font-size: 280%;
+    white-space:nowrap;
+    height:200%;
+    font-family: var(--title-font);
    }
    
-   a{
-       color:var(--text-unused);
-   }
    
    #about-us{
-       position:absolute;
-       top:5.5%;
-       left: 58%;
-       color: var(--link);
-       font-size: 80%;
-       color:var(--text-unused);
+    position:absolute;
+    top:5.5%;
+    left: 58%;
+    color: var(--link);
+    font-size: 80%;
+    color:var(--text-unused);
    }
    #about-diabetes{
-       position:absolute;
-       top:5.5%;
-       left: 70%;
-       color: var(--link);
-       font-size: 80%;
-       color:var(--text-unused);
+    position:absolute;
+    top:5.5%;
+    left: 70%;
+    color: var(--link);
+    font-size: 80%;
+    color:var(--text-unused);
    }
    
    #go_back{
-       position:absolute;
-       top:4.6%;
-       left: 88%;
-       font-size: 80%;
-       color:var(--text-unused);
+    position:absolute;
+    top:5.3%;
+    left: 88%;
+    font-size: 80%;
+    color:var(--text-unused);
    }
    
    #go_back_w{
-       position:absolute;
-       bottom: -90%;
-       left: 100%;
-       font-size: 300%;
-       white-space:nowrap;
-       height:200%;
-       font-family: var(--text-unused);
+    position:absolute;
+    bottom: -90%;
+    left: 150%;
+    font-size: 280%;
+    white-space:nowrap;
+    height:200%;
+    font-family: var(--title-font);
    }
