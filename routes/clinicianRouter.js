@@ -11,9 +11,6 @@ clinicianRouter.get('/dashboard', utilities.isLoggedInClinician, clinicianContro
 // patient today info page
 clinicianRouter.get('/patient-info/:patientID', utilities.isLoggedInClinician, clinicianController.patientInfo)
 
-// patient daily info page
-clinicianRouter.get('/patient-info/:patientID/:date', utilities.isLoggedInClinician, clinicianController.patientInfoByDate)
-
 // patient comment page ***
 clinicianRouter.get('/comment', utilities.isLoggedInClinician, clinicianController.comment)
 

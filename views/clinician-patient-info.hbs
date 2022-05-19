@@ -6,14 +6,19 @@
 
 {{> clinician-navbar}}
 
-</section>
-    <section class = info>
+<section>
+    <form method="GET" action="/clinician/patient-info/{{patient._id}}">
+        <label for="start">Pick Date:</label>
+        <input type="date" id="start" name="date" min="2022-01-01" max="2099-12-31">
+        <button type="submit">View</button>
+    </form>
+    <section class="info">
         <img id = "photo" src="/images/patient.png">
             <br></br>
-        <h1 id = "username"> Username:{{patient.username}}</h1>
-        <h1 id = "fullname"> Full Name:{{patient.firstname}} {{patient.lastname}}</h1>
-        <h1 id = "phone"> Phone:{{patient.phone}}</h1>
-        <h1 id = "email"> Email:{{patient.email}}</h1>
+        <h1 id="username"> Username:{{patient.username}}</h1>
+        <h1 id="fullname"> Full Name:{{patient.firstname}} {{patient.lastname}}</h1>
+        <h1 id="phone"> Phone:{{patient.phone}}</h1>
+        <h1 id="email"> Email:{{patient.email}}</h1>
     </section>
 </section>
 <section class="data">
@@ -116,14 +121,14 @@
 		<button>Edit</button>
 	</form> 
     <section class = "note">
-        <h1>Clincian Note</h1>
-        <input type ="textbox" id="note-c" name="note">
-        {{!-- <button id="add-new-note" onclick="show()">Add New Note</button> --}}
+        <h1>Clinician Note</h1>
+        <input type ="text" id="note-c" name="note">
+        <button id="add-new-note" onclick="show()">Add New Note</button>
         <p id = "demo"></p>
         <h1 id="support-message">Support Message</h1>
         <form method="POST" action="/clinician/support-message/{{patient._id}}">
-            <input type="textbox" id="supportmessage" name="supportMessage" value={{patient.management.supportMessage}}>
-            <button type="submit" id=confirm>Update</button>
+            <input type="textbox" id="note-c" name="supportMessage" value={{patient.management.supportMessage}}>
+            <button type="submit" id="confirm">Update</button>
         </form>
     </section>
 
