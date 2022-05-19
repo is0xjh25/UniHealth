@@ -1,26 +1,26 @@
 const Patient = require('../models/patient.js')
 const DailyRecord = require('../models/dailyRecord.js')
 
+Date.prototype.isValid = function () {
+    // An invalid date object returns NaN for getTime() and NaN is the only
+    // object not strictly equal to itself.
+    return this.getTime() === this.getTime();
+};  
+
 const dashboard = async (req, res) => {
 	try {
 		const patientID = req.session.passport.user
 		const patient = await Patient.findById(patientID).lean()
-		const today = new Date().toDateString()
-		const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": today}]}).lean()
-		return res.render('patient-dashboard', {date: today, patient: patient, record: record, message: req.flash('message')})
-	} catch (err) {
-		console.log(err)
-		return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
-	}
-}
-
-const dashboardByDate = async (req, res) => {
-	try {
-		const patientID = req.session.passport.user
-		const patient = await Patient.findById(patientID).lean()
-		const date = new Date(req.params.date).toDateString()
-		const record = await DailyRecord.findOne( {$and: [{"_patientID": patientID}, {"date": date}]}).lean()
-		return res.render('patient-dashboard', {date: today, patient: patient, record: record})
+		var today = new Date().toDateString()
+		if (new Date(req.query.date).isValid()) today = new Date(req.query.date).toDateString()
+		const record = await DailyRecord.findOne({$and: [{"_patientID": patientID}, {"date": today}]}).lean()
+		const badge = false
+		let difference = new Date().getTime() - patient.registered.getTime() 
+		let totalDays = Math.ceil(difference / (1000 * 3600 * 24))
+		if (totalDays === 0) totalDays = 1
+		let records = await DailyRecord.find({$and: [{"_patientID": patientID}]}).lean()				
+		let rate = Math.round(records.length / totalDays * 10000) / 100
+		return res.render('patient-dashboard', {date: today, patient: patient, record: record, rate: rate, message: req.flash('message')})
 	} catch (err) {
 		console.log(err)
 		return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
@@ -167,7 +167,6 @@ const statistics = async (req, res) => {
  
 module.exports = {
 	dashboard,
-	dashboardByDate,
 	addData,
 	addComment,
 	record,

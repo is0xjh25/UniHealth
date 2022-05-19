@@ -86,22 +86,11 @@ const patientManagement = async (req, res) => {
 
 const patientInfo = async (req, res) => {
     try {
-        const today = new Date().toDateString()
         const patient = await Patient.findById(req.params.patientID).lean()
+		var today = new Date().toDateString()
+		if (new Date(req.query.date).isValid()) today = new Date(req.query.date).toDateString()
         const record = await DailyRecord.findOne( {$and: [{"_patientID": patient._id}, {"date": today }]}).lean()
         return res.render('clinician-patient-info', {date: today, patient: patient, record: record})
-    } catch (err) {
-        console.log(err)
-        return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
-    }
-}
-
-const patientInfoByDate = async (req, res) => {
-    try {
-        const patient = await Patient.findById(req.params.patientID).lean()
-        const date = new Date(req.params.date).toDateString()
-        const record = await DailyRecord.findOne( {$and: [{"_patientID": patient._id}, {"date": date }]}).lean()
-        return res.render('clinician-patient-info', {date: date, patient: patient, record: record})
     } catch (err) {
         console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
@@ -221,7 +210,6 @@ module.exports = {
     dashboard,
     patientManagement,
     patientInfo,
-    patientInfoByDate,
     addPatient,
     newPatient,
     comment,

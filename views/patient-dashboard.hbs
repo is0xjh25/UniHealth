@@ -99,6 +99,11 @@
     
     <!--desktop table-->
     <div class="right">
+        <form method="GET" action="/patient/dashboard">
+            <label for="start">Pick Date:</label>
+            <input type="date" id="start" name="date" min="2022-01-01" max="2099-12-31">
+            <button type="submit">View</button>
+        </form>
         <table>
             <tr>
                 <th>DATE</th>
