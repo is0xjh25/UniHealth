@@ -11,9 +11,9 @@
 
 body{
     background-color: #2D65A4;
+    white-space: nowrap
 }
  
-/*mobile椤甸潰鏍峰紡 */
 @media screen and (min-width: 375px) {
     .title{
         display: flex;                       
@@ -92,6 +92,7 @@ body{
         }
         
         .bloodcolor{
+            margin-top: 20%;
             width: 700px;
             height: 100px;
             line-height: 60px;
@@ -218,7 +219,7 @@ body{
         
     }
 
-/*PC鏍峰紡 */
+
 @media screen and (min-width: 1024px) {
     .title{
         display: none;
@@ -258,9 +259,8 @@ body{
     }
     
     .bloodcolor{
-        width: 355px;
-        height: 40px;
-        line-height: 20px;
+        width: 100%;
+        height: 50%;
         border-style: solid;
         border-radius: 10px;
         border-color: #2D65A4;
@@ -283,9 +283,8 @@ body{
     }
     
     .weightcolor{
-        width: 355px;
-        height: 40px;
-        line-height: 20px;
+        width: 100%;
+        height: 50%;
         border-style: solid;
         border-radius: 10px;
         border-color: #2D65A4;
@@ -307,9 +306,8 @@ body{
     }
     
     .dosecolor{
-        width: 355px;
-        height: 40px;
-        line-height: 20px;
+        width: 100%;
+        height: 50%;
         border-style: solid;
         border-radius: 10px;
         border-color: #2D65A4;
@@ -330,9 +328,8 @@ body{
     }
     
     .excolor{
-        width: 355px;
-        height: 40px;
-        line-height: 20px;
+        width: 100%;
+        height: 50%;
         border-style: solid;
         border-radius: 10px;
         border-color: #2D65A4;
@@ -387,9 +384,9 @@ body{
      
     
 
-/* 寮圭獥 (background) */
+
 .modal {
-    display: none; /* 榛樿闅愯棌 */
+    display: none; 
     position: fixed; 
     z-index: 1; 
     padding-top: 100px; 
@@ -402,7 +399,7 @@ body{
     background-color: rgba(0,0,0,0.4);
 }
  
-/* 寮圭獥鍐呭 */
+
 .modal-content {
     position: relative;
     background-color: #fefefe;
@@ -417,7 +414,7 @@ body{
     animation-duration: 0.4s
 }
  
-/* 娣诲姞鍔ㄧ敾 */
+
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
@@ -428,7 +425,7 @@ body{
     to {top:0; opacity:1}
 }
  
-/* 鍏抽棴鎸夐挳 */
+
 .close {
     color: white;
     float: right;

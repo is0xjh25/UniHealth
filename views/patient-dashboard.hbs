@@ -93,10 +93,10 @@
 
     <div>
         <form method="GET" action="/patient/dashboard">
-            <input type="date" id="tablet-start" name="date" min="2022-01-01" max="2099-12-31">
-            <button type="submit" id="tablet-view">View</button>
+            <input type="date" id="desk-start" name="date" min={{#dateToString patient.registered}}{{/dateToString}} max={{#dateToString "today"}}{{/dateToString}}>
+            <button type="submit" id="desk-view">View</button>
         </form>
-    </div>
+        </div>
 
     <div class="table-right">
         <table>

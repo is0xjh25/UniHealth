@@ -18,13 +18,15 @@
 </section>
 <section class="data">
 
-    <form method="GET" action="/clinician/patient-info/{{patient._id}}"></form>
     <h3 id ="date">
-    <input type="date" id="start" name="date" min="2022-01-01" max="2099-12-31">
-    <button type="submit" id="view">View</button>
+    <div>
+        <form method="GET" action="/clinician/patient-info/{{patient._id}}">
+            <input type="date" id="desk-start" name="date" min={{#dateToString patient.registered}}{{/dateToString}} max={{#dateToString "today"}}{{/dateToString}}>
+            <button type="submit" id="desk-view">View</button>
+        </form>
+        </div>
     {{date}}
     </h3>
-    </form>
 
     <table id = "blood">
         <tr>
