@@ -9,8 +9,9 @@ body{
     top: 55%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 360px;
-    height: 600px;
+    width: 900px;
+    height: 1600px;
+    font-size: 150%;
     line-height: 20px;
     border-style: solid;
     border-color: #2D65A4;
@@ -21,18 +22,18 @@ body{
 
 table
 {
-    width: 330px;
+    width: 800px;
     border-collapse:collapse;
     background-color: white;
 }
 
 th{
-    height:50px;
+    height:100px;
 }
 
 td{
     text-align: center;
-    height: 30px;
+    height: 80px;
 }
 
 table, th, td
@@ -51,6 +52,7 @@ table, th, td
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    font-size: 100%;
 
 }
 
@@ -59,6 +61,7 @@ table, th, td
     justify-content: center;
     align-items: center;
     color: white;
+    font-size: 100%;
 }
 
 }

@@ -1,4 +1,4 @@
- <link rel="stylesheet" type="text/css" href= "/css/patient-record.css">
+<link rel="stylesheet" type="text/css" href= "/css/patient-record.css">
 <script src="https://kit.fontawesome.com/74c293aa5a.js" crossorigin="anonymous"></script>
 <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
 
@@ -9,7 +9,7 @@
 
 
         <div class = date>
-            <h2>{{date}}</h2>
+            <h3>{{date}}</h3>
         </div>
 
         <div class="blood">
@@ -18,13 +18,13 @@
             </div>
             <form action="/patient/add-data/bloodGlucoseLevel" method="POST">
                 <label for="data">Data</label>
-                <input type="number" name="data" value="{{record.bloodGlucoseLevelData}}"/>
-                <input type="submit" value="Submit"/>
+                <input class="kk1" type="number" name="data" value="{{record.bloodGlucoseLevelData}}"/>
+                <input class="kk2" type="submit" value="Submit"/>
             </form>
             <form action="/patient/add-comment/bloodGlucoseLevel" method="POST">
                 <label for="data">Comment:</label>
-                <input type="text" name="data" value="{{record.bloodGlucoseLevelComment}}"/>
-                <input type="submit" value="Submit"/>
+                <input class="kk1" type="text" name="data" value="{{record.bloodGlucoseLevelComment}}"/>
+                <input class="kk2" type="submit" value="Submit"/>
             </form>
          </div>
 
@@ -36,13 +36,13 @@
             </div>
             <form action="/patient/add-data/weight" method="POST">
                 <label for="data">Data:</label>
-                <input type="number" name="data" value="{{record.weightData}}"/>
-                <input type="submit" value="Submit"/>
+                <input class="kk1" type="number" name="data" value="{{record.weightData}}"/>
+                <input class="kk2" type="submit" value="Submit"/>
             </form>
             <form action="/patient/add-comment/weight" method="POST">
 	            <label for="data">Comment:</label>
-	            <input type="text" name="data" value="{{record.weightComment}}"/>
-	            <input type="submit" value="Submit"/>
+	            <input class="kk1" type="text" name="data" value="{{record.weightComment}}"/>
+	            <input class="kk2" type="submit" value="Submit"/>
             </form>
           </div>
     
@@ -54,13 +54,13 @@
             </div>
             <form action="/patient/add-data/doesesOfInsulinTaken" method="POST">
                 <label for="data">Data:</label>
-                <input type="number" name="data" value="{{record.doesesOfInsulinTakenData}}"/>
-                <input type="submit" value="Submit"/>
+                <input class="kk1" type="number" name="data" value="{{record.doesesOfInsulinTakenData}}"/>
+                <input class="kk2" type="submit" value="Submit"/>
             </form>
             <form action="/patient/add-comment/doesesOfInsulinTaken" method="POST">
                 <label for="data">Comment</label>
-                <input type="text" name="data" value="{{record.doesesOfInsulinTakenComment}}"/>
-                <input type="submit" value="Submit"/>
+                <input class="kk1" type="text" name="data" value="{{record.doesesOfInsulinTakenComment}}"/>
+                <input class="kk2" type="submit" value="Submit"/>
             </form>
           </div>
     
@@ -72,13 +72,13 @@
             </div>
             <form action="/patient/add-data/exercise" method="POST">
                 <label for="data">Data:</label>
-                <input type="number" name="data" value="{{record.exerciseData}}"/>
-                <input type="submit" value="Submit"/>
+                <input class="kk1" type="number" name="data" value="{{record.exerciseData}}"/>
+                <input class="kk2" type="submit" value="Submit"/>
             </form>
             <form action="/patient/add-comment/exercise" method="POST">
                 <label for="data">Comment:</label>
-                <input type="text" name="data" value="{{record.exerciseComment}}"/>
-                <input type="submit" value="Submit"/>
+                <input class="kk1" type="text" name="data" value="{{record.exerciseComment}}"/>
+                <input class="kk2" type="submit" value="Submit"/>
             </form>          
         </div>
 

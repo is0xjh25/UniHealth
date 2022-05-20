@@ -33,12 +33,16 @@
    <img id="favicon" src="/images/favicon.png" >
   </section >
   <section class="account-password">
-   <label for="email" id="acc">Email:</label>
-    <input type="text" name="email" id="enter-email"/>
-    <br></br>
+   <section class="account-password">
+    <form action="login-clinician" method="POST">
+    <label for="email" id="acc">Email</label>
+    <input type="text" name="email"id="enter-email"/>
     <label for="password" id="passw">Password:</label>
-    <input type="password" name="password"/>
-   <button id = 'signin' onclick=turn_dashbord()>Sign In</button>
+    <input type="password" name="password"  id="enter-pass"/>
+    <br></br>
+    <input type="submit" value="Submit" id="signin"/>
+   </form>
+  </section>
   </section>
   <a id = "about_unit_health_m" href="/about-us" > <i class="fa-solid fa-circle-info fa-1x" ></i> About Unit Health</a>
   <a  id = "about_diabetes_m" href="/about-diabetes" ><i class="fa-solid fa-circle-info fa-1x"></i> About Diabetes</a>

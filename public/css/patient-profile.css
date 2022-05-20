@@ -21,25 +21,26 @@ body{
 
 
 @media screen and (max-width: 1023px) {
+
 .info{
     display: flex;
     justify-content: space-between;
-    margin: 10px;
-    width: 330px;
+    margin: 50px;
+    width: 800px;
     height: 40px;
     line-height: 20px;
     color: white;
-
+    font-size: 200%;
 }
 
 #rpBtn{
-    width:120px;
-    height: 40px;
-    border: none;
+    width:250px;
+    height: 80px;
     border-radius: 8px;
-    border: 5px solid #18D9D9;
+    border: 10px solid #18D9D9;
     background-color: white;
     color: #18D9D9;
+    font-size: 80%;
 }
 
 #rpBtn:hover {
@@ -48,13 +49,13 @@ body{
 }
 
 #outBtn{
-    width:120px;
-    height: 40px;
-    border: none;
+    width:250px;
+    height: 80px;
     border-radius: 8px;
-    border: 5px solid #F26780;
+    border: 10px solid #F26780;
     background-color: white;
     color: #F26780;
+    font-size: 80%;
 }
 
 #outBtn:hover {
@@ -111,9 +112,9 @@ body{
 
 
 
-/* 弹窗 (background) */
+/* 寮圭獥 (background) */
 .modal {
-    display: none; /* 默认隐藏 */
+    display: none; /* 榛樿闅愯棌 */
     position: fixed; 
     z-index: 1; 
     padding-top: 100px; 
@@ -126,7 +127,7 @@ body{
     background-color: rgba(0,0,0,0.4);
 }
  
-/* 弹窗内容 */
+/* 寮圭獥鍐呭 */
 .modal-content {
     position: relative;
     background-color: #fefefe;
@@ -141,7 +142,7 @@ body{
     animation-duration: 0.4s
 }
  
-/* 添加动画 */
+/* 娣诲姞鍔ㄧ敾 */
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
@@ -152,7 +153,7 @@ body{
     to {top:0; opacity:1}
 }
  
-/* 关闭按钮 */
+/* 鍏抽棴鎸夐挳 */
 .close {
     color: white;
     float: right;
@@ -218,5 +219,4 @@ body{
     color: #2763A7;
     margin: 20px;
 }
-
 

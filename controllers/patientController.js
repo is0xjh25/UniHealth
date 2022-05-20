@@ -155,10 +155,14 @@ const resetPassword = async (req, res) => {
 
 const statistics = async (req, res) => {
 	try {
+		const today = new Date().toDateString()
 		const patientID = req.session.passport.user
 		const patient = await Patient.findById(patientID).lean()
 		const records = await DailyRecord.find({"_patientID": patientID}).lean()
-		return res.render('patient-statistics', {patient: patient, records: records})
+		const startDate = new Date(patient.registered).toDateString()
+		// return res.send(records)
+		return res.render('patient-statistics', {patient: patient, records: records, endDate: today, startDate: startDate})
+
 	} catch (err) {
 		console.log(err)
 		return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
