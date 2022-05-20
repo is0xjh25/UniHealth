@@ -107,12 +107,13 @@ const rank = async (req, res) => {
 				let info = {
 					_patientID: p._id,
 					username: p.username,
-					records: rate
+					record: rate
 				}
 				rank.push(info) 
             })
         )
-		rank.sort(({records: a}, {records: b}) => b - a)
+		rank.sort(({record: a}, {record: b}) => b - a)
+		// return res.send(rank)
 	 	return res.render('patient-rank', {rank: rank})
 	} catch (err) {
 		console.log(err)
@@ -161,6 +162,7 @@ const statistics = async (req, res) => {
 		const startDate = new Date(patient.registered).toDateString()
 		// return res.send(records)
 		return res.render('patient-statistics', {patient: patient, records: records, endDate: today, startDate: startDate})
+
 	} catch (err) {
 		console.log(err)
 		return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
