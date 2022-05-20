@@ -1,7 +1,11 @@
 const mongoose = require('mongoose')
 
 const dailyRecordSchema = new mongoose.Schema({
-    _patientID: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient', required: true },
+    _patientID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Patient',
+        required: true,
+    },
     createBy: { type: Date, default: Date.now, require: true },
     date: { type: String, require: true },
     bloodGlucoseLevelData: { type: Number },

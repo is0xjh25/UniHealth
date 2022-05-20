@@ -11,27 +11,26 @@ const clinicianRouter = require('./routes/clinicianRouter')
 const patientRouter = require('./routes/patientRouter')
 const app = express()
 
-
 app.use(flash())
 
 // Track authenticated users through login sessions
 app.use(
     session({
-        secret: process.env.SESSION_SECRET || 'keyboard cat', 
+        secret: process.env.SESSION_SECRET || 'keyboard cat',
         name: 'Uni Health',
         saveUninitialized: false,
         resave: false,
         cookie: {
             sameSite: 'strict',
             httpOnly: true,
-            secure: app.get('env') === 'production'
+            secure: app.get('env') === 'production',
         },
         store: MongoStore.create({ clientPromise: mongooseClient }),
     })
 )
 
 if (app.get('env') === 'production') {
-    app.set('trust proxy', 1); // Trust first proxy
+    app.set('trust proxy', 1) // Trust first proxy
 }
 app.use(passport.authenticate('session'))
 
@@ -40,7 +39,7 @@ app.engine(
     exphbs.engine({
         defaultLayout: 'main',
         extname: 'hbs',
-        helpers: require(__dirname + "/public/js/helpers.js").helpers
+        helpers: require(__dirname + '/public/js/helpers.js').helpers,
     })
 )
 
@@ -62,5 +61,4 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
     console.log(`Uni Health is listening on port ${port}!`)
-    }
-)
+})

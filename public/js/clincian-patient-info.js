@@ -9,7 +9,6 @@
 //  var btn = document.getElementById("rpBtn");
 //  var signout = document.getElementById("outBtn");
 
-
 //  // 获取 <span> 元素，用于关闭弹窗 that closes the modal
 //  var span = document.getElementsByClassName("close")[0];
 
@@ -23,7 +22,6 @@
 //   btn.onclick = function() {
 //       modal.style.display = "block";
 //  }
-
 
 //  btn3.onclick = function(){
 //      modal.style.display = "none";
