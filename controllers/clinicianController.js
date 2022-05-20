@@ -136,16 +136,21 @@ const comment = async (req, res) => {
             clinician.patients.map(async (p) => {
                 const records = p._id.dailyRecords
                 records.map((r) => {
-                    const type = [ 'weight', 'doesesOfInsulinTaken', 'exercise']
+                    const type = ['bloodGlucoseLevel', 'weight', 'doesesOfInsulinTaken', 'exercise']
                     type.map((t) => {
                         if (r._id[(t+"Comment")] !== undefined) {
-                            console.log(r._id[t+"Comment"])
+                            var data = r._id[t+"Data"]
+                            var time = new Date()
+                            if (!data) {
+                                data = "Not Record"
+                                time = r._id.createBy
+                            }
                             const comment = {
                                 patientID: p._id,
                                 type: t,
-                                data: r._id[t+"Data"],
+                                data: data,
                                 comment: r._id[t+"Comment"],
-                                time: r._id[t+"Time"]
+                                time: time
                             }
                             comments.push(comment)    
                         }
@@ -154,8 +159,7 @@ const comment = async (req, res) => {
             })
         )
         comments.sort(({time: a}, {time: b}) => b.getTime() - a.getTime())
-        res.send(123)
-        // return res.render('clinician-comment', {comments: comments})
+        return res.render('clinician-comment', {comments: comments})
     } catch (err) {
         console.log(err)
         return res.status(500).render('error', {errorCode: '500', message: 'Internal Server Error'})
