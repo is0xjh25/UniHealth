@@ -8,6 +8,9 @@
     <form method="POST" action="/clinician/create-patient">
         <section class = "adding">
             <h1 id = "hearder">Adding New Patient.....<h1>
+            {{#if message}}
+                <div style="color:red;text-align:center;" class="">{{message}}</div>
+            {{/if}}
             <label for="username" id="userName"> User Name:</label>
             <input type="text" id="user-name" name="username" required/>
             <label for="firstname"> First Name:</label>
@@ -15,9 +18,9 @@
             <label for="lastname"> Last Name:</label>
             <input type="text" id="last-name" name="lastname" required/>
             <label for="phone"> Phone:</label>
-            <input type="number" id="phone" name ="phone" required minlength="10"/>
+            <input type="text" id="phone" name ="phone" required maxlength="10" minlength="10" pattern="\d{10}"/>
             <label for="yearBorn"> Year of Born:</label>
-            <input type="number" id="birth" name ="yearBorn" required/>
+            <input type="number" id="birth" name ="yearBorn" min="1900" max="2022" required/>
             <label for="gender">Gender:</label>
             <select name="gender">
                 <option value="male">male</option>
@@ -30,9 +33,6 @@
             <label> Confirm Password</label>
             <input type="password" id="password-confirm" name="confirmPassword" required onkeyup="check()"/>
             <span id="warning"></span>
-            {{#if message}}
-                <div style="color:red;text-align:center;" class="">{{message}}</div>
-            {{/if}}
             </div>
              <label id="email" for="email"> Email:</label>
             <input type ="email" id="email-input" name="email" id="email-box" required/> 

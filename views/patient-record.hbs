@@ -18,12 +18,12 @@
             </div>
             <form action="/patient/add-data/bloodGlucoseLevel" method="POST">
                 <label for="data">Data</label>
-                <input class="kk1" type="number" name="data" value="{{record.bloodGlucoseLevelData}}"/>
-                <input class="kk2" type="submit" value="Submit"/>
+                <input class="kk1" type="number" name="data" value="{{record.bloodGlucoseLevelData}}" min='0' max='50' step="0.1" reuqired/>
+                <input class="kk2" type="submit" value="Submit" />
             </form>
             <form action="/patient/add-comment/bloodGlucoseLevel" method="POST">
                 <label for="data">Comment:</label>
-                <input class="kk1" type="text" name="data" value="{{record.bloodGlucoseLevelComment}}"/>
+                <input class="kk1" type="text" name="data" value="{{record.bloodGlucoseLevelComment}}" required />
                 <input class="kk2" type="submit" value="Submit"/>
             </form>
          </div>
@@ -36,12 +36,12 @@
             </div>
             <form action="/patient/add-data/weight" method="POST">
                 <label for="data">Data:</label>
-                <input class="kk1" type="number" name="data" value="{{record.weightData}}"/>
+                <input class="kk1" type="number" name="data" value="{{record.weightData}}" min='30' max='300' step="0.1" required/>
                 <input class="kk2" type="submit" value="Submit"/>
             </form>
             <form action="/patient/add-comment/weight" method="POST">
 	            <label for="data">Comment:</label>
-	            <input class="kk1" type="text" name="data" value="{{record.weightComment}}"/>
+	            <input class="kk1" type="text" name="data" value="{{record.weightComment}}" required/>
 	            <input class="kk2" type="submit" value="Submit"/>
             </form>
           </div>
@@ -54,12 +54,12 @@
             </div>
             <form action="/patient/add-data/doesesOfInsulinTaken" method="POST">
                 <label for="data">Data:</label>
-                <input class="kk1" type="number" name="data" value="{{record.doesesOfInsulinTakenData}}"/>
+                <input class="kk1" type="number" name="data" value="{{record.doesesOfInsulinTakenData}}" min='0' max='30' step="1" required/>
                 <input class="kk2" type="submit" value="Submit"/>
             </form>
             <form action="/patient/add-comment/doesesOfInsulinTaken" method="POST">
                 <label for="data">Comment</label>
-                <input class="kk1" type="text" name="data" value="{{record.doesesOfInsulinTakenComment}}"/>
+                <input class="kk1" type="text" name="data" value="{{record.doesesOfInsulinTakenComment}}" required/>
                 <input class="kk2" type="submit" value="Submit"/>
             </form>
           </div>
@@ -72,12 +72,12 @@
             </div>
             <form action="/patient/add-data/exercise" method="POST">
                 <label for="data">Data:</label>
-                <input class="kk1" type="number" name="data" value="{{record.exerciseData}}"/>
+                <input class="kk1" type="number" name="data" value="{{record.exerciseData}}" min='0' max='100000' step="1" required/>
                 <input class="kk2" type="submit" value="Submit"/>
             </form>
             <form action="/patient/add-comment/exercise" method="POST">
                 <label for="data">Comment:</label>
-                <input class="kk1" type="text" name="data" value="{{record.exerciseComment}}"/>
+                <input class="kk1" type="text" name="data" value="{{record.exerciseComment}}" required/>
                 <input class="kk2" type="submit" value="Submit"/>
             </form>          
         </div>

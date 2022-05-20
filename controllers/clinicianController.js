@@ -27,11 +27,13 @@ const createClinician = async (req, res) => {
 const createPatient = async (req, res) => {
     try {
         const clinician = await Clinician.findById(req.session.passport.user)
-        console.log(req.body)
-        if (req.body.password !== req.body.confirmPassword) {
-            req.flash('message', 'New password and confirm password do not match.')
-            return res.redirect('/clinician/add-patient') 
-        }
+        const patient = await Patient.findOne({email: req.body.email})
+        console.log(req.body.email)
+        console.log(patient)
+        if(patient){
+            req.flash('message', 'The email has been registerd.')
+            return res.redirect('/clinician/add-patient')
+        } 
         const newPatient = new Patient(req.body)
         await newPatient.save()
         clinician.patients.addToSet(newPatient._id)

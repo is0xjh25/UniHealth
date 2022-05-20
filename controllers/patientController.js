@@ -16,8 +16,8 @@ const dashboard = async (req, res) => {
 		const record = await DailyRecord.findOne({$and: [{"_patientID": patientID}, {"date": today}]}).lean()
 		const badge = false
 		let difference = new Date().getTime() - patient.registered.getTime() 
-		let totalDays = Math.ceil(difference / (1000 * 3600 * 24))
-		if (totalDays === 0) totalDays = 1
+		let totalDays = Math.ceil(difference / (1000 * 3600 * 24)) + 1
+		// if (totalDays === 0) totalDays = 1
 		let records = await DailyRecord.find({$and: [{"_patientID": patientID}]}).lean()				
 		let rate = Math.round(records.length / totalDays * 10000) / 100
 		return res.render('patient-dashboard', {date: today, patient: patient, record: record, rate: rate, message: req.flash('message')})
@@ -100,8 +100,8 @@ const rank = async (req, res) => {
         await Promise.all(
             patients.map(async (p) => {
                 let difference = new Date().getTime() - p.registered.getTime() 
-				let totalDays = Math.ceil(difference / (1000 * 3600 * 24))
-				if (totalDays === 0) totalDays = 1
+				let totalDays = Math.ceil(difference / (1000 * 3600 * 24)) + 1
+				// if (totalDays === 0) totalDays = 1
 				let records = await DailyRecord.find({$and: [{"_patientID": p._id}]}).lean()				
 				let rate = Math.round(records.length / totalDays * 10000) / 100
 				let info = {
