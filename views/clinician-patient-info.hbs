@@ -17,7 +17,6 @@
     </section>
 </section>
 <section class="data">
-
     <h3 id ="date">
     <div>
         <form method="GET" action="/clinician/patient-info/{{patient._id}}">
@@ -125,6 +124,8 @@
 		<input type="number" name="lowerThreshold"/>
 		<button>Edit</button>
 	</form> 
+    </section>
+    
     <section class = "note">
         <h1>Clinician Note</h1>
         <form method="POST" action="/clinician/note/{{patient._id}}">
@@ -142,6 +143,4 @@
             <button type="submit" id="confirm">Update</button>
         </form>
     </section>
-
-</section>
 
