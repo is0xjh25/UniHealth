@@ -29,23 +29,25 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center; 
-    margin: 20px;
-    width: 355px;
-    height: 40px;
+    margin: 50px;
+    width: 700px;
+    height: 100px;
     line-height: 20px;
     border-style: solid;
     border-radius: 20px;
     border-color: #2D65A4;
     background-color: white;
+    font-size: 200%;
 }
 
 .aboveRank{
     display: flex;
     justify-content: space-around;
     align-items: center; 
-    margin: 20px;
-    width: 355px;
-    height: 40px;
+    margin: 50px;
+    width: 700px;
+    height: 100px;
+    font-size: 200%;
     line-height: 20px;
     color: white;
 }
@@ -54,6 +56,10 @@ body{
     display: flex;
     justify-content: center;
     color: #e8d810;
+    margin: 50px;
+    width: 700px;
+    height: 100px;
+    font-size: 200%;
 
 }
 
