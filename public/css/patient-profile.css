@@ -112,9 +112,9 @@ body{
 
 
 
-/* 寮圭獥 (background) */
+
 .modal {
-    display: none; /* 榛樿闅愯棌 */
+    display: none; 
     position: fixed; 
     z-index: 1; 
     padding-top: 100px; 
@@ -127,7 +127,7 @@ body{
     background-color: rgba(0,0,0,0.4);
 }
  
-/* 寮圭獥鍐呭 */
+
 .modal-content {
     position: relative;
     background-color: #fefefe;
@@ -142,7 +142,7 @@ body{
     animation-duration: 0.4s
 }
  
-/* 娣诲姞鍔ㄧ敾 */
+
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
@@ -153,7 +153,7 @@ body{
     to {top:0; opacity:1}
 }
  
-/* 鍏抽棴鎸夐挳 */
+
 .close {
     color: white;
     float: right;
