@@ -205,13 +205,13 @@
        background-color: var(--text-unused);
        border-radius: 90px;
        border-style:solid;
-       width: 40%;
+       width: 20%;
        white-space: nowrap;
-       margin-left: 87%;
-       margin-top: -90%;
-       font-size: 200%;
+       margin-left: 75%;
+       margin-top: -50%;
+       font-size: 180%;
        padding-left: 5%;
-       padding-bottom: 13%;
+       padding-bottom: 5%;
    }
 
    #note-c{
