@@ -8,7 +8,7 @@
             <p id = "hearder">Rencent Comments:</p>
             {{#each comments}}
                 <section id="user">
-                    <p id="name"><i class="fa-solid fa-comment" style="color:red;"></i><a href="/clinician/patient-info/{{this.patientID._id}}/{{this.time}}">{{this.patientID.firstname}} {{this.patientID.lastname}} ({{this.patientID.username}})</a></p>
+                    <p id="name"><i class="fa-solid fa-comment" style="color:red;"></i><a href="/clinician/patient-info/{{this.patientID._id}}?date={{#dateToString this.time}}{{/dateToString}}">{{this.patientID.firstname}} {{this.patientID.lastname}} ({{this.patientID.username}})</a></p>
                     <h6 id="time">{{#toMelbourneTime this.time}}{{/toMelbourneTime}}</h6>
                     <p id ="subject"><i class="fa-solid fa-star" style="color:#2763A7;"></i>{{this.type}}: {{this.data}}</p>
                     <p id="sentence">{{this.comment}}</p>
